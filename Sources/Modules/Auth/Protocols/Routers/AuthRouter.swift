@@ -10,7 +10,7 @@ import Foundation
 protocol AuthRouter {
     func openRegistration()
     func openPasswordRecovery()
-    func openEmailVerification(email: String, type: VerificationViewState.VerificationType)
+    func openEmailVerification(email: String, type: VerificationType)
     func openDashboard()
     func goBackToLogin()
 }
