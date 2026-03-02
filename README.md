@@ -99,3 +99,9 @@ Presenter обновляет View через протокол `render(state)` и
 - **Хранилище:** протокол `StorageService` (save, load, delete, exists, clearAll по ключу); `StorageKey` (`userSession`, `totpItems`).
 - **Общие модели:** `Result<T>` (success/failure с `AppError`); `UserSession`; `LoadingState` (initial, loading, loaded, error).
 - **Ошибки:** `AppError` (networkError, authError, validationError, storageError, unknown); `NetworkError`; `AuthError`.
+
+---
+
+## Диаграмма
+
+![Architecture Diagram](./diagram.drawio.svg)
