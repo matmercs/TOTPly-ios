@@ -205,7 +205,7 @@ final class LoginViewController: UIViewController, LoginView {
     }
 
     @objc private func didTapLogin() {
-        view.endEditing(true)
+        view.endEditing(true) // скрываем клавиатуру
         presenter.didTapLogin(email: emailField.text ?? "", password: passwordField.text ?? "")
     }
 
