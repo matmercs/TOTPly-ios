@@ -9,9 +9,9 @@ import Foundation
 
 struct DashboardViewState: Equatable {
     var loadingState: LoadingState
-    var items: [TOTPItemViewModel]
+    var items: [DashboardTOTPItem]
     var searchQuery: String
-    var filteredItems: [TOTPItemViewModel]
+    var filteredItems: [DashboardTOTPItem]
     var isRefreshing: Bool
     var areCodesMasked: Bool
 
@@ -30,7 +30,7 @@ struct DashboardViewState: Equatable {
         items.isEmpty
     }
     
-    var displayItems: [TOTPItemViewModel] {
+    var displayItems: [DashboardTOTPItem] {
         searchQuery.isEmpty ? items : filteredItems
     }
 }
