@@ -31,8 +31,21 @@ final class LoginPresenterImpl: LoginPresenter {
     }
 
     func didTapLogin(email: String, password: String) {
+        state.email = email
+        state.password = password
+        state.emailTouched = true
+        state.passwordTouched = true
+        validateFields()
+
+        guard
+            state.validationErrors.emailError == nil,
+            state.validationErrors.passwordError == nil
+        else {
+            return
+        }
+
         state.loadingState = .loading
-        state.validationErrors = .init()  // красиво
+        state.validationErrors = .init()
         view?.render(state)
         
         
@@ -73,15 +86,52 @@ final class LoginPresenterImpl: LoginPresenter {
 
     func didChangeEmail(_ email: String) {
         state.email = email
-        state.isLoginButtonEnabled = !email.isEmpty && !state.password.isEmpty
-        state.validationErrors.emailError = nil
+        validateFields()
         view?.render(state)
     }
 
     func didChangePassword(_ password: String) {
         state.password = password
-        state.isLoginButtonEnabled = !state.email.isEmpty && !password.isEmpty
-        state.validationErrors.passwordError = nil
+        validateFields()
         view?.render(state)
     }
+
+    func didEndEditingEmail() {
+        state.emailTouched = true
+        validateFields()
+        view?.render(state)
+    }
+
+    func didEndEditingPassword() {
+        state.passwordTouched = true
+        validateFields()
+        view?.render(state)
+    }
+
+    private func validateFields() {
+        var errors = LoginViewState.ValidationErrors()
+
+        let trimmedEmail = state.email.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmedEmail.isEmpty {
+            errors.emailError = "Введите почту"
+        } else if !isValidEmail(trimmedEmail) {
+            errors.emailError = "Некорректная почта"
+        }
+
+        if state.password.isEmpty {
+            errors.passwordError = "Введите пароль"
+        }
+
+        state.validationErrors = errors
+        state.isLoginButtonEnabled = errors.emailError == nil && errors.passwordError == nil
+    }
+
+    private func isValidEmail(_ email: String) -> Bool {
+        let parts = email.split(separator: "@")
+        guard parts.count == 2, !parts[0].isEmpty else { return false }
+        let domainParts = parts[1].split(separator: ".")
+        guard domainParts.count >= 2, !domainParts.last!.isEmpty else { return false }
+        return true
+    }
+
 }

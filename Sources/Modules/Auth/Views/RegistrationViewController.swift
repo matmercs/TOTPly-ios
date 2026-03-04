@@ -48,12 +48,47 @@ final class RegistrationViewController: UIViewController, RegistrationView {
         return t
     }()
 
+    private let emailErrorLabel: UILabel = {
+        let l = UILabel()
+        l.font = .systemFont(ofSize: 12)
+        l.textColor = .systemRed
+        l.numberOfLines = 0
+        l.isHidden = true
+        return l
+    }()
+
     private let passwordField: UITextField = {
         let t = UITextField()
         t.placeholder = "Пароль"
         t.isSecureTextEntry = true
         t.borderStyle = .roundedRect
         return t
+    }()
+
+    private let passwordErrorLabel: UILabel = {
+        let l = UILabel()
+        l.font = .systemFont(ofSize: 12)
+        l.textColor = .systemRed
+        l.numberOfLines = 0
+        l.isHidden = true
+        return l
+    }()
+
+    private let confirmPasswordField: UITextField = {
+        let t = UITextField()
+        t.placeholder = "Повторите пароль"
+        t.isSecureTextEntry = true
+        t.borderStyle = .roundedRect
+        return t
+    }()
+
+    private let confirmPasswordErrorLabel: UILabel = {
+        let l = UILabel()
+        l.font = .systemFont(ofSize: 12)
+        l.textColor = .systemRed
+        l.numberOfLines = 0
+        l.isHidden = true
+        return l
     }()
 
     private let displayNameField: UITextField = {
@@ -63,9 +98,18 @@ final class RegistrationViewController: UIViewController, RegistrationView {
         return t
     }()
 
+    private let displayNameErrorLabel: UILabel = {
+        let l = UILabel()
+        l.font = .systemFont(ofSize: 12)
+        l.textColor = .systemRed
+        l.numberOfLines = 0
+        l.isHidden = true
+        return l
+    }()
+
     private let errorLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 14)
+        l.font = .systemFont(ofSize: 12)
         l.textColor = .systemRed
         l.numberOfLines = 0
         l.isHidden = true
@@ -105,14 +149,20 @@ final class RegistrationViewController: UIViewController, RegistrationView {
 
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(displayNameField)
+        stackView.addArrangedSubview(displayNameErrorLabel)
         stackView.addArrangedSubview(emailField)
+        stackView.addArrangedSubview(emailErrorLabel)
         stackView.addArrangedSubview(passwordField)
+        stackView.addArrangedSubview(passwordErrorLabel)
+        stackView.addArrangedSubview(confirmPasswordField)
+        stackView.addArrangedSubview(confirmPasswordErrorLabel)
         stackView.addArrangedSubview(errorLabel)
         stackView.addArrangedSubview(registerButton)
         stackView.addArrangedSubview(loginButton)
 
         emailField.addTarget(self, action: #selector(emailChanged), for: .editingChanged)
         passwordField.addTarget(self, action: #selector(passwordChanged), for: .editingChanged)
+        confirmPasswordField.addTarget(self, action: #selector(confirmPasswordChanged), for: .editingChanged)
         displayNameField.addTarget(self, action: #selector(displayNameChanged), for: .editingChanged)
         registerButton.addTarget(self, action: #selector(didTapRegister), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(didTapGoToLogin), for: .touchUpInside)
@@ -120,6 +170,7 @@ final class RegistrationViewController: UIViewController, RegistrationView {
         displayNameField.delegate = self
         emailField.delegate = self
         passwordField.delegate = self
+        confirmPasswordField.delegate = self
 
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -160,6 +211,28 @@ final class RegistrationViewController: UIViewController, RegistrationView {
     }
 
     func render(_ state: RegistrationViewState) {
+        let showDisplayNameError = state.validationErrors.displayNameError != nil && state.displayNameTouched
+        let showEmailError = state.validationErrors.emailError != nil && state.emailTouched
+        let showPasswordError = state.validationErrors.passwordError != nil && state.passwordTouched
+        let showConfirmPasswordError = state.validationErrors.confirmPasswordError != nil && state.confirmPasswordTouched
+        
+        displayNameErrorLabel.text = state.validationErrors.displayNameError
+        displayNameErrorLabel.isHidden = !showDisplayNameError
+
+        emailErrorLabel.text = state.validationErrors.emailError
+        emailErrorLabel.isHidden = !showEmailError
+
+        passwordErrorLabel.text = state.validationErrors.passwordError
+        passwordErrorLabel.isHidden = !showPasswordError
+
+        confirmPasswordErrorLabel.text = state.validationErrors.confirmPasswordError
+        confirmPasswordErrorLabel.isHidden = !showConfirmPasswordError
+
+        applyValidationStyle(textField: displayNameField, hasError: showDisplayNameError)
+        applyValidationStyle(textField: emailField, hasError: showEmailError)
+        applyValidationStyle(textField: passwordField, hasError: showPasswordError)
+        applyValidationStyle(textField: confirmPasswordField, hasError: showConfirmPasswordError)
+
         errorLabel.text = state.errorMessage
         errorLabel.isHidden = state.errorMessage == nil
         registerButton.isEnabled = state.isRegisterButtonEnabled && !state.isLoading
@@ -177,18 +250,38 @@ final class RegistrationViewController: UIViewController, RegistrationView {
     @objc private func passwordChanged() {
         presenter.didChangePassword(passwordField.text ?? "")
     }
-    
+
+    @objc private func confirmPasswordChanged() {
+        presenter.didChangeConfirmPassword(confirmPasswordField.text ?? "")
+    }
+
     @objc private func displayNameChanged() {
         presenter.didChangeDisplayName(displayNameField.text ?? "")
     }
 
     @objc private func didTapRegister() {
         view.endEditing(true) // скрыли клавиатуру
-        presenter.didTapRegister(email: emailField.text ?? "", password: passwordField.text ?? "", displayName: displayNameField.text?.isEmpty == false ? displayNameField.text : nil)
+        presenter.didTapRegister(
+            email: emailField.text ?? "",
+            password: passwordField.text ?? "",
+            confirmPassword: confirmPasswordField.text ?? "",
+            displayName: displayNameField.text?.isEmpty == false ? displayNameField.text : nil
+        )
     }
 
     @objc private func didTapGoToLogin() {
         presenter.didTapGoToLogin()
+    }
+
+    private func applyValidationStyle(textField: UITextField, hasError: Bool) {
+        if hasError {
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = UIColor.systemRed.cgColor
+            textField.layer.cornerRadius = 8
+        } else {
+            textField.layer.borderWidth = 0
+            textField.layer.borderColor = nil
+        }
     }
 
     deinit {
@@ -202,6 +295,8 @@ extension RegistrationViewController: UITextFieldDelegate {
             emailField.becomeFirstResponder()
         } else if textField === emailField {
             passwordField.becomeFirstResponder()
+        } else if textField === passwordField {
+            confirmPasswordField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
             if registerButton.isEnabled {
@@ -209,5 +304,17 @@ extension RegistrationViewController: UITextFieldDelegate {
             }
         }
         return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField === displayNameField {
+            presenter.didEndEditingDisplayName()
+        } else if textField === emailField {
+            presenter.didEndEditingEmail()
+        } else if textField === passwordField {
+            presenter.didEndEditingPassword()
+        } else if textField === confirmPasswordField {
+            presenter.didEndEditingConfirmPassword()
+        }
     }
 }

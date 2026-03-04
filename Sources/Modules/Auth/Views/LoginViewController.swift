@@ -80,7 +80,7 @@ final class LoginViewController: UIViewController, LoginView {
 
     private let errorLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 14)
+        l.font = .systemFont(ofSize: 12)
         l.textColor = .systemRed
         l.numberOfLines = 0
         l.isHidden = true
@@ -104,8 +104,6 @@ final class LoginViewController: UIViewController, LoginView {
         b.accessibilityIdentifier = "login.goToRegister"
         return b
     }()
-
-    private var loginButtonBottomConstraint: NSLayoutConstraint?
 
     init(presenter: LoginPresenter) {
         self.presenter = presenter
@@ -149,7 +147,7 @@ final class LoginViewController: UIViewController, LoginView {
             contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor), // иначе горизонтальный скролл
 
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
@@ -182,10 +180,14 @@ final class LoginViewController: UIViewController, LoginView {
     }
 
     func render(_ state: LoginViewState) {
+        let showEmailError = state.validationErrors.emailError != nil && state.emailTouched
+        let showPasswordError = state.validationErrors.passwordError != nil && state.passwordTouched
         emailErrorLabel.text = state.validationErrors.emailError
-        emailErrorLabel.isHidden = state.validationErrors.emailError == nil
+        emailErrorLabel.isHidden = !showEmailError
         passwordErrorLabel.text = state.validationErrors.passwordError
-        passwordErrorLabel.isHidden = state.validationErrors.passwordError == nil
+        passwordErrorLabel.isHidden = !showPasswordError
+        applyValidationStyle(textField: emailField, hasError: showEmailError)
+        applyValidationStyle(textField: passwordField, hasError: showPasswordError)
         errorLabel.text = state.errorMessage
         errorLabel.isHidden = state.errorMessage == nil
         loginButton.isEnabled = state.isLoginButtonEnabled && !state.isLoading
@@ -213,6 +215,17 @@ final class LoginViewController: UIViewController, LoginView {
         presenter.didTapGoToRegister()
     }
 
+    private func applyValidationStyle(textField: UITextField, hasError: Bool) {
+        if hasError {
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = UIColor.systemRed.cgColor
+            textField.layer.cornerRadius = 8
+        } else {
+            textField.layer.borderWidth = 0
+            textField.layer.borderColor = nil
+        }
+    }
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -229,5 +242,13 @@ extension LoginViewController: UITextFieldDelegate {
             }
         }
         return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField === emailField {
+            presenter.didEndEditingEmail()
+        } else if textField === passwordField {
+            presenter.didEndEditingPassword()
+        }
     }
 }
