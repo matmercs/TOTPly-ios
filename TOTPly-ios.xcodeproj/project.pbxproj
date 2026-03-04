@@ -24,9 +24,77 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		34F324062F4C771B00B14F9F /* TOTPly-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TOTPly-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		34F3241C2F4C771E00B14F9F /* TOTPly-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TOTPly-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		34F324262F4C771E00B14F9F /* TOTPly-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TOTPly-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34B745DF2F534B47009F9B4D /* TOTPly-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TOTPly-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34B745E02F534B47009F9B4D /* TOTPly-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TOTPly-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34B745E12F534B47009F9B4D /* TOTPly-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TOTPly-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34B745F52F534C87009F9B4D /* PasswordResetVerifyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetVerifyRequest.swift; sourceTree = "<group>"; };
+		34B745F62F534DA6009F9B4D /* RegistrationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponse.swift; sourceTree = "<group>"; };
+		34B745F72F534E07009F9B4D /* ResendVerificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResendVerificationRequest.swift; sourceTree = "<group>"; };
+		34B745F82F534E26009F9B4D /* ResendVerificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResendVerificationResponse.swift; sourceTree = "<group>"; };
+		34B745FA2F534ECA009F9B4D /* VerificationViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewState.swift; sourceTree = "<group>"; };
+		34B745FE2F535335009F9B4D /* WelcomeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewState.swift; sourceTree = "<group>"; };
+		34B745FF2F53537A009F9B4D /* LoginViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewState.swift; sourceTree = "<group>"; };
+		34B746002F535395009F9B4D /* RegistrationViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewState.swift; sourceTree = "<group>"; };
+		34B746022F5354F6009F9B4D /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		34B746032F535528009F9B4D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		34B746042F53553D009F9B4D /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		34B746062F5382EC009F9B4D /* DashboardViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewState.swift; sourceTree = "<group>"; };
+		34B746072F538380009F9B4D /* DashboardTOTPItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTOTPItem.swift; sourceTree = "<group>"; };
+		34B746082F5383C4009F9B4D /* TOTPAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPAlgorithm.swift; sourceTree = "<group>"; };
+		34B746092F53840A009F9B4D /* TOTPItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPItemDTO.swift; sourceTree = "<group>"; };
+		34B7460C2F54726F009F9B4D /* PasswordResetVerifyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetVerifyResponse.swift; sourceTree = "<group>"; };
+		34B7460D2F5472A4009F9B4D /* PasswordResetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetResponse.swift; sourceTree = "<group>"; };
+		34B7460E2F54741C009F9B4D /* TOTPItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPItem.swift; sourceTree = "<group>"; };
+		34B7460F2F547488009F9B4D /* CreateTOTPItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTOTPItemRequest.swift; sourceTree = "<group>"; };
+		34B746112F547712009F9B4D /* VerifyEmailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailResponse.swift; sourceTree = "<group>"; };
+		34B746132F54777B009F9B4D /* CreateTOTPItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTOTPItemResponse.swift; sourceTree = "<group>"; };
+		34B746142F547841009F9B4D /* DeleteTOTPItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTOTPItemRequest.swift; sourceTree = "<group>"; };
+		34B746152F54785F009F9B4D /* DeleteTOTPItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTOTPItemResponse.swift; sourceTree = "<group>"; };
+		34B746162F547886009F9B4D /* TOTPItemsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPItemsRequest.swift; sourceTree = "<group>"; };
+		34B746172F5478A7009F9B4D /* TOTPItemsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPItemsResponse.swift; sourceTree = "<group>"; };
+		34B746182F547FC7009F9B4D /* UpdateTOTPItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTOTPItemRequest.swift; sourceTree = "<group>"; };
+		34B746192F547FEF009F9B4D /* UpdateTOTPItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTOTPItemResponse.swift; sourceTree = "<group>"; };
+		34B7461A2F54802B009F9B4D /* CodeDetailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailInput.swift; sourceTree = "<group>"; };
+		34B7461B2F54808B009F9B4D /* CodeDetailViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailViewState.swift; sourceTree = "<group>"; };
+		34B7461D2F548618009F9B4D /* AddTOTPInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTOTPInput.swift; sourceTree = "<group>"; };
+		34B7461E2F54865A009F9B4D /* AddTOTPViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTOTPViewState.swift; sourceTree = "<group>"; };
+		34B746252F548A93009F9B4D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		34B746262F548AAC009F9B4D /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		34B746272F548B92009F9B4D /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
+		34B7462A2F548C0A009F9B4D /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		34B7462B2F548C55009F9B4D /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		34B7462C2F548C6F009F9B4D /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		34B7462D2F548CA8009F9B4D /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		34B7462E2F548CD6009F9B4D /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
+		34B7462F2F548CEA009F9B4D /* VerificationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationPresenter.swift; sourceTree = "<group>"; };
+		34B746342F548E5F009F9B4D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		34B746352F548E80009F9B4D /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		34B746362F548F72009F9B4D /* VerificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationType.swift; sourceTree = "<group>"; };
+		34B746372F549259009F9B4D /* AuthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResult.swift; sourceTree = "<group>"; };
+		34B746392F549B40009F9B4D /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		34B7463A2F549B53009F9B4D /* StorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageKey.swift; sourceTree = "<group>"; };
+		34B746452F549D63009F9B4D /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		34B746462F549FF6009F9B4D /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
+		34B746472F54A0A3009F9B4D /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
+		34B746482F54A190009F9B4D /* TOTPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPRepository.swift; sourceTree = "<group>"; };
+		34B746492F54A26B009F9B4D /* TOTPGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPGenerator.swift; sourceTree = "<group>"; };
+		34B7464C2F54A49C009F9B4D /* CodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailView.swift; sourceTree = "<group>"; };
+		34B7464D2F54A541009F9B4D /* CodeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailPresenter.swift; sourceTree = "<group>"; };
+		34B7464E2F54A5AA009F9B4D /* CodeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailRouter.swift; sourceTree = "<group>"; };
+		34B7464F2F54A97A009F9B4D /* AddTOTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTOTPView.swift; sourceTree = "<group>"; };
+		34B746502F54AB79009F9B4D /* AddTOTPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTOTPPresenter.swift; sourceTree = "<group>"; };
+		34B746512F54ABDE009F9B4D /* AddTOTPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTOTPRouter.swift; sourceTree = "<group>"; };
+		34B746542F562548009F9B4D /* KeychainStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorageService.swift; sourceTree = "<group>"; };
+		34B746552F5628EC009F9B4D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		34F3247B2F4E18B000B14F9F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		34F3247C2F4E191D00B14F9F /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		34F3247D2F4E19CA00B14F9F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		34F3247E2F4E19FF00B14F9F /* RegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
+		34F3247F2F4E1A1600B14F9F /* VerifyEmailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailRequest.swift; sourceTree = "<group>"; };
+		34F324802F4E1A3400B14F9F /* PasswordResetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetRequest.swift; sourceTree = "<group>"; };
+		34F324852F4E1E6000B14F9F /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		34F324872F4E1EA900B14F9F /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		34F324882F4E1ED300B14F9F /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -85,24 +153,380 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34B745FC2F53500C009F9B4D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				34B745F72F534E07009F9B4D /* ResendVerificationRequest.swift */,
+				34B745F52F534C87009F9B4D /* PasswordResetVerifyRequest.swift */,
+				34F324802F4E1A3400B14F9F /* PasswordResetRequest.swift */,
+				34F3247B2F4E18B000B14F9F /* LoginRequest.swift */,
+				34F3247F2F4E1A1600B14F9F /* VerifyEmailRequest.swift */,
+				34F3247E2F4E19FF00B14F9F /* RegistrationRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		34B745FD2F535015009F9B4D /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				34B746112F547712009F9B4D /* VerifyEmailResponse.swift */,
+				34B7460D2F5472A4009F9B4D /* PasswordResetResponse.swift */,
+				34B7460C2F54726F009F9B4D /* PasswordResetVerifyResponse.swift */,
+				34B745F82F534E26009F9B4D /* ResendVerificationResponse.swift */,
+				34F3247D2F4E19CA00B14F9F /* LoginResponse.swift */,
+				34B745F62F534DA6009F9B4D /* RegistrationResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		34B746052F5355B2009F9B4D /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				34B746042F53553D009F9B4D /* AuthError.swift */,
+				34B746032F535528009F9B4D /* NetworkError.swift */,
+				34B746022F5354F6009F9B4D /* AppError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		34B7460A2F54714C009F9B4D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				34B746182F547FC7009F9B4D /* UpdateTOTPItemRequest.swift */,
+				34B746162F547886009F9B4D /* TOTPItemsRequest.swift */,
+				34B746142F547841009F9B4D /* DeleteTOTPItemRequest.swift */,
+				34B7460F2F547488009F9B4D /* CreateTOTPItemRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		34B7460B2F547156009F9B4D /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				34B746192F547FEF009F9B4D /* UpdateTOTPItemResponse.swift */,
+				34B746172F5478A7009F9B4D /* TOTPItemsResponse.swift */,
+				34B746152F54785F009F9B4D /* DeleteTOTPItemResponse.swift */,
+				34B746132F54777B009F9B4D /* CreateTOTPItemResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		34B7461C2F5485F0009F9B4D /* AddTOTP */ = {
+			isa = PBXGroup;
+			children = (
+				34B746242F548903009F9B4D /* Protocols */,
+				34B7461F2F548752009F9B4D /* Models */,
+			);
+			path = AddTOTP;
+			sourceTree = "<group>";
+		};
+		34B7461F2F548752009F9B4D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				34B7461E2F54865A009F9B4D /* AddTOTPViewState.swift */,
+				34B7461D2F548618009F9B4D /* AddTOTPInput.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		34B746202F5488E0009F9B4D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				34B746322F548D2A009F9B4D /* Views */,
+				34B746312F548D21009F9B4D /* Routers */,
+				34B746302F548D18009F9B4D /* Presenters */,
+				34B7462D2F548CA8009F9B4D /* AuthRepository.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		34B746212F5488E7009F9B4D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				34B746492F54A26B009F9B4D /* TOTPGenerator.swift */,
+				34B746482F54A190009F9B4D /* TOTPRepository.swift */,
+				34B7463D2F549CBC009F9B4D /* Presenters */,
+				34B7463C2F549CB3009F9B4D /* Routers */,
+				34B7463B2F549CAD009F9B4D /* Views */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		34B746232F5488FD009F9B4D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				34B746402F549CD8009F9B4D /* Presenters */,
+				34B7463F2F549CD3009F9B4D /* Routers */,
+				34B7463E2F549CCD009F9B4D /* Views */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		34B746242F548903009F9B4D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				34B746442F549D01009F9B4D /* Presenters */,
+				34B746432F549CF5009F9B4D /* Routers */,
+				34B746422F549CF0009F9B4D /* Views */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		34B746302F548D18009F9B4D /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				34B746352F548E80009F9B4D /* LoginPresenter.swift */,
+				34B7462F2F548CEA009F9B4D /* VerificationPresenter.swift */,
+				34B7462B2F548C55009F9B4D /* RegistrationPresenter.swift */,
+				34B746262F548AAC009F9B4D /* WelcomePresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		34B746312F548D21009F9B4D /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				34B7462C2F548C6F009F9B4D /* AuthRouter.swift */,
+				34B746272F548B92009F9B4D /* WelcomeRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		34B746322F548D2A009F9B4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34B746342F548E5F009F9B4D /* LoginView.swift */,
+				34B7462E2F548CD6009F9B4D /* VerificationView.swift */,
+				34B7462A2F548C0A009F9B4D /* RegistrationView.swift */,
+				34B746252F548A93009F9B4D /* WelcomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34B746382F5499B6009F9B4D /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				34B7463A2F549B53009F9B4D /* StorageKey.swift */,
+				34B746392F549B40009F9B4D /* StorageService.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		34B7463B2F549CAD009F9B4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34B746452F549D63009F9B4D /* DashboardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34B7463C2F549CB3009F9B4D /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				34B746472F54A0A3009F9B4D /* DashboardRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		34B7463D2F549CBC009F9B4D /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				34B746462F549FF6009F9B4D /* DashboardPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		34B7463E2F549CCD009F9B4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34B7464C2F54A49C009F9B4D /* CodeDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34B7463F2F549CD3009F9B4D /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				34B7464E2F54A5AA009F9B4D /* CodeDetailRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		34B746402F549CD8009F9B4D /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				34B7464D2F54A541009F9B4D /* CodeDetailPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		34B746422F549CF0009F9B4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34B7464F2F54A97A009F9B4D /* AddTOTPView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34B746432F549CF5009F9B4D /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				34B746512F54ABDE009F9B4D /* AddTOTPRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		34B746442F549D01009F9B4D /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				34B746502F54AB79009F9B4D /* AddTOTPPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		34B746522F55F789009F9B4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34B746552F5628EC009F9B4D /* WelcomeViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		34F323FD2F4C771B00B14F9F = {
 			isa = PBXGroup;
 			children = (
-				34F324082F4C771B00B14F9F /* TOTPly-ios */,
+				34F324702F4E13B000B14F9F /* Sources */,
 				34F3241F2F4C771E00B14F9F /* TOTPly-iosTests */,
 				34F324292F4C771E00B14F9F /* TOTPly-iosUITests */,
-				34F324072F4C771B00B14F9F /* Products */,
+				34F324082F4C771B00B14F9F /* TOTPly-ios */,
+				34B745DF2F534B47009F9B4D /* TOTPly-ios.app */,
+				34B745E02F534B47009F9B4D /* TOTPly-iosTests.xctest */,
+				34B745E12F534B47009F9B4D /* TOTPly-iosUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
-		34F324072F4C771B00B14F9F /* Products */ = {
+		34F324702F4E13B000B14F9F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				34F324062F4C771B00B14F9F /* TOTPly-ios.app */,
-				34F3241C2F4C771E00B14F9F /* TOTPly-iosTests.xctest */,
-				34F324262F4C771E00B14F9F /* TOTPly-iosUITests.xctest */,
+				34F324732F4E13D800B14F9F /* Services */,
+				34F324722F4E13D100B14F9F /* Modules */,
+				34F324712F4E13BD00B14F9F /* Core */,
 			);
-			name = Products;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		34F324712F4E13BD00B14F9F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				34B746382F5499B6009F9B4D /* Storage */,
+				34F324812F4E1DDB00B14F9F /* Common */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		34F324722F4E13D100B14F9F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				34B7461C2F5485F0009F9B4D /* AddTOTP */,
+				34F324782F4E15D900B14F9F /* CodeDetail */,
+				34F324752F4E154C00B14F9F /* Dashboard */,
+				34F324742F4E149000B14F9F /* Auth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		34F324732F4E13D800B14F9F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				34B746542F562548009F9B4D /* KeychainStorageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		34F324742F4E149000B14F9F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				34B746522F55F789009F9B4D /* Views */,
+				34B746202F5488E0009F9B4D /* Protocols */,
+				34F324762F4E15C700B14F9F /* Models */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		34F324752F4E154C00B14F9F /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				34B746212F5488E7009F9B4D /* Protocols */,
+				34F324772F4E15D000B14F9F /* Models */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		34F324762F4E15C700B14F9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				34B746372F549259009F9B4D /* AuthResult.swift */,
+				34B746362F548F72009F9B4D /* VerificationType.swift */,
+				34B746002F535395009F9B4D /* RegistrationViewState.swift */,
+				34B745FF2F53537A009F9B4D /* LoginViewState.swift */,
+				34B745FE2F535335009F9B4D /* WelcomeViewState.swift */,
+				34B745FD2F535015009F9B4D /* Responses */,
+				34B745FC2F53500C009F9B4D /* Requests */,
+				34B745FA2F534ECA009F9B4D /* VerificationViewState.swift */,
+				34F3247C2F4E191D00B14F9F /* DeviceInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		34F324772F4E15D000B14F9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				34B7460E2F54741C009F9B4D /* TOTPItem.swift */,
+				34B7460B2F547156009F9B4D /* Responses */,
+				34B7460A2F54714C009F9B4D /* Requests */,
+				34B746092F53840A009F9B4D /* TOTPItemDTO.swift */,
+				34B746082F5383C4009F9B4D /* TOTPAlgorithm.swift */,
+				34B746072F538380009F9B4D /* DashboardTOTPItem.swift */,
+				34B746062F5382EC009F9B4D /* DashboardViewState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		34F324782F4E15D900B14F9F /* CodeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				34B746232F5488FD009F9B4D /* Protocols */,
+				34F324792F4E15E000B14F9F /* Models */,
+			);
+			path = CodeDetail;
+			sourceTree = "<group>";
+		};
+		34F324792F4E15E000B14F9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				34B7461B2F54808B009F9B4D /* CodeDetailViewState.swift */,
+				34B7461A2F54802B009F9B4D /* CodeDetailInput.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		34F324812F4E1DDB00B14F9F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				34B746052F5355B2009F9B4D /* Errors */,
+				34F324832F4E1E2900B14F9F /* Models */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		34F324832F4E1E2900B14F9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				34F324882F4E1ED300B14F9F /* Result.swift */,
+				34F324872F4E1EA900B14F9F /* UserSession.swift */,
+				34F324852F4E1E6000B14F9F /* LoadingState.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +551,7 @@
 			packageProductDependencies = (
 			);
 			productName = "TOTPly-ios";
-			productReference = 34F324062F4C771B00B14F9F /* TOTPly-ios.app */;
+			productReference = 34B745DF2F534B47009F9B4D /* TOTPly-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
 		34F3241B2F4C771E00B14F9F /* TOTPly-iosTests */ = {
@@ -150,7 +574,7 @@
 			packageProductDependencies = (
 			);
 			productName = "TOTPly-iosTests";
-			productReference = 34F3241C2F4C771E00B14F9F /* TOTPly-iosTests.xctest */;
+			productReference = 34B745E02F534B47009F9B4D /* TOTPly-iosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		34F324252F4C771E00B14F9F /* TOTPly-iosUITests */ = {
@@ -173,7 +597,7 @@
 			packageProductDependencies = (
 			);
 			productName = "TOTPly-iosUITests";
-			productReference = 34F324262F4C771E00B14F9F /* TOTPly-iosUITests.xctest */;
+			productReference = 34B745E12F534B47009F9B4D /* TOTPly-iosUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -209,7 +633,7 @@
 			mainGroup = 34F323FD2F4C771B00B14F9F;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 34F324072F4C771B00B14F9F /* Products */;
+			productRefGroup = 34F323FD2F4C771B00B14F9F;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
