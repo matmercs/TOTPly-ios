@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		34AC02B12F6044F1005D5F98 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02B02F6044F0005D5F98 /* NetworkClient.swift */; };
 		34AC02B32F604EE1005D5F98 /* URLSessionNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02B22F604EDF005D5F98 /* URLSessionNetworkClient.swift */; };
+		34AC02B62F608076005D5F98 /* RemoteTOTPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02B52F608075005D5F98 /* RemoteTOTPRepository.swift */; };
 		34B746AF2F573834009F9B4D /* LocalAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B746A22F571FE7009F9B4D /* LocalAuthRepository.swift */; };
 		34B746B02F573834009F9B4D /* KeychainStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B746542F562548009F9B4D /* KeychainStorageService.swift */; };
 		34B746B12F573834009F9B4D /* AddTOTPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B746502F54AB79009F9B4D /* AddTOTPPresenter.swift */; };
@@ -107,6 +108,7 @@
 /* Begin PBXFileReference section */
 		34AC02B02F6044F0005D5F98 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		34AC02B22F604EDF005D5F98 /* URLSessionNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkClient.swift; sourceTree = "<group>"; };
+		34AC02B52F608075005D5F98 /* RemoteTOTPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTOTPRepository.swift; sourceTree = "<group>"; };
 		34B745DF2F534B47009F9B4D /* TOTPly-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TOTPly-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B745E02F534B47009F9B4D /* TOTPly-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TOTPly-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B745E12F534B47009F9B4D /* TOTPly-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TOTPly-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -582,6 +584,7 @@
 		34F324732F4E13D800B14F9F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				34AC02B52F608075005D5F98 /* RemoteTOTPRepository.swift */,
 				34B746A22F571FE7009F9B4D /* LocalAuthRepository.swift */,
 				34B746542F562548009F9B4D /* KeychainStorageService.swift */,
 				34AC02B22F604EDF005D5F98 /* URLSessionNetworkClient.swift */,
@@ -833,6 +836,7 @@
 				34B746B72F573834009F9B4D /* CodeDetailRouter.swift in Sources */,
 				34B746B82F573834009F9B4D /* CodeDetailView.swift in Sources */,
 				34B746B92F573834009F9B4D /* CodeDetailViewState.swift in Sources */,
+				34AC02B62F608076005D5F98 /* RemoteTOTPRepository.swift in Sources */,
 				34B746BA2F573834009F9B4D /* CodeDetailInput.swift in Sources */,
 				34B746BB2F573834009F9B4D /* TOTPGenerator.swift in Sources */,
 				34B746BC2F573834009F9B4D /* TOTPRepository.swift in Sources */,
