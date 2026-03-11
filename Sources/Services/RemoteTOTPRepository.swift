@@ -13,6 +13,9 @@ final class RemoteTOTPRepository: TOTPRepository {
     private let baseURL: String
     private let echoPath: String
     
+    private let cacheTTL: TimeInterval = 30 * 60
+    private var lastSyncDate: Date?
+    
     init(
         networkClient: NetworkClient,
         storage: StorageService,
@@ -31,18 +34,45 @@ final class RemoteTOTPRepository: TOTPRepository {
     
     
     func fetchRemoteItems() async throws -> [TOTPItem] {
-        guard let url = URL(string: "\(baseURL)/\(echoPath)") else {
-            throw NetworkError.invalidResponse
+        if let cachedItems = try? await fetchLocalItems(),
+           !cachedItems.isEmpty,
+           let lastSync = lastSyncDate,
+           Date().timeIntervalSince(lastSync) < cacheTTL {
+            return cachedItems
         }
         
-        let response: TOTPItemsResponse = try await networkClient.get(url)
-        
-        // Пока что если хотя бы один элемент невалиден то кидаем ошибку
-        let items = try response.items.map { try $0.toDomain() }
-        
-        try saveItemsToLocalStorage(items)
-        
-        return items
+        do {
+
+            guard let url = URL(string: "\(baseURL)/\(echoPath)") else {
+                throw NetworkError.invalidResponse
+            }
+            
+            let response: TOTPItemsResponse = try await networkClient.get(url)
+            
+            // Маппим DTO в domain модели
+            // Пока если хотя бы один элемент невалиден то бросим ошибку
+            let items = try response.items.map { try $0.toDomain() }
+            
+            lastSyncDate = Date()
+            
+            try saveItemsToLocalStorage(items)
+            
+            return items
+        } catch {
+            // Graceful degradation: если сеть недоступна, используем устаревший кэш, с секретами это ок
+            if let staleCachedItems = try? await fetchLocalItems(), !staleCachedItems.isEmpty {
+                if let lastSync = lastSyncDate {
+                    let cacheAge = Date().timeIntervalSince(lastSync)
+                    print("Network error, using stale cache (age: \(Int(cacheAge))s)")
+                } else {
+                    print("Network error, using old cache (unknown age)")
+                }
+                return staleCachedItems
+            }
+            
+            // а вот если кэша нет то грустно
+            throw error
+        }
     }
     
     func fetchLocalItems() async throws -> [TOTPItem] {
@@ -68,7 +98,7 @@ final class RemoteTOTPRepository: TOTPRepository {
         // Пока помечаем как удалённый локально
         var items = try await fetchLocalItems()
         if let index = items.firstIndex(where: { $0.id == id }) {
-            var item = items[index]
+            let item = items[index]
             items[index] = TOTPItem(
                 id: item.id,
                 name: item.name,
@@ -84,5 +114,11 @@ final class RemoteTOTPRepository: TOTPRepository {
             )
         }
         try storage.save(items, key: StorageKey.totpItems.rawValue)
+    }
+    
+    func invalidateCache() {
+        lastSyncDate = nil
+        
+        // можно явно удалить?
     }
 }

@@ -18,4 +18,5 @@ protocol DashboardPresenter {
     func didSearch(query: String)
     func didTapDelete(itemId: String)
     func didTapToggleCodeMask()
+    func didTapForceRefresh()
 }

@@ -112,6 +112,11 @@ final class DashboardPresenterImpl: DashboardPresenter {
         render()
     }
     
+    func didTapForceRefresh() {
+        repository.invalidateCache()
+        didPullToRefresh()
+    }
+    
     
     private func loadItems() {
         loadItemsTask?.cancel()
