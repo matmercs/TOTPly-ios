@@ -15,6 +15,9 @@ final class DashboardPresenterImpl: DashboardPresenter {
     
     private var state: DashboardViewState = .initial
     
+    private var loadItemsTask: Task<Void, Never>?
+    private var refreshTask: Task<Void, Never>?
+    
     init(
         view: DashboardView,
         repository: TOTPRepository,
@@ -37,10 +40,12 @@ final class DashboardPresenterImpl: DashboardPresenter {
     }
     
     func didPullToRefresh() {
+        loadItemsTask?.cancel()
+        
         state.isRefreshing = true
         render()
         
-        Task { @MainActor in
+        loadItemsTask = Task { @MainActor in
             await loadItemsFromRemote()
             state.isRefreshing = false
             render()
@@ -92,7 +97,7 @@ final class DashboardPresenterImpl: DashboardPresenter {
     }
     
     func didTapDelete(itemId: String) {
-        Task {
+        Task { @MainActor in
             do {
                 try await repository.deleteItem(id: itemId)
                 await loadItemsFromLocal()
@@ -109,16 +114,20 @@ final class DashboardPresenterImpl: DashboardPresenter {
     
     
     private func loadItems() {
+        loadItemsTask?.cancel()
+        
         state.loadingState = .loading
         render()
         
-        Task {
+        loadItemsTask = Task { @MainActor in
             await loadItemsFromRemote()
         }
     }
     
     private func refreshItems() {
-        Task {
+        refreshTask?.cancel()
+        
+        refreshTask = Task { @MainActor in
             // Сначала показываем локальные данные
             await loadItemsFromLocal()
             
@@ -129,8 +138,15 @@ final class DashboardPresenterImpl: DashboardPresenter {
     
     private func loadItemsFromRemote() async {
         do {
+            if Task.isCancelled { return }
+            
             let totpItems = try await repository.fetchRemoteItems()
+            
+            if Task.isCancelled { return }
+            
             let viewModels = totpItems.compactMap { DashboardTOTPItem.from(item: $0, generator: generator) }
+            
+            if Task.isCancelled { return }
             
             await MainActor.run {
                 // Обновляем только если данные изменились
@@ -150,6 +166,8 @@ final class DashboardPresenterImpl: DashboardPresenter {
                 }
             }
         } catch {
+            if Task.isCancelled { return }
+            
             await MainActor.run {
                 handleError(error)
             }
@@ -158,8 +176,15 @@ final class DashboardPresenterImpl: DashboardPresenter {
     
     private func loadItemsFromLocal() async {
         do {
+            if Task.isCancelled { return }
+            
             let totpItems = try await repository.fetchLocalItems()
+            
+            if Task.isCancelled { return }
+            
             let viewModels = totpItems.compactMap { DashboardTOTPItem.from(item: $0, generator: generator) }
+            
+            if Task.isCancelled { return }
             
             await MainActor.run {
                 // Обновляем только если данные изменились
