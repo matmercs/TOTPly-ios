@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		34998F7D2F6997A500EBF491 /* TOTPCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F7C2F6997A400EBF491 /* TOTPCellModel.swift */; };
 		34998F7F2F69AC9E00EBF491 /* TOTPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F7E2F69AC9D00EBF491 /* TOTPCell.swift */; };
+		34998F822F69AD9F00EBF491 /* CodeDetailStubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F812F69AD9E00EBF491 /* CodeDetailStubViewController.swift */; };
 		34AC02B12F6044F1005D5F98 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02B02F6044F0005D5F98 /* NetworkClient.swift */; };
 		34AC02B32F604EE1005D5F98 /* URLSessionNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02B22F604EDF005D5F98 /* URLSessionNetworkClient.swift */; };
 		34AC02B62F608076005D5F98 /* RemoteTOTPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02B52F608075005D5F98 /* RemoteTOTPRepository.swift */; };
@@ -124,6 +125,7 @@
 /* Begin PBXFileReference section */
 		34998F7C2F6997A400EBF491 /* TOTPCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPCellModel.swift; sourceTree = "<group>"; };
 		34998F7E2F69AC9D00EBF491 /* TOTPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPCell.swift; sourceTree = "<group>"; };
+		34998F812F69AD9E00EBF491 /* CodeDetailStubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailStubViewController.swift; sourceTree = "<group>"; };
 		34AC02B02F6044F0005D5F98 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		34AC02B22F604EDF005D5F98 /* URLSessionNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkClient.swift; sourceTree = "<group>"; };
 		34AC02B52F608075005D5F98 /* RemoteTOTPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTOTPRepository.swift; sourceTree = "<group>"; };
@@ -284,6 +286,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34998F802F69AD9600EBF491 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34998F812F69AD9E00EBF491 /* CodeDetailStubViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		34AC02AF2F6044A7005D5F98 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,6 +701,7 @@
 		34F324782F4E15D900B14F9F /* CodeDetail */ = {
 			isa = PBXGroup;
 			children = (
+				34998F802F69AD9600EBF491 /* Views */,
 				34B746232F5488FD009F9B4D /* Protocols */,
 				34F324792F4E15E000B14F9F /* Models */,
 			);
@@ -897,6 +908,7 @@
 				34B746C42F573834009F9B4D /* CreateTOTPItemResponse.swift in Sources */,
 				34B746C52F573834009F9B4D /* UpdateTOTPItemRequest.swift in Sources */,
 				34B746C62F573834009F9B4D /* TOTPItemsRequest.swift in Sources */,
+				34998F822F69AD9F00EBF491 /* CodeDetailStubViewController.swift in Sources */,
 				34B746C72F573834009F9B4D /* DeleteTOTPItemRequest.swift in Sources */,
 				34B746C82F573834009F9B4D /* CreateTOTPItemRequest.swift in Sources */,
 				34B746C92F573834009F9B4D /* TOTPItemDTO.swift in Sources */,
