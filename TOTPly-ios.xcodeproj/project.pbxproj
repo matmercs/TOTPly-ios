@@ -10,6 +10,11 @@
 		34998F7D2F6997A500EBF491 /* TOTPCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F7C2F6997A400EBF491 /* TOTPCellModel.swift */; };
 		34998F7F2F69AC9E00EBF491 /* TOTPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F7E2F69AC9D00EBF491 /* TOTPCell.swift */; };
 		34998F822F69AD9F00EBF491 /* CodeDetailStubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F812F69AD9E00EBF491 /* CodeDetailStubViewController.swift */; };
+		34998F842F69AF3300EBF491 /* DashboardRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F832F69AF3200EBF491 /* DashboardRouterImpl.swift */; };
+		34998F852F69AF3300EBF491 /* DashboardRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F832F69AF3200EBF491 /* DashboardRouterImpl.swift */; };
+		34998F862F69AF3300EBF491 /* DashboardRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F832F69AF3200EBF491 /* DashboardRouterImpl.swift */; };
+		34998F882F69AF5200EBF491 /* DashboardListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F872F69AF5100EBF491 /* DashboardListManager.swift */; };
+		34998F8A2F69AF6C00EBF491 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F892F69AF6C00EBF491 /* DashboardViewController.swift */; };
 		34AC02B12F6044F1005D5F98 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02B02F6044F0005D5F98 /* NetworkClient.swift */; };
 		34AC02B32F604EE1005D5F98 /* URLSessionNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02B22F604EDF005D5F98 /* URLSessionNetworkClient.swift */; };
 		34AC02B62F608076005D5F98 /* RemoteTOTPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02B52F608075005D5F98 /* RemoteTOTPRepository.swift */; };
@@ -126,6 +131,9 @@
 		34998F7C2F6997A400EBF491 /* TOTPCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPCellModel.swift; sourceTree = "<group>"; };
 		34998F7E2F69AC9D00EBF491 /* TOTPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPCell.swift; sourceTree = "<group>"; };
 		34998F812F69AD9E00EBF491 /* CodeDetailStubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailStubViewController.swift; sourceTree = "<group>"; };
+		34998F832F69AF3200EBF491 /* DashboardRouterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouterImpl.swift; sourceTree = "<group>"; };
+		34998F872F69AF5100EBF491 /* DashboardListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardListManager.swift; sourceTree = "<group>"; };
+		34998F892F69AF6C00EBF491 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		34AC02B02F6044F0005D5F98 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		34AC02B22F604EDF005D5F98 /* URLSessionNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkClient.swift; sourceTree = "<group>"; };
 		34AC02B52F608075005D5F98 /* RemoteTOTPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTOTPRepository.swift; sourceTree = "<group>"; };
@@ -314,6 +322,7 @@
 		34AC02BE2F6166E2005D5F98 /* Routers */ = {
 			isa = PBXGroup;
 			children = (
+				34998F832F69AF3200EBF491 /* DashboardRouterImpl.swift */,
 				34AC02BF2F6166EB005D5F98 /* DashboardRouterStub.swift */,
 			);
 			path = Routers;
@@ -581,6 +590,8 @@
 		34B747242F574275009F9B4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34998F892F69AF6C00EBF491 /* DashboardViewController.swift */,
+				34998F872F69AF5100EBF491 /* DashboardListManager.swift */,
 				34998F7E2F69AC9D00EBF491 /* TOTPCell.swift */,
 				34B747252F57427D009F9B4D /* DashboardStubViewController.swift */,
 			);
@@ -903,10 +914,13 @@
 				34B746C02F573834009F9B4D /* TOTPItem.swift in Sources */,
 				34B746C12F573834009F9B4D /* UpdateTOTPItemResponse.swift in Sources */,
 				34B746C22F573834009F9B4D /* TOTPItemsResponse.swift in Sources */,
+				34998F862F69AF3300EBF491 /* DashboardRouterImpl.swift in Sources */,
 				34B746C32F573834009F9B4D /* DeleteTOTPItemResponse.swift in Sources */,
+				34998F8A2F69AF6C00EBF491 /* DashboardViewController.swift in Sources */,
 				34B747282F574831009F9B4D /* LoginViewController.swift in Sources */,
 				34B746C42F573834009F9B4D /* CreateTOTPItemResponse.swift in Sources */,
 				34B746C52F573834009F9B4D /* UpdateTOTPItemRequest.swift in Sources */,
+				34998F882F69AF5200EBF491 /* DashboardListManager.swift in Sources */,
 				34B746C62F573834009F9B4D /* TOTPItemsRequest.swift in Sources */,
 				34998F822F69AD9F00EBF491 /* CodeDetailStubViewController.swift in Sources */,
 				34B746C72F573834009F9B4D /* DeleteTOTPItemRequest.swift in Sources */,
@@ -978,6 +992,7 @@
 				34AC02CE2F616C4D005D5F98 /* TOTPGeneratorImpl.swift in Sources */,
 				34AC02CC2F616C42005D5F98 /* RemoteTOTPRepository.swift in Sources */,
 				34AC02CA2F616C3B005D5F98 /* URLSessionNetworkClient.swift in Sources */,
+				34998F852F69AF3300EBF491 /* DashboardRouterImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -990,6 +1005,7 @@
 				34AC02C92F616C32005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34AC02CB2F616C3B005D5F98 /* URLSessionNetworkClient.swift in Sources */,
 				34AC02C72F616C2D005D5F98 /* DashboardRouterStub.swift in Sources */,
+				34998F842F69AF3300EBF491 /* DashboardRouterImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,6 +52,16 @@ final class TOTPCell: UITableViewCell {
         return pv
     }()
 
+    private let copyButton: UIButton = {
+        let b = UIButton(type: .system)
+        b.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
+        b.tintColor = .systemGray
+        b.translatesAutoresizingMaskIntoConstraints = false
+        return b
+    }()
+
+    var onCopyTapped: (() -> Void)?
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -62,12 +72,19 @@ final class TOTPCell: UITableViewCell {
     }
 
     private func setupUI() {
+        copyButton.addTarget(self, action: #selector(copyTapped), for: .touchUpInside)
+
         let leftStack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
         leftStack.axis = .vertical
         leftStack.spacing = 2
         leftStack.translatesAutoresizingMaskIntoConstraints = false
 
-        let rightStack = UIStackView(arrangedSubviews: [codeLabel, timerLabel, progressView])
+        let codeRow = UIStackView(arrangedSubviews: [codeLabel, copyButton])
+        codeRow.axis = .horizontal
+        codeRow.spacing = 6
+        codeRow.alignment = .center
+
+        let rightStack = UIStackView(arrangedSubviews: [codeRow, timerLabel, progressView])
         rightStack.axis = .vertical
         rightStack.spacing = 4
         rightStack.alignment = .trailing
@@ -89,8 +106,14 @@ final class TOTPCell: UITableViewCell {
             leftStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             rightStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
 
+            copyButton.widthAnchor.constraint(equalToConstant: 24),
+            copyButton.heightAnchor.constraint(equalToConstant: 24),
             progressView.widthAnchor.constraint(equalToConstant: 60),
         ])
+    }
+
+    @objc private func copyTapped() {
+        onCopyTapped?()
     }
 
     func configure(with viewModel: TOTPCellModel) {
@@ -123,5 +146,6 @@ final class TOTPCell: UITableViewCell {
         timerLabel.textColor = .secondaryLabel
         progressView.progress = 0
         progressView.progressTintColor = .systemBlue
+        onCopyTapped = nil
     }
 }
