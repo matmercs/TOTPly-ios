@@ -79,14 +79,15 @@ final class AuthRouterImpl: AuthRouter, WelcomeRouter {
         let storage = KeychainStorageService()
         let repository = RemoteTOTPRepository(
             networkClient: networkClient,
-            storage: storage
+            storage: storage,
+            useMockData: true
         )
         let generator = TOTPGeneratorImpl()
         
-        // Заглушка
-        let router = DashboardRouterStub()
-        
-        let view = DashboardStubViewController()
+
+        let router = DashboardRouterImpl()
+
+        let view = DashboardViewController()
         let presenter = DashboardPresenterImpl(
             view: view,
             repository: repository,
@@ -95,9 +96,9 @@ final class AuthRouterImpl: AuthRouter, WelcomeRouter {
         )
         view.presenter = presenter
         
-        // Завернем в navigation controller для будущей навигации
         let nav = UINavigationController(rootViewController: view)
         nav.navigationBar.prefersLargeTitles = true
+        router.navigationController = nav
         
         window?.rootViewController = nav
         window?.makeKeyAndVisible()

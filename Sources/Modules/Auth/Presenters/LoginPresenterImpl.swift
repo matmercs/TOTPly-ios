@@ -11,6 +11,7 @@ final class LoginPresenterImpl: LoginPresenter {
     private weak var view: LoginView?
     private let router: AuthRouter
     private let authRepository: AuthRepository
+    private let validator = AuthValidator()
 
     private var state: LoginViewState = .initial {
         didSet { view?.render(state) } // property observer
@@ -109,29 +110,9 @@ final class LoginPresenterImpl: LoginPresenter {
     }
 
     private func validateFields() {
-        var errors = LoginViewState.ValidationErrors()
-
-        let trimmedEmail = state.email.trimmingCharacters(in: .whitespacesAndNewlines)
-        if trimmedEmail.isEmpty {
-            errors.emailError = "Введите почту"
-        } else if !isValidEmail(trimmedEmail) {
-            errors.emailError = "Некорректная почта"
-        }
-
-        if state.password.isEmpty {
-            errors.passwordError = "Введите пароль"
-        }
-
+        let errors = validator.validateLogin(email: state.email, password: state.password)
         state.validationErrors = errors
         state.isLoginButtonEnabled = errors.emailError == nil && errors.passwordError == nil
-    }
-
-    private func isValidEmail(_ email: String) -> Bool {
-        let parts = email.split(separator: "@")
-        guard parts.count == 2, !parts[0].isEmpty else { return false }
-        let domainParts = parts[1].split(separator: ".")
-        guard domainParts.count >= 2, !domainParts.last!.isEmpty else { return false }
-        return true
     }
 
 }
