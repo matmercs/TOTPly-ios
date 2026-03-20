@@ -10,7 +10,7 @@ import UIKit
 final class TOTPCell: UITableViewCell {
     static let reuseIdentifier = "TOTPCell"
 
-    private let titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let l = UILabel()
         l.font = .systemFont(ofSize: 16, weight: .semibold)
         l.textColor = .label
@@ -18,7 +18,7 @@ final class TOTPCell: UITableViewCell {
         return l
     }()
 
-    private let subtitleLabel: UILabel = {
+    private lazy var subtitleLabel: UILabel = {
         let l = UILabel()
         l.font = .systemFont(ofSize: 13, weight: .regular)
         l.textColor = .secondaryLabel
@@ -26,7 +26,7 @@ final class TOTPCell: UITableViewCell {
         return l
     }()
 
-    private let codeLabel: UILabel = {
+    private lazy var codeLabel: UILabel = {
         let l = UILabel()
         l.font = .monospacedDigitSystemFont(ofSize: 22, weight: .bold)
         l.textColor = .systemBlue
@@ -35,7 +35,7 @@ final class TOTPCell: UITableViewCell {
         return l
     }()
 
-    private let timerLabel: UILabel = {
+    private lazy var timerLabel: UILabel = {
         let l = UILabel()
         l.font = .monospacedDigitSystemFont(ofSize: 13, weight: .medium)
         l.textColor = .secondaryLabel
@@ -44,7 +44,7 @@ final class TOTPCell: UITableViewCell {
         return l
     }()
 
-    private let progressView: UIProgressView = {
+    private lazy var progressView: UIProgressView = {
         let pv = UIProgressView(progressViewStyle: .default)
         pv.trackTintColor = .systemGray5
         pv.progressTintColor = .systemBlue
@@ -52,7 +52,7 @@ final class TOTPCell: UITableViewCell {
         return pv
     }()
 
-    private let copyButton: UIButton = {
+    private lazy var copyButton: UIButton = {
         let b = UIButton(type: .system)
         b.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
         b.tintColor = .systemGray

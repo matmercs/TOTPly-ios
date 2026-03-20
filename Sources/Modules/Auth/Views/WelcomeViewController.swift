@@ -10,7 +10,7 @@ import UIKit
 final class WelcomeViewController: UIViewController, WelcomeView {
     private let presenter: WelcomePresenter
 
-    private let stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 16
@@ -19,7 +19,7 @@ final class WelcomeViewController: UIViewController, WelcomeView {
         return stack
     }()
 
-    private let titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "TOTPly"
         label.font = .systemFont(ofSize: 28, weight: .bold)

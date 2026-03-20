@@ -11,70 +11,25 @@ final class DashboardViewController: UIViewController {
     var presenter: DashboardPresenter?
 
     private var listManager: DashboardListManager?
+    private var currentState: DashboardViewState?
 
-    private let tableView: UITableView = {
-        let tv = UITableView(frame: .zero, style: .plain)
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.rowHeight = UITableView.automaticDimension
-        tv.estimatedRowHeight = 72
-        return tv
-    }()
+    private var rootView: DashboardRootView { view as! DashboardRootView }
 
-    private let activityIndicator: UIActivityIndicatorView = {
-        let ai = UIActivityIndicatorView(style: .large)
-        ai.translatesAutoresizingMaskIntoConstraints = false
-        ai.hidesWhenStopped = true
-        return ai
-    }()
-
-    private let emptyLabel: UILabel = {
-        let l = UILabel()
-        l.text = "Нет TOTP-кодов"
-        l.font = .systemFont(ofSize: 17, weight: .medium)
-        l.textColor = .secondaryLabel
-        l.textAlignment = .center
-        l.translatesAutoresizingMaskIntoConstraints = false
-        l.isHidden = true
-        return l
-    }()
-
-    private let errorView: UIStackView = {
-        let sv = UIStackView()
-        sv.axis = .vertical
-        sv.spacing = 12
-        sv.alignment = .center
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        sv.isHidden = true
-        return sv
-    }()
-
-    private let errorLabel: UILabel = {
-        let l = UILabel()
-        l.font = .systemFont(ofSize: 15, weight: .regular)
-        l.textColor = .secondaryLabel
-        l.textAlignment = .center
-        l.numberOfLines = 0
-        return l
-    }()
-
-    private let retryButton: UIButton = {
-        let b = UIButton(type: .system)
-        b.setTitle("Повторить", for: .normal)
-        b.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
-        return b
-    }()
+    override func loadView() {
+        view = DashboardRootView()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
         title = "Dashboard"
 
         setupNavigationBar()
-        setupUI()
         setupSearchController()
         setupRefreshControl()
 
-        listManager = DashboardListManager(tableView: tableView)
+        rootView.retryButton.addTarget(self, action: #selector(didTapRetry), for: .touchUpInside)
+
+        listManager = DashboardListManager(tableView: rootView.tableView)
         listManager?.onItemSelected = { [weak self] index in
             self?.presenter?.didTapItem(at: index)
         }
@@ -112,37 +67,6 @@ final class DashboardViewController: UIViewController {
         navigationItem.leftBarButtonItems = [profileButton, settingsButton]
     }
 
-    private func setupUI() {
-        errorView.addArrangedSubview(errorLabel)
-        errorView.addArrangedSubview(retryButton)
-        retryButton.addTarget(self, action: #selector(didTapRetry), for: .touchUpInside)
-
-        view.addSubview(tableView)
-        view.addSubview(activityIndicator)
-        view.addSubview(emptyLabel)
-        view.addSubview(errorView)
-
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-
-            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-
-            emptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emptyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            emptyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
-            emptyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
-
-            errorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            errorView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            errorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
-            errorView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
-        ])
-    }
-
     private func setupSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -155,38 +79,36 @@ final class DashboardViewController: UIViewController {
     private func setupRefreshControl() {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
-        tableView.refreshControl = refreshControl
+        rootView.tableView.refreshControl = refreshControl
     }
 
     private func applyState(_ loadingState: LoadingState, isEmpty: Bool) {
         switch loadingState {
         case .initial, .loading:
-            activityIndicator.startAnimating()
-            tableView.isHidden = true
-            emptyLabel.isHidden = true
-            errorView.isHidden = true
+            rootView.activityIndicator.startAnimating()
+            rootView.tableView.isHidden = true
+            rootView.emptyLabel.isHidden = true
+            rootView.errorView.isHidden = true
 
         case .loaded:
-            activityIndicator.stopAnimating()
+            rootView.activityIndicator.stopAnimating()
             if isEmpty {
-                tableView.isHidden = true
-                emptyLabel.isHidden = false
+                rootView.tableView.isHidden = true
+                rootView.emptyLabel.isHidden = false
             } else {
-                tableView.isHidden = false
-                emptyLabel.isHidden = true
+                rootView.tableView.isHidden = false
+                rootView.emptyLabel.isHidden = true
             }
-            errorView.isHidden = true
+            rootView.errorView.isHidden = true
 
         case .error(let error):
-            activityIndicator.stopAnimating()
-            tableView.isHidden = true
-            emptyLabel.isHidden = true
-            errorView.isHidden = false
-            errorLabel.text = error.localizedDescription
+            rootView.activityIndicator.stopAnimating()
+            rootView.tableView.isHidden = true
+            rootView.emptyLabel.isHidden = true
+            rootView.errorView.isHidden = false
+            rootView.errorLabel.text = error.localizedDescription
         }
     }
-
-    private var currentState: DashboardViewState?
 
     @objc private func didTapProfile() {
         presenter?.didTapProfile()
@@ -225,7 +147,7 @@ extension DashboardViewController: DashboardView {
         applyState(state.loadingState, isEmpty: state.displayItems.isEmpty)
 
         if !state.isRefreshing {
-            tableView.refreshControl?.endRefreshing()
+            rootView.tableView.refreshControl?.endRefreshing()
         }
 
         if let maskButton = navigationItem.rightBarButtonItems?.last {

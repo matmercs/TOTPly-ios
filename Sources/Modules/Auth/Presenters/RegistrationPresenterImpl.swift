@@ -11,6 +11,7 @@ final class RegistrationPresenterImpl: RegistrationPresenter {
     private weak var view: RegistrationView?
     private let router: AuthRouter
     private let authRepository: AuthRepository
+    private let validator = AuthValidator()
 
     private var state: RegistrationViewState = .initial {
         didSet { view?.render(state) }
@@ -126,58 +127,16 @@ final class RegistrationPresenterImpl: RegistrationPresenter {
     }
 
     private func validateFields() {
-        var errors = RegistrationViewState.ValidationErrors()
-
-        let trimmedEmail = state.email.trimmingCharacters(in: .whitespacesAndNewlines)
-        if trimmedEmail.isEmpty {
-            errors.emailError = "Введите почту"
-        } else if !isValidEmail(trimmedEmail) {
-            errors.emailError = "Некорректная почта"
-        }
-
-        if state.password.isEmpty {
-            errors.passwordError = "Введите пароль"
-        } else if let strengthError = passwordStrengthError(state.password) {
-            errors.passwordError = strengthError
-        }
-
-        if state.confirmPassword.isEmpty {
-            errors.confirmPasswordError = "Повторите пароль"
-        } else if state.confirmPassword != state.password {
-            errors.confirmPasswordError = "Пароли не совпадают"
-        }
-
-        let trimmedName = state.displayName.trimmingCharacters(in: .whitespacesAndNewlines)
-        if trimmedName.isEmpty {
-            errors.displayNameError = "Введите имя"
-        } else if trimmedName.count < 2 {
-            errors.displayNameError = "Слишком короткое имя"
-        }
-
+        let errors = validator.validateRegistration(
+            email: state.email,
+            password: state.password,
+            confirmPassword: state.confirmPassword,
+            displayName: state.displayName
+        )
         state.validationErrors = errors
         state.isRegisterButtonEnabled = errors.emailError == nil &&
             errors.passwordError == nil &&
             errors.confirmPasswordError == nil &&
             errors.displayNameError == nil
-    }
-
-    private func passwordStrengthError(_ password: String) -> String? {
-        var requirements: [String] = []
-        if password.count < 8 { requirements.append("минимум 8 символов") }
-        if !password.contains(where: { $0.isUppercase }) { requirements.append("есть заглавная буква") }
-        if !password.contains(where: { $0.isLowercase }) { requirements.append("есть строчная буква") }
-        if !password.contains(where: { $0.isNumber }) { requirements.append("есть цифра") }
-        let special = CharacterSet.alphanumerics.inverted
-        if !password.unicodeScalars.contains(where: { special.contains($0) }) { requirements.append("есть спецсимвол") }
-        guard !requirements.isEmpty else { return nil }
-        return "Пароль не соответствует требованиям: " + requirements.joined(separator: ", ")
-    }
-
-    private func isValidEmail(_ email: String) -> Bool {
-        let parts = email.split(separator: "@")
-        guard parts.count == 2, !parts[0].isEmpty else { return false }
-        let domainParts = parts[1].split(separator: ".")
-        guard domainParts.count >= 2, !domainParts.last!.isEmpty else { return false }
-        return true
     }
 }

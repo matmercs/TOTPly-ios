@@ -10,7 +10,7 @@ import UIKit
 final class DashboardStubViewController: UIViewController {
     var presenter: DashboardPresenter?
     
-    private let label: UILabel = {
+    private lazy var label: UILabel = {
         let l = UILabel()
         l.text = "Загрузка..."
         l.font = .systemFont(ofSize: 14, weight: .regular)
@@ -20,13 +20,13 @@ final class DashboardStubViewController: UIViewController {
         return l
     }()
     
-    private let scrollView: UIScrollView = {
+    private lazy var scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
     
-    private let contentView: UIView = {
+    private lazy var contentView: UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
@@ -78,43 +78,7 @@ final class DashboardStubViewController: UIViewController {
 
 extension DashboardStubViewController: DashboardView {
     func render(_ state: DashboardViewState) {
-        var text = "Dashboard State Debug\n\n"
-        
-        switch state.loadingState {
-        case .initial:
-            text += " State: Initial\n\n"
-        case .loading:
-            text += " State: Loading...\n\n"
-        case .loaded:
-            text += " State: Loaded\n\n"
-        case .error(let error):
-            text += " State: Error\n\(error.localizedDescription)\n\n"
-        }
-        
-        text += " Количество items: \(state.items.count)\n"
-        
-        if !state.searchQuery.isEmpty {
-            text += " Поиск: \"\(state.searchQuery)\"\n"
-            text += " Фильтр: \(state.filteredItems.count)\n"
-        }
-        
-        text += "\n"
-        
-        if state.items.isEmpty {
-            text += "Нет данных\n"
-        } else {
-            for (index, item) in state.displayItems.enumerated() {
-                text += "[\(index + 1)] \(item.displayName)\n"
-                if let issuer = item.issuer {
-                    text += "    Issuer: \(issuer)\n"
-                }
-                text += "    Code: \(state.areCodesMasked ? "••••••" : item.currentCode)\n"
-                text += "    Expires in: \(item.timeRemaining)s\n"
-                text += "\n"
-            }
-        }
-        
-        label.text = text
+        label.text = state.debugText
     }
     
     func copyCodeToClipboard(_ code: String) {

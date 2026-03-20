@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34406AF62F6D598A008F2B0E /* AuthValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34406AF52F6D5988008F2B0E /* AuthValidator.swift */; };
+		34406AF82F6D5A12008F2B0E /* DashboardRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34406AF72F6D5A11008F2B0E /* DashboardRootView.swift */; };
 		34998F7D2F6997A500EBF491 /* TOTPCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F7C2F6997A400EBF491 /* TOTPCellModel.swift */; };
 		34998F7F2F69AC9E00EBF491 /* TOTPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F7E2F69AC9D00EBF491 /* TOTPCell.swift */; };
 		34998F822F69AD9F00EBF491 /* CodeDetailStubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34998F812F69AD9E00EBF491 /* CodeDetailStubViewController.swift */; };
@@ -128,6 +130,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34406AF52F6D5988008F2B0E /* AuthValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidator.swift; sourceTree = "<group>"; };
+		34406AF72F6D5A11008F2B0E /* DashboardRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRootView.swift; sourceTree = "<group>"; };
 		34998F7C2F6997A400EBF491 /* TOTPCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPCellModel.swift; sourceTree = "<group>"; };
 		34998F7E2F69AC9D00EBF491 /* TOTPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPCell.swift; sourceTree = "<group>"; };
 		34998F812F69AD9E00EBF491 /* CodeDetailStubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailStubViewController.swift; sourceTree = "<group>"; };
@@ -590,6 +594,7 @@
 		34B747242F574275009F9B4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34406AF72F6D5A11008F2B0E /* DashboardRootView.swift */,
 				34998F892F69AF6C00EBF491 /* DashboardViewController.swift */,
 				34998F872F69AF5100EBF491 /* DashboardListManager.swift */,
 				34998F7E2F69AC9D00EBF491 /* TOTPCell.swift */,
@@ -657,6 +662,7 @@
 		34F324742F4E149000B14F9F /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				34406AF52F6D5988008F2B0E /* AuthValidator.swift */,
 				34B746A52F57251D009F9B4D /* Presenters */,
 				34B746A32F5720B4009F9B4D /* Routers */,
 				34B746522F55F789009F9B4D /* Views */,
@@ -964,7 +970,9 @@
 				34B746E52F573834009F9B4D /* RegistrationResponse.swift in Sources */,
 				34B746E62F573834009F9B4D /* ResendVerificationRequest.swift in Sources */,
 				34B746E72F573834009F9B4D /* PasswordResetVerifyRequest.swift in Sources */,
+				34406AF82F6D5A12008F2B0E /* DashboardRootView.swift in Sources */,
 				34B746E82F573834009F9B4D /* PasswordResetRequest.swift in Sources */,
+				34406AF62F6D598A008F2B0E /* AuthValidator.swift in Sources */,
 				34B746E92F573834009F9B4D /* LoginRequest.swift in Sources */,
 				34B746EA2F573834009F9B4D /* VerifyEmailRequest.swift in Sources */,
 				34B746EB2F573834009F9B4D /* RegistrationRequest.swift in Sources */,

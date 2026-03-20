@@ -10,7 +10,7 @@ import UIKit
 final class CodeDetailStubViewController: UIViewController {
     private let itemId: String
 
-    private let label: UILabel = {
+    private lazy var label: UILabel = {
         let l = UILabel()
         l.font = .systemFont(ofSize: 18, weight: .medium)
         l.textColor = .label

@@ -10,20 +10,20 @@ import UIKit
 final class RegistrationViewController: UIViewController, RegistrationView {
     private let presenter: RegistrationPresenter
 
-    private let scrollView: UIScrollView = {
+    private lazy var scrollView: UIScrollView = {
         let s = UIScrollView()
         s.keyboardDismissMode = .onDrag
         s.translatesAutoresizingMaskIntoConstraints = false
         return s
     }()
 
-    private let contentView: UIView = {
+    private lazy var contentView: UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
 
-    private let stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let s = UIStackView()
         s.axis = .vertical
         s.spacing = 16
@@ -32,14 +32,14 @@ final class RegistrationViewController: UIViewController, RegistrationView {
         return s
     }()
 
-    private let titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let l = UILabel()
         l.text = "Регистрация"
         l.font = .systemFont(ofSize: 24, weight: .bold)
         return l
     }()
 
-    private let emailField: UITextField = {
+    private lazy var emailField: UITextField = {
         let t = UITextField()
         t.placeholder = "Почта"
         t.keyboardType = .emailAddress
@@ -48,7 +48,7 @@ final class RegistrationViewController: UIViewController, RegistrationView {
         return t
     }()
 
-    private let emailErrorLabel: UILabel = {
+    private lazy var emailErrorLabel: UILabel = {
         let l = UILabel()
         l.font = .systemFont(ofSize: 12)
         l.textColor = .systemRed
@@ -57,7 +57,7 @@ final class RegistrationViewController: UIViewController, RegistrationView {
         return l
     }()
 
-    private let passwordField: UITextField = {
+    private lazy var passwordField: UITextField = {
         let t = UITextField()
         t.placeholder = "Пароль"
         t.isSecureTextEntry = true
@@ -65,7 +65,7 @@ final class RegistrationViewController: UIViewController, RegistrationView {
         return t
     }()
 
-    private let passwordErrorLabel: UILabel = {
+    private lazy var passwordErrorLabel: UILabel = {
         let l = UILabel()
         l.font = .systemFont(ofSize: 12)
         l.textColor = .systemRed
@@ -74,7 +74,7 @@ final class RegistrationViewController: UIViewController, RegistrationView {
         return l
     }()
 
-    private let confirmPasswordField: UITextField = {
+    private lazy var confirmPasswordField: UITextField = {
         let t = UITextField()
         t.placeholder = "Повторите пароль"
         t.isSecureTextEntry = true
@@ -82,7 +82,7 @@ final class RegistrationViewController: UIViewController, RegistrationView {
         return t
     }()
 
-    private let confirmPasswordErrorLabel: UILabel = {
+    private lazy var confirmPasswordErrorLabel: UILabel = {
         let l = UILabel()
         l.font = .systemFont(ofSize: 12)
         l.textColor = .systemRed
@@ -91,14 +91,14 @@ final class RegistrationViewController: UIViewController, RegistrationView {
         return l
     }()
 
-    private let displayNameField: UITextField = {
+    private lazy var displayNameField: UITextField = {
         let t = UITextField()
         t.placeholder = "Имя"
         t.borderStyle = .roundedRect
         return t
     }()
 
-    private let displayNameErrorLabel: UILabel = {
+    private lazy var displayNameErrorLabel: UILabel = {
         let l = UILabel()
         l.font = .systemFont(ofSize: 12)
         l.textColor = .systemRed
@@ -107,7 +107,7 @@ final class RegistrationViewController: UIViewController, RegistrationView {
         return l
     }()
 
-    private let errorLabel: UILabel = {
+    private lazy var errorLabel: UILabel = {
         let l = UILabel()
         l.font = .systemFont(ofSize: 12)
         l.textColor = .systemRed
@@ -116,7 +116,7 @@ final class RegistrationViewController: UIViewController, RegistrationView {
         return l
     }()
 
-    private let registerButton: UIButton = {
+    private lazy var registerButton: UIButton = {
         let b = UIButton(type: .system)
         b.setTitle("Зарегистрироваться", for: .normal)
         b.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
@@ -124,7 +124,7 @@ final class RegistrationViewController: UIViewController, RegistrationView {
         return b
     }()
 
-    private let loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let b = UIButton(type: .system)
         b.setTitle("Уже есть аккаунт? Войти", for: .normal)
         b.titleLabel?.font = .systemFont(ofSize: 15)

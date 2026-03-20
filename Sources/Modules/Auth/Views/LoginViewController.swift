@@ -10,20 +10,20 @@ import UIKit
 final class LoginViewController: UIViewController, LoginView {
     private let presenter: LoginPresenter
 
-    private let scrollView: UIScrollView = {
+    private lazy var scrollView: UIScrollView = {
         let s = UIScrollView()
         s.keyboardDismissMode = .onDrag
         s.translatesAutoresizingMaskIntoConstraints = false
         return s
     }()
 
-    private let contentView: UIView = {
+    private lazy var contentView: UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
 
-    private let stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let s = UIStackView()
         s.axis = .vertical
         s.spacing = 16
@@ -32,7 +32,7 @@ final class LoginViewController: UIViewController, LoginView {
         return s
     }()
 
-    private let titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let l = UILabel()
         l.text = "Вход"
         l.font = .systemFont(ofSize: 24, weight: .bold)
@@ -40,7 +40,7 @@ final class LoginViewController: UIViewController, LoginView {
         return l
     }()
 
-    private let emailField: UITextField = {
+    private lazy var emailField: UITextField = {
         let t = UITextField()
         t.placeholder = "Почта"
         t.keyboardType = .emailAddress
@@ -51,7 +51,7 @@ final class LoginViewController: UIViewController, LoginView {
         return t
     }()
 
-    private let emailErrorLabel: UILabel = {
+    private lazy var emailErrorLabel: UILabel = {
         let l = UILabel()
         l.font = .systemFont(ofSize: 12)
         l.textColor = .systemRed
@@ -60,7 +60,7 @@ final class LoginViewController: UIViewController, LoginView {
         return l
     }()
 
-    private let passwordField: UITextField = {
+    private lazy var passwordField: UITextField = {
         let t = UITextField()
         t.placeholder = "Пароль"
         t.isSecureTextEntry = true
@@ -69,7 +69,7 @@ final class LoginViewController: UIViewController, LoginView {
         return t
     }()
 
-    private let passwordErrorLabel: UILabel = {
+    private lazy var passwordErrorLabel: UILabel = {
         let l = UILabel()
         l.font = .systemFont(ofSize: 12)
         l.textColor = .systemRed
@@ -78,7 +78,7 @@ final class LoginViewController: UIViewController, LoginView {
         return l
     }()
 
-    private let errorLabel: UILabel = {
+    private lazy var errorLabel: UILabel = {
         let l = UILabel()
         l.font = .systemFont(ofSize: 12)
         l.textColor = .systemRed
@@ -88,7 +88,7 @@ final class LoginViewController: UIViewController, LoginView {
         return l
     }()
 
-    private let loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let b = UIButton(type: .system)
         b.setTitle("Войти", for: .normal)
         b.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
@@ -97,7 +97,7 @@ final class LoginViewController: UIViewController, LoginView {
         return b
     }()
 
-    private let registerButton: UIButton = {
+    private lazy var registerButton: UIButton = {
         let b = UIButton(type: .system)
         b.setTitle("Нет аккаунта? Регистрация", for: .normal)
         b.titleLabel?.font = .systemFont(ofSize: 15)
