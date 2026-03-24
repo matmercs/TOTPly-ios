@@ -27,7 +27,9 @@ final class DashboardViewController: UIViewController {
         setupSearchController()
         setupRefreshControl()
 
-        rootView.retryButton.addTarget(self, action: #selector(didTapRetry), for: .touchUpInside)
+        rootView.stateView.onRetryTapped = { [weak self] in
+            self?.presenter?.didPullToRefresh()
+        }
 
         listManager = DashboardListManager(tableView: rootView.tableView)
         listManager?.onItemSelected = { [weak self] index in
@@ -50,20 +52,31 @@ final class DashboardViewController: UIViewController {
 
     private func setupNavigationBar() {
         let refreshButton = UIBarButtonItem(
-            barButtonSystemItem: .refresh,
+            image: DS.Icon.image(DS.Icon.refresh, size: .medium, tint: DS.Color.accent),
+            style: .plain,
             target: self,
             action: #selector(didTapForceRefresh)
         )
         let maskButton = UIBarButtonItem(
-            image: UIImage(systemName: "eye.slash"),
+            image: DS.Icon.image(DS.Icon.eyeClosed, size: .medium, tint: DS.Color.accent),
             style: .plain,
             target: self,
             action: #selector(didTapToggleMask)
         )
         navigationItem.rightBarButtonItems = [refreshButton, maskButton]
 
-        let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(didTapProfile))
-        let settingsButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(didTapSettings))
+        let profileButton = UIBarButtonItem(
+            image: DS.Icon.image(DS.Icon.profile, size: .medium, tint: DS.Color.accent),
+            style: .plain,
+            target: self,
+            action: #selector(didTapProfile)
+        )
+        let settingsButton = UIBarButtonItem(
+            image: DS.Icon.image(DS.Icon.settings, size: .medium, tint: DS.Color.accent),
+            style: .plain,
+            target: self,
+            action: #selector(didTapSettings)
+        )
         navigationItem.leftBarButtonItems = [profileButton, settingsButton]
     }
 
@@ -72,6 +85,7 @@ final class DashboardViewController: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Поиск"
+        searchController.searchBar.searchTextField.font = TextStyle.body.font
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
@@ -85,28 +99,28 @@ final class DashboardViewController: UIViewController {
     private func applyState(_ loadingState: LoadingState, isEmpty: Bool) {
         switch loadingState {
         case .initial, .loading:
-            rootView.activityIndicator.startAnimating()
+            rootView.stateView.setState(.loading(message: nil))
             rootView.tableView.isHidden = true
-            rootView.emptyLabel.isHidden = true
-            rootView.errorView.isHidden = true
 
         case .loaded:
-            rootView.activityIndicator.stopAnimating()
             if isEmpty {
+                rootView.stateView.setState(.empty(
+                    icon: DS.Icon.empty,
+                    title: "Нет TOTP-кодов",
+                    subtitle: "Добавьте первый код"
+                ))
                 rootView.tableView.isHidden = true
-                rootView.emptyLabel.isHidden = false
             } else {
+                rootView.stateView.setState(.content)
                 rootView.tableView.isHidden = false
-                rootView.emptyLabel.isHidden = true
             }
-            rootView.errorView.isHidden = true
 
         case .error(let error):
-            rootView.activityIndicator.stopAnimating()
+            rootView.stateView.setState(.error(
+                message: error.localizedDescription,
+                retryTitle: "Повторить"
+            ))
             rootView.tableView.isHidden = true
-            rootView.emptyLabel.isHidden = true
-            rootView.errorView.isHidden = false
-            rootView.errorLabel.text = error.localizedDescription
         }
     }
 
@@ -124,10 +138,6 @@ final class DashboardViewController: UIViewController {
 
     @objc private func didTapForceRefresh() {
         presenter?.didTapForceRefresh()
-    }
-
-    @objc private func didTapRetry() {
-        presenter?.didPullToRefresh()
     }
 
     @objc private func didPullToRefresh() {
@@ -151,8 +161,8 @@ extension DashboardViewController: DashboardView {
         }
 
         if let maskButton = navigationItem.rightBarButtonItems?.last {
-            let iconName = state.areCodesMasked ? "eye" : "eye.slash"
-            maskButton.image = UIImage(systemName: iconName)
+            let iconName = state.areCodesMasked ? DS.Icon.eyeOpen : DS.Icon.eyeClosed
+            maskButton.image = DS.Icon.image(iconName, size: .medium, tint: DS.Color.accent)
         }
     }
 
@@ -164,11 +174,11 @@ extension DashboardViewController: DashboardView {
     private func showCopiedToast() {
         let toast = UILabel()
         toast.text = "Скопировано"
-        toast.font = .systemFont(ofSize: 14, weight: .medium)
-        toast.textColor = .white
-        toast.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        toast.font = TextStyle.subheadline.font
+        toast.textColor = DS.Color.toastText
+        toast.backgroundColor = DS.Color.toastBackground
         toast.textAlignment = .center
-        toast.layer.cornerRadius = 16
+        toast.layer.cornerRadius = DS.CornerRadius.large
         toast.clipsToBounds = true
         toast.translatesAutoresizingMaskIntoConstraints = false
         toast.alpha = 0
@@ -176,9 +186,9 @@ extension DashboardViewController: DashboardView {
         view.addSubview(toast)
         NSLayoutConstraint.activate([
             toast.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            toast.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            toast.widthAnchor.constraint(equalToConstant: 140),
-            toast.heightAnchor.constraint(equalToConstant: 32),
+            toast.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: DS.Size.toastBottomOffset),
+            toast.widthAnchor.constraint(equalToConstant: DS.Size.toastWidth),
+            toast.heightAnchor.constraint(equalToConstant: DS.Size.toastHeight),
         ])
 
         UIView.animate(withDuration: 0.2, animations: {

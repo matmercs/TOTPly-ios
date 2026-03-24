@@ -77,11 +77,40 @@ extension DashboardListManager: UITableViewDelegate {
     ) -> UISwipeActionsConfiguration? {
         let item = items[indexPath.row]
 
-        let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { [weak self] _, _, completion in
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
             self?.onItemDeleted?(item.id)
             completion(true)
         }
 
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        let cell = tableView.cellForRow(at: indexPath)
+        let cellHeight = cell?.contentView.frame.height ?? DS.Size.estimatedCellHeight
+        deleteAction.image = Self.makeDeleteActionImage(height: cellHeight)
+        deleteAction.backgroundColor = DS.Color.background
+
+        let config = UISwipeActionsConfiguration(actions: [deleteAction])
+        config.performsFirstActionWithFullSwipe = false
+        return config
+    }
+
+    // Рисуем свою карточку для действия удаления
+    private static func makeDeleteActionImage(height: CGFloat) -> UIImage? {
+        let width: CGFloat = 64
+        let size = CGSize(width: width, height: height)
+        let renderer = UIGraphicsImageRenderer(size: size)
+
+        return renderer.image { _ in
+            let rect = CGRect(x: 0, y: 0, width: width, height: height)
+            let path = UIBezierPath(roundedRect: rect, cornerRadius: DS.CornerRadius.medium)
+            DS.Color.error.setFill()
+            path.fill()
+
+            if let icon = DS.Icon.image(DS.Icon.delete, size: .medium, tint: .white) {
+                let iconOrigin = CGPoint(
+                    x: (size.width - icon.size.width) / 2,
+                    y: (size.height - icon.size.height) / 2
+                )
+                icon.draw(at: iconOrigin)
+            }
+        }
     }
 }
