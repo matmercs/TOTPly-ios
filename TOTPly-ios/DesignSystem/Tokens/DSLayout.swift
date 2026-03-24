@@ -34,5 +34,6 @@ extension DS {
         static let toastHeight: CGFloat = 32
         static let navLargeTitleSize: CGFloat = 34
         static let welcomeVerticalOffset: CGFloat = -40
+        static let fieldBorderWidth: CGFloat = 1
     }
 }

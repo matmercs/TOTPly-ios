@@ -57,14 +57,6 @@ final class DSButton: UIButton {
     }
 
     private func setupButton() {
-        var config = UIButton.Configuration.plain()
-        config.contentInsets = NSDirectionalEdgeInsets(
-            top: 0,
-            leading: DS.Spacing.l,
-            bottom: 0,
-            trailing: DS.Spacing.l
-        )
-        configuration = config
 
         titleLabel?.font = TextStyle.headline.font
         layer.cornerRadius = DS.CornerRadius.small
