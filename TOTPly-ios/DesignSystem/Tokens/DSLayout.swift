@@ -35,5 +35,9 @@ extension DS {
         static let navLargeTitleSize: CGFloat = 34
         static let welcomeVerticalOffset: CGFloat = -40
         static let fieldBorderWidth: CGFloat = 1
+        static let estimatedCellHeight: CGFloat = 80
+        static let circularTimerLineWidth: CGFloat = 3.5
+        static let circularTimerFontSize: CGFloat = 14
+        static let toastBottomOffset: CGFloat = -20
     }
 }
