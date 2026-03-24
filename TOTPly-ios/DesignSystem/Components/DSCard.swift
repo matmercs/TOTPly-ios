@@ -11,7 +11,7 @@ final class DSCard: UIView {
     private(set) lazy var cardContent: UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
-        v.clipsToBounds = true
+        v.clipsToBounds = true // чтобы stripe правильно обрезался по углам
         return v
     }()
 
@@ -27,7 +27,7 @@ final class DSCard: UIView {
     private func setup() {
         backgroundColor = DS.Color.surfaceCard
         layer.cornerRadius = DS.CornerRadius.medium
-        clipsToBounds = false
+        clipsToBounds = false // чтобы тень не обрезалась
         applyShadow(DS.Shadow.card)
 
         cardContent.backgroundColor = .clear
@@ -41,8 +41,7 @@ final class DSCard: UIView {
             cardContent.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
-    
-    // вроде common practice для оптимизации
+
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.shadowPath = UIBezierPath(
