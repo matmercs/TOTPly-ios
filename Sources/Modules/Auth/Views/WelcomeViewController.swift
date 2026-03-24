@@ -13,8 +13,8 @@ final class WelcomeViewController: UIViewController, WelcomeView {
     private lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 16
-        stack.alignment = .center
+        stack.spacing = DS.Spacing.l
+        stack.alignment = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -22,16 +22,23 @@ final class WelcomeViewController: UIViewController, WelcomeView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "TOTPly"
-        label.font = .systemFont(ofSize: 28, weight: .bold)
+        label.apply(.largeTitle)
         label.textAlignment = .center
         label.accessibilityIdentifier = "welcome.title"
         return label
     }()
 
-    private lazy var signInButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Войти", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
+    private lazy var subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Двухфакторная аутентификация, просто"
+        label.apply(.callout)
+        label.textColor = DS.Color.textSecondary
+        label.textAlignment = .center
+        return label
+    }()
+
+    private lazy var signInButton: DSButton = {
+        let button = DSButton(style: .primary, title: "Войти")
         button.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
         button.accessibilityIdentifier = "welcome.signIn"
         return button
@@ -39,8 +46,21 @@ final class WelcomeViewController: UIViewController, WelcomeView {
 
     private lazy var createAccountButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Создать аккаунт", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
+        let attributed = NSMutableAttributedString(
+            string: "Нет аккаунта? ",
+            attributes: [
+                .font: TextStyle.callout.font,
+                .foregroundColor: DS.Color.textSecondary
+            ]
+        )
+        attributed.append(NSAttributedString(
+            string: "Регистрация",
+            attributes: [
+                .font: TextStyle.headline.font,
+                .foregroundColor: DS.Color.accent
+            ]
+        ))
+        button.setAttributedTitle(attributed, for: .normal)
         button.addTarget(self, action: #selector(didTapCreateAccount), for: .touchUpInside)
         button.accessibilityIdentifier = "welcome.createAccount"
         return button
@@ -57,17 +77,21 @@ final class WelcomeViewController: UIViewController, WelcomeView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        view.addSubview(stackView)
+        view.backgroundColor = DS.Color.background
+
         stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(subtitleLabel)
         stackView.addArrangedSubview(signInButton)
         stackView.addArrangedSubview(createAccountButton)
+        stackView.setCustomSpacing(DS.Spacing.s, after: titleLabel)
+        stackView.setCustomSpacing(DS.Spacing.xxl, after: subtitleLabel)
+
+        view.addSubview(stackView)
 
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80),
-            stackView.leadingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
-            stackView.trailingAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: DS.Size.welcomeVerticalOffset),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: DS.Spacing.xl),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -DS.Spacing.xl),
         ])
         presenter.viewDidLoad()
     }

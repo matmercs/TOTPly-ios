@@ -27,11 +27,12 @@ extension DS {
     enum Size {
         static let buttonHeight: CGFloat = 48
         static let fieldHeight: CGFloat = 44
-        static let circularTimer: CGFloat = 48
-        static let copyButton: CGFloat = 28
+        static let circularTimerSize: CGFloat = 48
+        static let copyButtonSize: CGFloat = 28
         static let accentStripe: CGFloat = 3
         static let toastWidth: CGFloat = 140
         static let toastHeight: CGFloat = 32
         static let navLargeTitleSize: CGFloat = 34
+        static let welcomeVerticalOffset: CGFloat = -40
     }
 }
