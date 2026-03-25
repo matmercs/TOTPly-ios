@@ -186,9 +186,9 @@ extension DashboardViewController: DashboardView {
         view.addSubview(toast)
         NSLayoutConstraint.activate([
             toast.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            toast.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: DS.Size.toastBottomOffset),
-            toast.widthAnchor.constraint(equalToConstant: DS.Size.toastWidth),
-            toast.heightAnchor.constraint(equalToConstant: DS.Size.toastHeight),
+            toast.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: DS.Size.Toast.bottomOffset),
+            toast.widthAnchor.constraint(equalToConstant: DS.Size.Toast.width),
+            toast.heightAnchor.constraint(equalToConstant: DS.Size.Toast.height),
         ])
 
         UIView.animate(withDuration: 0.2, animations: {

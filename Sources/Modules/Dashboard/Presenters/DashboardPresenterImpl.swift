@@ -208,7 +208,7 @@ final class DashboardPresenterImpl: DashboardPresenter {
     private func loadItemsFromLocal() async {
         do {
             if Task.isCancelled { return }
-            
+
             let totpItems = try await repository.fetchLocalItems()
 
             if Task.isCancelled { return }
@@ -218,9 +218,7 @@ final class DashboardPresenterImpl: DashboardPresenter {
             if Task.isCancelled { return }
 
             await MainActor.run {
-                // Обновляем только если данные изменились
                 guard state.items != viewModels else {
-                    state.loadingState = .loaded
                     return
                 }
 

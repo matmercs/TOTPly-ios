@@ -17,7 +17,7 @@ extension UINavigationBar {
             .foregroundColor: DS.Color.textPrimary
         ]
         navAppearance.largeTitleTextAttributes = [
-            .font: DSFonts.bold(DS.Size.navLargeTitleSize),
+            .font: DSFonts.bold(DS.Size.Nav.largeTitleSize),
             .foregroundColor: DS.Color.textPrimary
         ]
         navAppearance.shadowColor = DS.Color.separator

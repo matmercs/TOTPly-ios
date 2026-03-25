@@ -12,7 +12,7 @@ final class DashboardRootView: UIView {
         let tv = UITableView(frame: .zero, style: .plain)
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.rowHeight = UITableView.automaticDimension
-        tv.estimatedRowHeight = DS.Size.estimatedCellHeight
+        tv.estimatedRowHeight = DS.Size.Cell.estimatedHeight
         tv.backgroundColor = .clear
         tv.separatorStyle = .none
         return tv

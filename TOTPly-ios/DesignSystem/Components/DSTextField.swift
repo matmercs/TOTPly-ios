@@ -9,34 +9,26 @@ import UIKit
 
 final class DSTextField: UIView {
 
+    struct Configuration {
+        var placeholder: String = ""
+        var isSecure: Bool = false
+        var keyboardType: UIKeyboardType = .default
+        var autocapitalizationType: UITextAutocapitalizationType = .sentences
+        var returnKeyType: UIReturnKeyType = .default
+        var accessibilityId: String?
+        var onTextChanged: ((String) -> Void)?
+        var onEditingDidEnd: (() -> Void)?
+        var onReturnTapped: (() -> Void)?
+    }
+
     var text: String? {
         get { textField.text }
         set { textField.text = newValue }
     }
 
-    var onTextChanged: ((String) -> Void)?
-    var onEditingDidEnd: (() -> Void)?
-    var onReturnTapped: (() -> Void)?
-
-    var keyboardType: UIKeyboardType {
-        get { textField.keyboardType }
-        set { textField.keyboardType = newValue }
-    }
-
-    var autocapitalizationType: UITextAutocapitalizationType {
-        get { textField.autocapitalizationType }
-        set { textField.autocapitalizationType = newValue }
-    }
-
-    var returnKeyType: UIReturnKeyType {
-        get { textField.returnKeyType }
-        set { textField.returnKeyType = newValue }
-    }
-
-    var accessibilityId: String? {
-        get { textField.accessibilityIdentifier }
-        set { textField.accessibilityIdentifier = newValue }
-    }
+    private(set) var onTextChanged: ((String) -> Void)?
+    private(set) var onEditingDidEnd: (() -> Void)?
+    private(set) var onReturnTapped: (() -> Void)?
 
     private lazy var titleLabel: UILabel = {
         let l = UILabel()
@@ -52,7 +44,7 @@ final class DSTextField: UIView {
         t.textColor = DS.Color.textPrimary
         t.backgroundColor = DS.Color.fieldBackground
         t.layer.cornerRadius = DS.CornerRadius.small
-        t.layer.borderWidth = DS.Size.fieldBorderWidth
+        t.layer.borderWidth = DS.Size.Field.borderWidth
         t.layer.borderColor = DS.Color.fieldBorder.cgColor
         t.autocorrectionType = .no
         t.translatesAutoresizingMaskIntoConstraints = false
@@ -84,8 +76,17 @@ final class DSTextField: UIView {
         return s
     }()
 
-    init() {
+    init(configuration: Configuration = Configuration()) {
+        self.onTextChanged = configuration.onTextChanged
+        self.onEditingDidEnd = configuration.onEditingDidEnd
+        self.onReturnTapped = configuration.onReturnTapped
         super.init(frame: .zero)
+        textField.keyboardType = configuration.keyboardType
+        textField.autocapitalizationType = configuration.autocapitalizationType
+        textField.returnKeyType = configuration.returnKeyType
+        textField.accessibilityIdentifier = configuration.accessibilityId
+        textField.placeholder = configuration.placeholder
+        textField.isSecureTextEntry = configuration.isSecure
         setup()
     }
 
@@ -104,7 +105,7 @@ final class DSTextField: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            textField.heightAnchor.constraint(equalToConstant: DS.Size.fieldHeight),
+            textField.heightAnchor.constraint(equalToConstant: DS.Size.Field.height),
         ])
 
         textField.addTarget(self, action: #selector(textChanged), for: .editingChanged)

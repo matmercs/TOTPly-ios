@@ -10,11 +10,11 @@ import UIKit
 final class DSCircularProgress: UIView {
     private let trackLayer = CAShapeLayer()
     private let progressLayer = CAShapeLayer()
-    private let lineWidth: CGFloat = DS.Size.circularTimerLineWidth
+    private let lineWidth: CGFloat = DS.Size.CircularTimer.lineWidth
 
     private lazy var timerLabel: UILabel = {
         let l = UILabel()
-        l.font = DSFonts.medium(DS.Size.circularTimerFontSize)
+        l.font = DSFonts.medium(DS.Size.CircularTimer.fontSize)
         l.textColor = DS.Color.textSecondary
         l.textAlignment = .center
         l.translatesAutoresizingMaskIntoConstraints = false

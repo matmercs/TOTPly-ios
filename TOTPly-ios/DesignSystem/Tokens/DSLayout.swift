@@ -25,19 +25,33 @@ extension DS {
     }
 
     enum Size {
-        static let buttonHeight: CGFloat = 48
-        static let fieldHeight: CGFloat = 44
-        static let circularTimerSize: CGFloat = 48
-        static let copyButtonSize: CGFloat = 28
-        static let accentStripe: CGFloat = 3
-        static let toastWidth: CGFloat = 140
-        static let toastHeight: CGFloat = 32
-        static let navLargeTitleSize: CGFloat = 34
-        static let welcomeVerticalOffset: CGFloat = -40
-        static let fieldBorderWidth: CGFloat = 1
-        static let estimatedCellHeight: CGFloat = 80
-        static let circularTimerLineWidth: CGFloat = 3.5
-        static let circularTimerFontSize: CGFloat = 14
-        static let toastBottomOffset: CGFloat = -20
+        enum Button {
+            static let height: CGFloat = 48
+        }
+        enum Field {
+            static let height: CGFloat = 44
+            static let borderWidth: CGFloat = 1
+        }
+        enum CircularTimer {
+            static let size: CGFloat = 48
+            static let lineWidth: CGFloat = 3.5
+            static let fontSize: CGFloat = 14
+        }
+        enum Toast {
+            static let width: CGFloat = 140
+            static let height: CGFloat = 32
+            static let bottomOffset: CGFloat = -20
+        }
+        enum Cell {
+            static let estimatedHeight: CGFloat = 80
+            static let accentStripe: CGFloat = 3
+            static let copyButtonSize: CGFloat = 28
+        }
+        enum Nav {
+            static let largeTitleSize: CGFloat = 34
+        }
+        enum Welcome {
+            static let verticalOffset: CGFloat = -40
+        }
     }
 }

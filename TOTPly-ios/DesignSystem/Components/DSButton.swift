@@ -61,7 +61,7 @@ final class DSButton: UIButton {
         titleLabel?.font = TextStyle.headline.font
         layer.cornerRadius = DS.CornerRadius.small
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: DS.Size.buttonHeight).isActive = true
+        heightAnchor.constraint(equalToConstant: DS.Size.Button.height).isActive = true
 
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.hidesWhenStopped = true

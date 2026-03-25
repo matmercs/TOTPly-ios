@@ -40,69 +40,69 @@ final class RegistrationViewController: UIViewController, RegistrationView {
     }()
 
     private lazy var displayNameField: DSTextField = {
-        let f = DSTextField()
-        f.returnKeyType = .next
-        f.onTextChanged = { [weak self] text in
-            self?.presenter.didChangeDisplayName(text)
-        }
-        f.onEditingDidEnd = { [weak self] in
-            self?.presenter.didEndEditingDisplayName()
-        }
-        f.onReturnTapped = { [weak self] in
-            self?.emailField.becomeFirstResponder()
-        }
-        return f
+        DSTextField(configuration: .init(
+            returnKeyType: .next,
+            onTextChanged: { [weak self] text in
+                self?.presenter.didChangeDisplayName(text)
+            },
+            onEditingDidEnd: { [weak self] in
+                self?.presenter.didEndEditingDisplayName()
+            },
+            onReturnTapped: { [weak self] in
+                self?.emailField.becomeFirstResponder()
+            }
+        ))
     }()
 
     private lazy var emailField: DSTextField = {
-        let f = DSTextField()
-        f.keyboardType = .emailAddress
-        f.autocapitalizationType = .none
-        f.returnKeyType = .next
-        f.onTextChanged = { [weak self] text in
-            self?.presenter.didChangeEmail(text)
-        }
-        f.onEditingDidEnd = { [weak self] in
-            self?.presenter.didEndEditingEmail()
-        }
-        f.onReturnTapped = { [weak self] in
-            self?.passwordField.becomeFirstResponder()
-        }
-        return f
+        DSTextField(configuration: .init(
+            keyboardType: .emailAddress,
+            autocapitalizationType: .none,
+            returnKeyType: .next,
+            onTextChanged: { [weak self] text in
+                self?.presenter.didChangeEmail(text)
+            },
+            onEditingDidEnd: { [weak self] in
+                self?.presenter.didEndEditingEmail()
+            },
+            onReturnTapped: { [weak self] in
+                self?.passwordField.becomeFirstResponder()
+            }
+        ))
     }()
 
     private lazy var passwordField: DSTextField = {
-        let f = DSTextField()
-        f.returnKeyType = .next
-        f.onTextChanged = { [weak self] text in
-            self?.presenter.didChangePassword(text)
-        }
-        f.onEditingDidEnd = { [weak self] in
-            self?.presenter.didEndEditingPassword()
-        }
-        f.onReturnTapped = { [weak self] in
-            self?.confirmPasswordField.becomeFirstResponder()
-        }
-        return f
+        DSTextField(configuration: .init(
+            returnKeyType: .next,
+            onTextChanged: { [weak self] text in
+                self?.presenter.didChangePassword(text)
+            },
+            onEditingDidEnd: { [weak self] in
+                self?.presenter.didEndEditingPassword()
+            },
+            onReturnTapped: { [weak self] in
+                self?.confirmPasswordField.becomeFirstResponder()
+            }
+        ))
     }()
 
     private lazy var confirmPasswordField: DSTextField = {
-        let f = DSTextField()
-        f.returnKeyType = .go
-        f.onTextChanged = { [weak self] text in
-            self?.presenter.didChangeConfirmPassword(text)
-        }
-        f.onEditingDidEnd = { [weak self] in
-            self?.presenter.didEndEditingConfirmPassword()
-        }
-        f.onReturnTapped = { [weak self] in
-            guard let self = self else { return }
-            _ = self.confirmPasswordField.resignFirstResponder()
-            if self.registerButton.isEnabled {
-                self.didTapRegister()
+        DSTextField(configuration: .init(
+            returnKeyType: .go,
+            onTextChanged: { [weak self] text in
+                self?.presenter.didChangeConfirmPassword(text)
+            },
+            onEditingDidEnd: { [weak self] in
+                self?.presenter.didEndEditingConfirmPassword()
+            },
+            onReturnTapped: { [weak self] in
+                guard let self = self else { return }
+                _ = self.confirmPasswordField.resignFirstResponder()
+                if self.registerButton.isEnabled {
+                    self.didTapRegister()
+                }
             }
-        }
-        return f
+        ))
     }()
 
     private lazy var errorLabel: UILabel = {

@@ -83,7 +83,7 @@ extension DashboardListManager: UITableViewDelegate {
         }
 
         let cell = tableView.cellForRow(at: indexPath)
-        let cellHeight = cell?.contentView.frame.height ?? DS.Size.estimatedCellHeight
+        let cellHeight = cell?.contentView.frame.height ?? DS.Size.Cell.estimatedHeight
         deleteAction.image = Self.makeDeleteActionImage(height: cellHeight)
         deleteAction.backgroundColor = DS.Color.background
 

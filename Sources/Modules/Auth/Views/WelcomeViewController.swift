@@ -89,7 +89,7 @@ final class WelcomeViewController: UIViewController, WelcomeView {
         view.addSubview(stackView)
 
         NSLayoutConstraint.activate([
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: DS.Size.welcomeVerticalOffset),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: DS.Size.Welcome.verticalOffset),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: DS.Spacing.xl),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -DS.Spacing.xl),
         ])

@@ -41,41 +41,41 @@ final class LoginViewController: UIViewController, LoginView {
     }()
 
     private lazy var emailField: DSTextField = {
-        let f = DSTextField()
-        f.keyboardType = .emailAddress
-        f.autocapitalizationType = .none
-        f.returnKeyType = .next
-        f.accessibilityId = "login.email"
-        f.onTextChanged = { [weak self] text in
-            self?.presenter.didChangeEmail(text)
-        }
-        f.onEditingDidEnd = { [weak self] in
-            self?.presenter.didEndEditingEmail()
-        }
-        f.onReturnTapped = { [weak self] in
-            self?.passwordField.becomeFirstResponder()
-        }
-        return f
+        DSTextField(configuration: .init(
+            keyboardType: .emailAddress,
+            autocapitalizationType: .none,
+            returnKeyType: .next,
+            accessibilityId: "login.email",
+            onTextChanged: { [weak self] text in
+                self?.presenter.didChangeEmail(text)
+            },
+            onEditingDidEnd: { [weak self] in
+                self?.presenter.didEndEditingEmail()
+            },
+            onReturnTapped: { [weak self] in
+                self?.passwordField.becomeFirstResponder()
+            }
+        ))
     }()
 
     private lazy var passwordField: DSTextField = {
-        let f = DSTextField()
-        f.returnKeyType = .go
-        f.accessibilityId = "login.password"
-        f.onTextChanged = { [weak self] text in
-            self?.presenter.didChangePassword(text)
-        }
-        f.onEditingDidEnd = { [weak self] in
-            self?.presenter.didEndEditingPassword()
-        }
-        f.onReturnTapped = { [weak self] in
-            guard let self = self else { return }
-            self.passwordField.resignFirstResponder()
-            if self.loginButton.isEnabled {
-                self.didTapLogin()
+        DSTextField(configuration: .init(
+            returnKeyType: .go,
+            accessibilityId: "login.password",
+            onTextChanged: { [weak self] text in
+                self?.presenter.didChangePassword(text)
+            },
+            onEditingDidEnd: { [weak self] in
+                self?.presenter.didEndEditingPassword()
+            },
+            onReturnTapped: { [weak self] in
+                guard let self = self else { return }
+                self.passwordField.resignFirstResponder()
+                if self.loginButton.isEnabled {
+                    self.didTapLogin()
+                }
             }
-        }
-        return f
+        ))
     }()
 
     private lazy var errorLabel: UILabel = {

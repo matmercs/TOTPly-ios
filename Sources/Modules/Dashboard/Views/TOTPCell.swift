@@ -16,7 +16,7 @@ final class TOTPCell: UITableViewCell {
         let v = UIView()
         v.backgroundColor = DS.Color.accent
         v.translatesAutoresizingMaskIntoConstraints = false
-        v.layer.cornerRadius = DS.Size.accentStripe / 2
+        v.layer.cornerRadius = DS.Size.Cell.accentStripe / 2
         return v
     }()
 
@@ -105,7 +105,7 @@ final class TOTPCell: UITableViewCell {
             accentStripe.leadingAnchor.constraint(equalTo: card.cardContent.leadingAnchor),
             accentStripe.topAnchor.constraint(equalTo: card.cardContent.topAnchor, constant: DS.Spacing.s),
             accentStripe.bottomAnchor.constraint(equalTo: card.cardContent.bottomAnchor, constant: -DS.Spacing.s),
-            accentStripe.widthAnchor.constraint(equalToConstant: DS.Size.accentStripe),
+            accentStripe.widthAnchor.constraint(equalToConstant: DS.Size.Cell.accentStripe),
 
             textStack.topAnchor.constraint(equalTo: card.cardContent.topAnchor, constant: padding),
             textStack.leadingAnchor.constraint(equalTo: accentStripe.trailingAnchor, constant: DS.Spacing.m),
@@ -118,11 +118,11 @@ final class TOTPCell: UITableViewCell {
 
             circularProgress.centerYAnchor.constraint(equalTo: card.cardContent.centerYAnchor),
             circularProgress.trailingAnchor.constraint(equalTo: card.cardContent.trailingAnchor, constant: -padding),
-            circularProgress.widthAnchor.constraint(equalToConstant: DS.Size.circularTimerSize),
-            circularProgress.heightAnchor.constraint(equalToConstant: DS.Size.circularTimerSize),
+            circularProgress.widthAnchor.constraint(equalToConstant: DS.Size.CircularTimer.size),
+            circularProgress.heightAnchor.constraint(equalToConstant: DS.Size.CircularTimer.size),
 
-            copyButton.widthAnchor.constraint(equalToConstant: DS.Size.copyButtonSize),
-            copyButton.heightAnchor.constraint(equalToConstant: DS.Size.copyButtonSize),
+            copyButton.widthAnchor.constraint(equalToConstant: DS.Size.Cell.copyButtonSize),
+            copyButton.heightAnchor.constraint(equalToConstant: DS.Size.Cell.copyButtonSize),
         ])
     }
 
