@@ -33,6 +33,7 @@ enum DS {
         private static let dark = DSDarkTheme()
 
         private static func themed(_ keyPath: KeyPath<DSTheme, UIColor>) -> UIColor {
+            // короткая запись для traitCollection in куда swift автоматически подставляется traitCollection
             UIColor { $0.userInterfaceStyle == .dark ? dark[keyPath: keyPath] : light[keyPath: keyPath] }
         }
 

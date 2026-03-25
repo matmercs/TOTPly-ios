@@ -7,9 +7,17 @@
 
 import UIKit
 
-extension UILabel {
-    func apply(_ style: TextStyle) {
-        font = style.font
-        textColor = style.color
+extension UIView {
+    func applyShadow(_ style: DS.Shadow.Style) {
+        layer.shadowColor = style.color.cgColor
+        layer.shadowOpacity = style.opacity
+        layer.shadowOffset = style.offset
+        layer.shadowRadius = style.radius
+        layer.masksToBounds = false
+    }
+
+    func applyCornerRadius(_ radius: CGFloat) {
+        layer.cornerRadius = radius
+        layer.masksToBounds = true
     }
 }
