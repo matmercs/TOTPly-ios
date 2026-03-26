@@ -165,3 +165,46 @@ Presenter обновляет View через протокол `render(state)` и
 
 - Войти с дефолт почтой `user@test.com` и паролем `12345`
 - Увидеть заглушку дэшборда с `DashboardTOTPItem` пока что в виде plain text
+
+---
+
+## Дизайн-система
+
+### Токены
+
+- **Colors** (`DSColors.swift` + `DSTheme.swift`): палитра Teal & Sage: background, surfaceCard, textPrimary, textSecondary, accent, error и др. Light/Dark через `DSTheme` протокол + `DSLightTheme`/`DSDarkTheme`.
+- **Typography** (`DSTypography.swift`): шрифт Onest, 10 стилей: largeTitle, title1, headline, body, callout, subheadline, footnote, caption, code, codeSmall.
+- **Layout** (`DSLayout.swift`): Spacing (xs–xxl), CornerRadius (small/medium/large), Size (фиксированные размеры компонентов).
+- **Shadows** (`DSShadows.swift`): тени (card, elevated, subtle).
+- **Icons** (`DSIcons.swift`): Phosphor Icons через TTF-шрифт, рендер в UIImage.
+
+### Компоненты
+
+| Компонент | Описание |
+|-----------|----------|
+| `DSButton` | Кнопка: primary, secondary, destructive, text. Loading-спиннер, disabled-состояние. |
+| `DSTextField` | Поле ввода с заголовком, placeholder, ошибкой, цепочкой полей (onReturnTapped). |
+| `DSCard` | Карточка со скруглёнными углами и тенью. Два слоя: внешний (тень), внутренний (clip). |
+| `DSCircularProgress` | Круговой таймер обратного отсчёта для TOTP-кодов. |
+| `DSStateView` | Универсальный контейнер состояний: loading, error, empty, content. |
+| `DSLoadingView` | Спиннер + опциональный текст. |
+| `DSErrorView` | Иконка + сообщение + кнопка "Повторить". |
+| `DSEmptyView` | Иконка + заголовок + подзаголовок. |
+
+### Применение на экранах
+
+- **Welcome**: DSButton, DS-токены.
+- **Login**: DSTextField, DSButton, DS-токены.
+- **Registration**: DSTextField, DSButton, DS-токены.
+- **Dashboard**: DSCard + акцентная полоска + DSCircularProgress в ячейках, DSStateView (loading/error/empty), Phosphor-иконки в навбаре, кастомный свайп удаления, DSButton, DS-токены.
+
+### Расположение
+
+Папка DesignSystem в TOTPly-ios
+
+### Как проверить состояния
+
+- **Loading** — виден при запуске дэшборда (спиннер на момент загрузки данных).
+- **Error** — отключить сеть или сломать URL в `RemoteTOTPRepository`: иконка + текст + "Повторить".
+- **Empty** — удалить все карточки свайпом: иконка + "Нет TOTP-кодов".
+- **Dark mode** — `Cmd+Shift+A` в симуляторе, все цвета переключаются автоматически.

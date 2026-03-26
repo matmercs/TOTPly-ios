@@ -10,54 +10,50 @@ import UIKit
 final class TOTPCell: UITableViewCell {
     static let reuseIdentifier = "TOTPCell"
 
+    private lazy var card = DSCard()
+
+    private lazy var accentStripe: UIView = {
+        let v = UIView()
+        v.backgroundColor = DS.Color.accent
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.layer.cornerRadius = DS.Size.Cell.accentStripe / 2
+        return v
+    }()
+
     private lazy var titleLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 16, weight: .semibold)
-        l.textColor = .label
+        l.apply(.headline)
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
     }()
 
     private lazy var subtitleLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 13, weight: .regular)
-        l.textColor = .secondaryLabel
+        l.apply(.footnote)
+        l.textColor = DS.Color.textSecondary
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
     }()
 
     private lazy var codeLabel: UILabel = {
         let l = UILabel()
-        l.font = .monospacedDigitSystemFont(ofSize: 22, weight: .bold)
-        l.textColor = .systemBlue
-        l.textAlignment = .right
+        l.apply(.code)
+        l.textColor = DS.Color.accent
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
-    }()
-
-    private lazy var timerLabel: UILabel = {
-        let l = UILabel()
-        l.font = .monospacedDigitSystemFont(ofSize: 13, weight: .medium)
-        l.textColor = .secondaryLabel
-        l.textAlignment = .right
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
-    }()
-
-    private lazy var progressView: UIProgressView = {
-        let pv = UIProgressView(progressViewStyle: .default)
-        pv.trackTintColor = .systemGray5
-        pv.progressTintColor = .systemBlue
-        pv.translatesAutoresizingMaskIntoConstraints = false
-        return pv
     }()
 
     private lazy var copyButton: UIButton = {
         let b = UIButton(type: .system)
-        b.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
-        b.tintColor = .systemGray
+        b.setImage(DS.Icon.image(DS.Icon.copy, size: .medium, tint: DS.Color.textSecondary), for: .normal)
         b.translatesAutoresizingMaskIntoConstraints = false
         return b
+    }()
+
+    private lazy var circularProgress: DSCircularProgress = {
+        let v = DSCircularProgress()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
     }()
 
     var onCopyTapped: (() -> Void)?
@@ -72,43 +68,61 @@ final class TOTPCell: UITableViewCell {
     }
 
     private func setupUI() {
+        // потому что это фон именно ячейки а не карточки
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        selectionStyle = .none
+
+        card.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(card)
+
         copyButton.addTarget(self, action: #selector(copyTapped), for: .touchUpInside)
 
-        let leftStack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
-        leftStack.axis = .vertical
-        leftStack.spacing = 2
-        leftStack.translatesAutoresizingMaskIntoConstraints = false
+        let textStack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
+        textStack.axis = .vertical
+        textStack.spacing = DS.Spacing.xxs
+        textStack.translatesAutoresizingMaskIntoConstraints = false
 
         let codeRow = UIStackView(arrangedSubviews: [codeLabel, copyButton])
         codeRow.axis = .horizontal
-        codeRow.spacing = 6
+        codeRow.spacing = DS.Spacing.s
         codeRow.alignment = .center
+        codeRow.translatesAutoresizingMaskIntoConstraints = false
 
-        let rightStack = UIStackView(arrangedSubviews: [codeRow, timerLabel, progressView])
-        rightStack.axis = .vertical
-        rightStack.spacing = 4
-        rightStack.alignment = .trailing
-        rightStack.translatesAutoresizingMaskIntoConstraints = false
+        card.cardContent.addSubview(accentStripe)
+        card.cardContent.addSubview(textStack)
+        card.cardContent.addSubview(codeRow)
+        card.cardContent.addSubview(circularProgress)
 
-        contentView.addSubview(leftStack)
-        contentView.addSubview(rightStack)
+        let padding = DS.Spacing.l
 
         NSLayoutConstraint.activate([
-            leftStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            leftStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            leftStack.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -12),
+            card.topAnchor.constraint(equalTo: contentView.topAnchor, constant: DS.Spacing.xs),
+            card.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: DS.Spacing.l),
+            card.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -DS.Spacing.l),
+            card.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -DS.Spacing.xs),
 
-            rightStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            rightStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            rightStack.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -12),
-            rightStack.leadingAnchor.constraint(greaterThanOrEqualTo: leftStack.trailingAnchor, constant: 12),
+            accentStripe.leadingAnchor.constraint(equalTo: card.cardContent.leadingAnchor),
+            accentStripe.topAnchor.constraint(equalTo: card.cardContent.topAnchor, constant: DS.Spacing.s),
+            accentStripe.bottomAnchor.constraint(equalTo: card.cardContent.bottomAnchor, constant: -DS.Spacing.s),
+            accentStripe.widthAnchor.constraint(equalToConstant: DS.Size.Cell.accentStripe),
 
-            leftStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            rightStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            textStack.topAnchor.constraint(equalTo: card.cardContent.topAnchor, constant: padding),
+            textStack.leadingAnchor.constraint(equalTo: accentStripe.trailingAnchor, constant: DS.Spacing.m),
+            textStack.trailingAnchor.constraint(lessThanOrEqualTo: circularProgress.leadingAnchor, constant: -DS.Spacing.m),
 
-            copyButton.widthAnchor.constraint(equalToConstant: 24),
-            copyButton.heightAnchor.constraint(equalToConstant: 24),
-            progressView.widthAnchor.constraint(equalToConstant: 60),
+            // Code + copy row
+            codeRow.topAnchor.constraint(equalTo: textStack.bottomAnchor, constant: DS.Spacing.s),
+            codeRow.leadingAnchor.constraint(equalTo: textStack.leadingAnchor),
+            codeRow.bottomAnchor.constraint(equalTo: card.cardContent.bottomAnchor, constant: -padding),
+
+            circularProgress.centerYAnchor.constraint(equalTo: card.cardContent.centerYAnchor),
+            circularProgress.trailingAnchor.constraint(equalTo: card.cardContent.trailingAnchor, constant: -padding),
+            circularProgress.widthAnchor.constraint(equalToConstant: DS.Size.CircularTimer.size),
+            circularProgress.heightAnchor.constraint(equalToConstant: DS.Size.CircularTimer.size),
+
+            copyButton.widthAnchor.constraint(equalToConstant: DS.Size.Cell.copyButtonSize),
+            copyButton.heightAnchor.constraint(equalToConstant: DS.Size.Cell.copyButtonSize),
         ])
     }
 
@@ -121,17 +135,19 @@ final class TOTPCell: UITableViewCell {
         subtitleLabel.text = viewModel.subtitle
         subtitleLabel.isHidden = viewModel.subtitle == nil
         codeLabel.text = viewModel.code
-        timerLabel.text = viewModel.timeRemaining
-        progressView.progress = Float(viewModel.progress)
+
+        circularProgress.configure(
+            progress: viewModel.progress,
+            timeText: viewModel.timeRemaining,
+            isExpiring: viewModel.isExpiringSoon
+        )
 
         if viewModel.isExpiringSoon {
-            codeLabel.textColor = .systemRed
-            progressView.progressTintColor = .systemRed
-            timerLabel.textColor = .systemRed
+            codeLabel.textColor = DS.Color.error
+            accentStripe.backgroundColor = DS.Color.error
         } else {
-            codeLabel.textColor = .systemBlue
-            progressView.progressTintColor = .systemBlue
-            timerLabel.textColor = .secondaryLabel
+            codeLabel.textColor = DS.Color.accent
+            accentStripe.backgroundColor = DS.Color.accent
         }
     }
 
@@ -141,11 +157,9 @@ final class TOTPCell: UITableViewCell {
         subtitleLabel.text = nil
         subtitleLabel.isHidden = false
         codeLabel.text = nil
-        codeLabel.textColor = .systemBlue
-        timerLabel.text = nil
-        timerLabel.textColor = .secondaryLabel
-        progressView.progress = 0
-        progressView.progressTintColor = .systemBlue
+        codeLabel.textColor = DS.Color.accent
+        accentStripe.backgroundColor = DS.Color.accent
+        circularProgress.resetAppearance()
         onCopyTapped = nil
     }
 }

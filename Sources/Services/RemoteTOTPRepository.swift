@@ -40,7 +40,9 @@ final class RemoteTOTPRepository: TOTPRepository {
     func fetchRemoteItems() async throws -> [TOTPItem] {
         if useMockData {
             print("Using mock data")
-            return createMockItems()
+            let items = createMockItems()
+            try saveItemsToLocalStorage(items)
+            return items
         }
         
         if let cachedItems = try? await fetchLocalItems(),

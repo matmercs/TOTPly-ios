@@ -26,7 +26,7 @@ final class LoginViewController: UIViewController, LoginView {
     private lazy var stackView: UIStackView = {
         let s = UIStackView()
         s.axis = .vertical
-        s.spacing = 16
+        s.spacing = DS.Spacing.l
         s.alignment = .fill
         s.translatesAutoresizingMaskIntoConstraints = false
         return s
@@ -35,72 +35,79 @@ final class LoginViewController: UIViewController, LoginView {
     private lazy var titleLabel: UILabel = {
         let l = UILabel()
         l.text = "Вход"
-        l.font = .systemFont(ofSize: 24, weight: .bold)
+        l.apply(.title1)
         l.accessibilityIdentifier = "login.title"
         return l
     }()
 
-    private lazy var emailField: UITextField = {
-        let t = UITextField()
-        t.placeholder = "Почта"
-        t.keyboardType = .emailAddress
-        t.autocapitalizationType = .none
-        t.autocorrectionType = .no
-        t.borderStyle = .roundedRect
-        t.accessibilityIdentifier = "login.email"
-        return t
+    private lazy var emailField: DSTextField = {
+        DSTextField(configuration: .init(
+            keyboardType: .emailAddress,
+            autocapitalizationType: .none,
+            returnKeyType: .next,
+            accessibilityId: "login.email",
+            onTextChanged: { [weak self] text in
+                self?.presenter.didChangeEmail(text)
+            },
+            onEditingDidEnd: { [weak self] in
+                self?.presenter.didEndEditingEmail()
+            },
+            onReturnTapped: { [weak self] in
+                self?.passwordField.becomeFirstResponder()
+            }
+        ))
     }()
 
-    private lazy var emailErrorLabel: UILabel = {
-        let l = UILabel()
-        l.font = .systemFont(ofSize: 12)
-        l.textColor = .systemRed
-        l.numberOfLines = 0
-        l.isHidden = true
-        return l
-    }()
-
-    private lazy var passwordField: UITextField = {
-        let t = UITextField()
-        t.placeholder = "Пароль"
-        t.isSecureTextEntry = true
-        t.borderStyle = .roundedRect
-        t.accessibilityIdentifier = "login.password"
-        return t
-    }()
-
-    private lazy var passwordErrorLabel: UILabel = {
-        let l = UILabel()
-        l.font = .systemFont(ofSize: 12)
-        l.textColor = .systemRed
-        l.numberOfLines = 0
-        l.isHidden = true
-        return l
+    private lazy var passwordField: DSTextField = {
+        DSTextField(configuration: .init(
+            returnKeyType: .go,
+            accessibilityId: "login.password",
+            onTextChanged: { [weak self] text in
+                self?.presenter.didChangePassword(text)
+            },
+            onEditingDidEnd: { [weak self] in
+                self?.presenter.didEndEditingPassword()
+            },
+            onReturnTapped: { [weak self] in
+                guard let self = self else { return }
+                self.passwordField.resignFirstResponder()
+                if self.loginButton.isEnabled {
+                    self.didTapLogin()
+                }
+            }
+        ))
     }()
 
     private lazy var errorLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 12)
-        l.textColor = .systemRed
+        l.apply(.caption)
+        l.textColor = DS.Color.error
         l.numberOfLines = 0
         l.isHidden = true
         l.accessibilityIdentifier = "login.error"
         return l
     }()
 
-    private lazy var loginButton: UIButton = {
-        let b = UIButton(type: .system)
-        b.setTitle("Войти", for: .normal)
-        b.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
+    private lazy var loginButton: DSButton = {
+        let b = DSButton(style: .primary, title: "Войти")
         b.isEnabled = false
+        b.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         b.accessibilityIdentifier = "login.submit"
         return b
     }()
 
     private lazy var registerButton: UIButton = {
         let b = UIButton(type: .system)
-        b.setTitle("Нет аккаунта? Регистрация", for: .normal)
-        b.titleLabel?.font = .systemFont(ofSize: 15)
+        let attributed = NSMutableAttributedString(
+            string: "Нет аккаунта? ",
+            attributes: [.font: TextStyle.callout.font, .foregroundColor: DS.Color.textSecondary]
+        )
+        attributed.append(NSAttributedString(
+            string: "Регистрация",
+            attributes: [.font: TextStyle.headline.font, .foregroundColor: DS.Color.accent]
+        ))
+        b.setAttributedTitle(attributed, for: .normal)
+        b.addTarget(self, action: #selector(didTapGoToRegister), for: .touchUpInside)
         b.accessibilityIdentifier = "login.goToRegister"
         return b
     }()
@@ -116,26 +123,17 @@ final class LoginViewController: UIViewController, LoginView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = DS.Color.background
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(stackView)
 
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(emailField)
-        stackView.addArrangedSubview(emailErrorLabel)
         stackView.addArrangedSubview(passwordField)
-        stackView.addArrangedSubview(passwordErrorLabel)
         stackView.addArrangedSubview(errorLabel)
         stackView.addArrangedSubview(loginButton)
         stackView.addArrangedSubview(registerButton)
-
-        emailField.addTarget(self, action: #selector(emailChanged), for: .editingChanged)
-        passwordField.addTarget(self, action: #selector(passwordChanged), for: .editingChanged)
-        emailField.delegate = self    // ниже - привязываем textFieldShouldReturn из протокола UITextFieldDelegate
-        passwordField.delegate = self
-        loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
-        registerButton.addTarget(self, action: #selector(didTapGoToRegister), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -147,12 +145,12 @@ final class LoginViewController: UIViewController, LoginView {
             contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor), // иначе горизонтальный скролл
+            contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
 
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: DS.Spacing.xl),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: DS.Spacing.xl),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -DS.Spacing.xl),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -DS.Spacing.xl),
         ])
 
         setupKeyboardObservers()
@@ -182,32 +180,30 @@ final class LoginViewController: UIViewController, LoginView {
     func render(_ state: LoginViewState) {
         let showEmailError = state.validationErrors.emailError != nil && state.emailTouched
         let showPasswordError = state.validationErrors.passwordError != nil && state.passwordTouched
-        emailErrorLabel.text = state.validationErrors.emailError
-        emailErrorLabel.isHidden = !showEmailError
-        passwordErrorLabel.text = state.validationErrors.passwordError
-        passwordErrorLabel.isHidden = !showPasswordError
-        applyValidationStyle(textField: emailField, hasError: showEmailError)
-        applyValidationStyle(textField: passwordField, hasError: showPasswordError)
+
+        emailField.configure(
+            title: nil,
+            placeholder: "Почта",
+            error: showEmailError ? state.validationErrors.emailError : nil,
+            isSecure: false
+        )
+
+        passwordField.configure(
+            title: nil,
+            placeholder: "Пароль",
+            error: showPasswordError ? state.validationErrors.passwordError : nil,
+            isSecure: true
+        )
+
         errorLabel.text = state.errorMessage
         errorLabel.isHidden = state.errorMessage == nil
+
         loginButton.isEnabled = state.isLoginButtonEnabled && !state.isLoading
-        if state.isLoading {
-            loginButton.setTitle("Вход…", for: .normal)
-        } else {
-            loginButton.setTitle("Войти", for: .normal)
-        }
-    }
-
-    @objc private func emailChanged() {
-        presenter.didChangeEmail(emailField.text ?? "")
-    }
-
-    @objc private func passwordChanged() {
-        presenter.didChangePassword(passwordField.text ?? "")
+        loginButton.isLoading = state.isLoading
     }
 
     @objc private func didTapLogin() {
-        view.endEditing(true) // скрываем клавиатуру
+        view.endEditing(true)
         presenter.didTapLogin(email: emailField.text ?? "", password: passwordField.text ?? "")
     }
 
@@ -215,40 +211,7 @@ final class LoginViewController: UIViewController, LoginView {
         presenter.didTapGoToRegister()
     }
 
-    private func applyValidationStyle(textField: UITextField, hasError: Bool) {
-        if hasError {
-            textField.layer.borderWidth = 1
-            textField.layer.borderColor = UIColor.systemRed.cgColor
-            textField.layer.cornerRadius = 8
-        } else {
-            textField.layer.borderWidth = 0
-            textField.layer.borderColor = nil
-        }
-    }
-
     deinit {
         NotificationCenter.default.removeObserver(self)
-    }
-}
-
-extension LoginViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField === emailField {
-            passwordField.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
-            if loginButton.isEnabled {
-                didTapLogin()
-            }
-        }
-        return true
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField === emailField {
-            presenter.didEndEditingEmail()
-        } else if textField === passwordField {
-            presenter.didEndEditingPassword()
-        }
     }
 }

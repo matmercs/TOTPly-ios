@@ -15,6 +15,7 @@ final class AppCoordinator {
     }
 
     func start() {
+        UINavigationBar.applyDSAppearance()
         let storage = KeychainStorageService()
         let authRepository = LocalAuthRepository(storage: storage)
         let authRouter = AuthRouterImpl(window: window, authRepository: authRepository)
