@@ -110,6 +110,9 @@
 		34B7472A2F5748EC009F9B4D /* LoginPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B747292F5748E7009F9B4D /* LoginPresenterImpl.swift */; };
 		34B7472C2F575A44009F9B4D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7472B2F575A41009F9B4D /* RegistrationViewController.swift */; };
 		34B7472E2F576095009F9B4D /* RegistrationPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7472D2F576095009F9B4D /* RegistrationPresenterImpl.swift */; };
+		34BE54152F7C6DF20094395C /* CodeDetailRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE54142F7C6DF10094395C /* CodeDetailRouterImpl.swift */; };
+		34BE54182F7C6E220094395C /* CodeDetailPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE54172F7C6E210094395C /* CodeDetailPresenterImpl.swift */; };
+		34BE541A2F7C6E4B0094395C /* CodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE54192F7C6E4B0094395C /* CodeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +218,9 @@
 		34B747292F5748E7009F9B4D /* LoginPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterImpl.swift; sourceTree = "<group>"; };
 		34B7472B2F575A41009F9B4D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		34B7472D2F576095009F9B4D /* RegistrationPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenterImpl.swift; sourceTree = "<group>"; };
+		34BE54142F7C6DF10094395C /* CodeDetailRouterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailRouterImpl.swift; sourceTree = "<group>"; };
+		34BE54172F7C6E210094395C /* CodeDetailPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailPresenterImpl.swift; sourceTree = "<group>"; };
+		34BE54192F7C6E4B0094395C /* CodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailViewController.swift; sourceTree = "<group>"; };
 		34F3247B2F4E18B000B14F9F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		34F3247C2F4E191D00B14F9F /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		34F3247D2F4E19CA00B14F9F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -301,6 +307,7 @@
 		34998F802F69AD9600EBF491 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34BE54192F7C6E4B0094395C /* CodeDetailViewController.swift */,
 				34998F812F69AD9E00EBF491 /* CodeDetailStubViewController.swift */,
 			);
 			path = Views;
@@ -603,6 +610,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		34BE54132F7C6DE90094395C /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				34BE54142F7C6DF10094395C /* CodeDetailRouterImpl.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		34BE54162F7C6E1B0094395C /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				34BE54172F7C6E210094395C /* CodeDetailPresenterImpl.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
 		34F323FD2F4C771B00B14F9F = {
 			isa = PBXGroup;
 			children = (
@@ -718,6 +741,8 @@
 		34F324782F4E15D900B14F9F /* CodeDetail */ = {
 			isa = PBXGroup;
 			children = (
+				34BE54162F7C6E1B0094395C /* Presenters */,
+				34BE54132F7C6DE90094395C /* Routers */,
 				34998F802F69AD9600EBF491 /* Views */,
 				34B746232F5488FD009F9B4D /* Protocols */,
 				34F324792F4E15E000B14F9F /* Models */,
@@ -901,6 +926,7 @@
 				34B746B02F573834009F9B4D /* KeychainStorageService.swift in Sources */,
 				34B746B12F573834009F9B4D /* AddTOTPPresenter.swift in Sources */,
 				34B746B22F573834009F9B4D /* AddTOTPRouter.swift in Sources */,
+				34BE54152F7C6DF20094395C /* CodeDetailRouterImpl.swift in Sources */,
 				34B746B32F573834009F9B4D /* AddTOTPView.swift in Sources */,
 				34B746B42F573834009F9B4D /* AddTOTPViewState.swift in Sources */,
 				34B746B52F573834009F9B4D /* AddTOTPInput.swift in Sources */,
@@ -911,6 +937,7 @@
 				34AC02B62F608076005D5F98 /* RemoteTOTPRepository.swift in Sources */,
 				34B746BA2F573834009F9B4D /* CodeDetailInput.swift in Sources */,
 				34B746BB2F573834009F9B4D /* TOTPGenerator.swift in Sources */,
+				34BE541A2F7C6E4B0094395C /* CodeDetailViewController.swift in Sources */,
 				34998F7D2F6997A500EBF491 /* TOTPCellModel.swift in Sources */,
 				34B746BC2F573834009F9B4D /* TOTPRepository.swift in Sources */,
 				34AC02B12F6044F1005D5F98 /* NetworkClient.swift in Sources */,
@@ -949,6 +976,7 @@
 				34B7472C2F575A44009F9B4D /* RegistrationViewController.swift in Sources */,
 				34AC02C32F616BE4005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34AC02C52F616BF8005D5F98 /* DashboardPresenterImpl.swift in Sources */,
+				34BE54182F7C6E220094395C /* CodeDetailPresenterImpl.swift in Sources */,
 				34B746D52F573834009F9B4D /* WelcomeRouter.swift in Sources */,
 				34B746D62F573834009F9B4D /* LoginPresenter.swift in Sources */,
 				34B746D72F573834009F9B4D /* VerificationPresenter.swift in Sources */,
