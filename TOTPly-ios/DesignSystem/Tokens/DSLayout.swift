@@ -53,5 +53,9 @@ extension DS {
         enum Welcome {
             static let verticalOffset: CGFloat = -40
         }
+        enum CodeField {
+            static let cellHeight: CGFloat = 56
+            static let borderWidth: CGFloat = 1
+        }
     }
 }
