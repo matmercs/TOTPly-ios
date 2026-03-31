@@ -57,5 +57,15 @@ extension DS {
             static let cellHeight: CGFloat = 56
             static let borderWidth: CGFloat = 1
         }
+        enum Avatar {
+            static let size: CGFloat = 64
+            static let cornerRadius: CGFloat = 32
+        }
+        enum Row {
+            static let height: CGFloat = 44
+        }
+        enum Separator {
+            static let height: CGFloat = 1
+        }
     }
 }

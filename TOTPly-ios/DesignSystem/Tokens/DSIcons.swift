@@ -13,6 +13,7 @@ extension DS {
             case small = 16
             case medium = 24
             case large = 32
+            case xlarge = 48
         }
 
         static let copy = "\u{e1ca}"
