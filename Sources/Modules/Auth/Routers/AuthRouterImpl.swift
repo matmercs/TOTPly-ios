@@ -9,48 +9,67 @@ import UIKit
 
 final class AuthRouterImpl: AuthRouter, WelcomeRouter {
     private weak var window: UIWindow?
-    private let authRepository: AuthRepository  // просто отдаем внутрь презентеров
+    private let authRepository: AuthRepository
     private var navigationController: UINavigationController?
-    
+
     init(window: UIWindow?, authRepository: AuthRepository) {
         self.window = window
         self.authRepository = authRepository
     }
-    
+
     func start() {
         let welcome = makeWelcomeViewController()
-        let nav = UINavigationController(rootViewController: welcome)
+        let nav = DSNavigationController(rootViewController: welcome)
         nav.navigationBar.prefersLargeTitles = false
         navigationController = nav
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
-    
+
     private func makeWelcomeViewController() -> WelcomeViewController {
         let presenter = WelcomePresenterImpl(router: self)
         let vc = WelcomeViewController(presenter: presenter)
         presenter.setView(vc)
         return vc
     }
-    
+
     private func makeLoginViewController() -> LoginViewController {
         let presenter = LoginPresenterImpl(router: self, authRepository: authRepository)
         let vc = LoginViewController(presenter: presenter)
         presenter.setView(vc)
         return vc
     }
-    
+
     private func makeRegistrationViewController() -> RegistrationViewController {
         let presenter = RegistrationPresenterImpl(router: self, authRepository: authRepository)
         let vc = RegistrationViewController(presenter: presenter)
         presenter.setView(vc)
         return vc
     }
-    
+
+    private func makeVerificationViewController(email: String, type: VerificationType) -> VerificationViewController {
+        let presenter = VerificationPresenterImpl(
+            router: self,
+            authRepository: authRepository,
+            email: email,
+            verificationType: type
+        )
+        let vc = VerificationViewController(presenter: presenter)
+        presenter.setView(vc)
+        return vc
+    }
+
+    private func makePasswordResetViewController() -> PasswordResetViewController {
+        let presenter = PasswordResetPresenterImpl(router: self, authRepository: authRepository)
+        let vc = PasswordResetViewController(presenter: presenter)
+        presenter.setView(vc)
+        return vc
+    }
+
     func openLogin() {
         navigationController?.pushViewController(makeLoginViewController(), animated: true)
     }
-    
+
     func openRegistration() {
         guard let nav = navigationController else { return }
         if let registrationVC = nav.viewControllers.first(where: { $0 is RegistrationViewController }) {
@@ -59,21 +78,18 @@ final class AuthRouterImpl: AuthRouter, WelcomeRouter {
             nav.pushViewController(makeRegistrationViewController(), animated: true)
         }
     }
-    
+
     func openPasswordRecovery() {
-        // Заглушка
-        let alert = UIAlertController(title: "Восстановление пароля", message: "Заглушка.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        navigationController?.topViewController?.present(alert, animated: true)
+        navigationController?.pushViewController(makePasswordResetViewController(), animated: true)
     }
-    
+
     func openEmailVerification(email: String, type: VerificationType) {
-        // Заглушка
-        let alert = UIAlertController(title: "Верификация", message: "Заглущка. Почта: \(email)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        navigationController?.topViewController?.present(alert, animated: true)
+        navigationController?.pushViewController(
+            makeVerificationViewController(email: email, type: type),
+            animated: true
+        )
     }
-    
+
     func openDashboard() {
         let networkClient = URLSessionNetworkClient()
         let storage = KeychainStorageService()
@@ -83,9 +99,13 @@ final class AuthRouterImpl: AuthRouter, WelcomeRouter {
             useMockData: true
         )
         let generator = TOTPGeneratorImpl()
-        
 
-        let router = DashboardRouterImpl()
+        let router = DashboardRouterImpl(
+            repository: repository,
+            generator: generator,
+            authRepository: authRepository,
+            storage: storage
+        )
 
         let view = DashboardViewController()
         let presenter = DashboardPresenterImpl(
@@ -95,15 +115,16 @@ final class AuthRouterImpl: AuthRouter, WelcomeRouter {
             router: router
         )
         view.presenter = presenter
-        
-        let nav = UINavigationController(rootViewController: view)
+
+        let nav = DSNavigationController(rootViewController: view)
         nav.navigationBar.prefersLargeTitles = true
         router.navigationController = nav
-        
+        router.window = window
+
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
-    
+
     func goBackToLogin() {
         guard let nav = navigationController else { return }
         if nav.viewControllers.contains(where: { $0 is LoginViewController }) {

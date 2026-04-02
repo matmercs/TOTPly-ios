@@ -33,14 +33,7 @@ final class LocalAuthRepository: AuthRepository {
 
     func register(email: String, password: String, displayName: String?) async throws -> AuthResult {
         if !email.isEmpty && !(password.isEmpty) {
-            let session = UserSession(
-                accessToken: "local_token",
-                refreshToken: "local_refresh",
-                userId: "local_user",
-                expiresAt: Date().addingTimeInterval(3600)
-            )
-            try saveSession(session)
-            return .session(session)
+            return .requiresEmailVerification(email: email)
         }
         throw AppError.validationError("Email and password required")
     }
@@ -59,11 +52,12 @@ final class LocalAuthRepository: AuthRepository {
     }
 
     func requestPasswordReset(email: String) async throws {
-        // TODO
+        try await Task.sleep(nanoseconds: 500_000_000)
     }
 
     func verifyPasswordReset(email: String, code: String, newPassword: String) async throws {
-        // TODO
+        try await Task.sleep(nanoseconds: 500_000_000)
+        guard code.count == 6 else { throw AuthError.invalidCredentials }
     }
 
     func getCurrentSession() -> UserSession? {

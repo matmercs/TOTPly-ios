@@ -10,4 +10,5 @@ import Foundation
 enum StorageKey: String {
     case userSession = "user_session"
     case totpItems = "totp_items"
+    case settings = "app_settings"
 }

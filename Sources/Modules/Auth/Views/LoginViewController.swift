@@ -96,6 +96,15 @@ final class LoginViewController: UIViewController, LoginView {
         return b
     }()
 
+    private lazy var forgotPasswordButton: UIButton = {
+        let b = UIButton(type: .system)
+        b.setTitle("Забыли пароль?", for: .normal)
+        b.titleLabel?.font = TextStyle.callout.font
+        b.setTitleColor(DS.Color.accent, for: .normal)
+        b.addTarget(self, action: #selector(didTapForgotPassword), for: .touchUpInside)
+        return b
+    }()
+
     private lazy var registerButton: UIButton = {
         let b = UIButton(type: .system)
         let attributed = NSMutableAttributedString(
@@ -133,6 +142,7 @@ final class LoginViewController: UIViewController, LoginView {
         stackView.addArrangedSubview(passwordField)
         stackView.addArrangedSubview(errorLabel)
         stackView.addArrangedSubview(loginButton)
+        stackView.addArrangedSubview(forgotPasswordButton)
         stackView.addArrangedSubview(registerButton)
 
         NSLayoutConstraint.activate([
@@ -205,6 +215,10 @@ final class LoginViewController: UIViewController, LoginView {
     @objc private func didTapLogin() {
         view.endEditing(true)
         presenter.didTapLogin(email: emailField.text ?? "", password: passwordField.text ?? "")
+    }
+
+    @objc private func didTapForgotPassword() {
+        presenter.didTapForgotPassword()
     }
 
     @objc private func didTapGoToRegister() {

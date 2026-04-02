@@ -110,6 +110,29 @@
 		34B7472A2F5748EC009F9B4D /* LoginPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B747292F5748E7009F9B4D /* LoginPresenterImpl.swift */; };
 		34B7472C2F575A44009F9B4D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7472B2F575A41009F9B4D /* RegistrationViewController.swift */; };
 		34B7472E2F576095009F9B4D /* RegistrationPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7472D2F576095009F9B4D /* RegistrationPresenterImpl.swift */; };
+		34BE54152F7C6DF20094395C /* CodeDetailRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE54142F7C6DF10094395C /* CodeDetailRouterImpl.swift */; };
+		34BE54182F7C6E220094395C /* CodeDetailPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE54172F7C6E210094395C /* CodeDetailPresenterImpl.swift */; };
+		34BE541A2F7C6E4B0094395C /* CodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE54192F7C6E4B0094395C /* CodeDetailViewController.swift */; };
+		34BE541C2F7C6FA10094395C /* OTPAuthParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE541B2F7C6FA10094395C /* OTPAuthParser.swift */; };
+		34BE54212F7C70720094395C /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE54202F7C70720094395C /* QRScannerViewController.swift */; };
+		34BE54242F7C709F0094395C /* AddTOTPRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE54232F7C709F0094395C /* AddTOTPRouterImpl.swift */; };
+		34BE54272F7C70CE0094395C /* AddTOTPPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE54262F7C70CE0094395C /* AddTOTPPresenterImpl.swift */; };
+		34BE54292F7C712A0094395C /* AddTOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE54282F7C71290094395C /* AddTOTPViewController.swift */; };
+		34BE579F2F7E52D60094395C /* VerificationPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE579E2F7E52D40094395C /* VerificationPresenterImpl.swift */; };
+		34BE57A12F7E530A0094395C /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57A02F7E53000094395C /* VerificationViewController.swift */; };
+		34BE57A32F7E6C470094395C /* PasswordResetViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57A22F7E6C460094395C /* PasswordResetViewState.swift */; };
+		34BE57A52F7E6C6C0094395C /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57A42F7E6C6A0094395C /* PasswordResetView.swift */; };
+		34BE57A92F7E6CAE0094395C /* PasswordResetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57A82F7E6CAD0094395C /* PasswordResetPresenter.swift */; };
+		34BE57AB2F7E6CC20094395C /* PasswordResetPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57AA2F7E6CC10094395C /* PasswordResetPresenterImpl.swift */; };
+		34BE57AD2F7E6D020094395C /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57AC2F7E6D020094395C /* PasswordResetViewController.swift */; };
+		34BE57B72F7E721E0094395C /* SessionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57B62F7E721E0094395C /* SessionItem.swift */; };
+		34BE57B92F7E72330094395C /* ProfileViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57B82F7E72320094395C /* ProfileViewState.swift */; };
+		34BE57BC2F7E725A0094395C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57BB2F7E72590094395C /* ProfileView.swift */; };
+		34BE57BF2F7E727F0094395C /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57BE2F7E727E0094395C /* ProfilePresenter.swift */; };
+		34BE57C22F7E72970094395C /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57C12F7E72960094395C /* ProfileRouter.swift */; };
+		34BE57C42F7E72AE0094395C /* ProfilePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57C32F7E72AE0094395C /* ProfilePresenterImpl.swift */; };
+		34BE57C62F7E72F40094395C /* ProfileRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57C52F7E72F30094395C /* ProfileRouterImpl.swift */; };
+		34BE57CA2F7E73180094395C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57C92F7E73180094395C /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +238,29 @@
 		34B747292F5748E7009F9B4D /* LoginPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterImpl.swift; sourceTree = "<group>"; };
 		34B7472B2F575A41009F9B4D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		34B7472D2F576095009F9B4D /* RegistrationPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenterImpl.swift; sourceTree = "<group>"; };
+		34BE54142F7C6DF10094395C /* CodeDetailRouterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailRouterImpl.swift; sourceTree = "<group>"; };
+		34BE54172F7C6E210094395C /* CodeDetailPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailPresenterImpl.swift; sourceTree = "<group>"; };
+		34BE54192F7C6E4B0094395C /* CodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailViewController.swift; sourceTree = "<group>"; };
+		34BE541B2F7C6FA10094395C /* OTPAuthParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPAuthParser.swift; sourceTree = "<group>"; };
+		34BE54202F7C70720094395C /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		34BE54232F7C709F0094395C /* AddTOTPRouterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTOTPRouterImpl.swift; sourceTree = "<group>"; };
+		34BE54262F7C70CE0094395C /* AddTOTPPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTOTPPresenterImpl.swift; sourceTree = "<group>"; };
+		34BE54282F7C71290094395C /* AddTOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTOTPViewController.swift; sourceTree = "<group>"; };
+		34BE579E2F7E52D40094395C /* VerificationPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationPresenterImpl.swift; sourceTree = "<group>"; };
+		34BE57A02F7E53000094395C /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
+		34BE57A22F7E6C460094395C /* PasswordResetViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewState.swift; sourceTree = "<group>"; };
+		34BE57A42F7E6C6A0094395C /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
+		34BE57A82F7E6CAD0094395C /* PasswordResetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetPresenter.swift; sourceTree = "<group>"; };
+		34BE57AA2F7E6CC10094395C /* PasswordResetPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetPresenterImpl.swift; sourceTree = "<group>"; };
+		34BE57AC2F7E6D020094395C /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
+		34BE57B62F7E721E0094395C /* SessionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionItem.swift; sourceTree = "<group>"; };
+		34BE57B82F7E72320094395C /* ProfileViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewState.swift; sourceTree = "<group>"; };
+		34BE57BB2F7E72590094395C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		34BE57BE2F7E727E0094395C /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		34BE57C12F7E72960094395C /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		34BE57C32F7E72AE0094395C /* ProfilePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterImpl.swift; sourceTree = "<group>"; };
+		34BE57C52F7E72F30094395C /* ProfileRouterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouterImpl.swift; sourceTree = "<group>"; };
+		34BE57C92F7E73180094395C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		34F3247B2F4E18B000B14F9F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		34F3247C2F4E191D00B14F9F /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		34F3247D2F4E19CA00B14F9F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -301,6 +347,7 @@
 		34998F802F69AD9600EBF491 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34BE54192F7C6E4B0094395C /* CodeDetailViewController.swift */,
 				34998F812F69AD9E00EBF491 /* CodeDetailStubViewController.swift */,
 			);
 			path = Views;
@@ -393,6 +440,9 @@
 		34B7461C2F5485F0009F9B4D /* AddTOTP */ = {
 			isa = PBXGroup;
 			children = (
+				34BE54252F7C70C10094395C /* Presenters */,
+				34BE54222F7C70910094395C /* Routers */,
+				34BE541F2F7C70630094395C /* Views */,
 				34B746242F548903009F9B4D /* Protocols */,
 				34B7461F2F548752009F9B4D /* Models */,
 			);
@@ -402,6 +452,7 @@
 		34B7461F2F548752009F9B4D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				34BE541B2F7C6FA10094395C /* OTPAuthParser.swift */,
 				34B7461E2F54865A009F9B4D /* AddTOTPViewState.swift */,
 				34B7461D2F548618009F9B4D /* AddTOTPInput.swift */,
 			);
@@ -454,6 +505,7 @@
 		34B746302F548D18009F9B4D /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				34BE57A82F7E6CAD0094395C /* PasswordResetPresenter.swift */,
 				34B746352F548E80009F9B4D /* LoginPresenter.swift */,
 				34B7462F2F548CEA009F9B4D /* VerificationPresenter.swift */,
 				34B7462B2F548C55009F9B4D /* RegistrationPresenter.swift */,
@@ -474,6 +526,7 @@
 		34B746322F548D2A009F9B4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34BE57A42F7E6C6A0094395C /* PasswordResetView.swift */,
 				34B746342F548E5F009F9B4D /* LoginView.swift */,
 				34B7462E2F548CD6009F9B4D /* VerificationView.swift */,
 				34B7462A2F548C0A009F9B4D /* RegistrationView.swift */,
@@ -566,6 +619,8 @@
 		34B746522F55F789009F9B4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34BE57AC2F7E6D020094395C /* PasswordResetViewController.swift */,
+				34BE57A02F7E53000094395C /* VerificationViewController.swift */,
 				34B7472B2F575A41009F9B4D /* RegistrationViewController.swift */,
 				34B747272F574831009F9B4D /* LoginViewController.swift */,
 				34B746552F5628EC009F9B4D /* WelcomeViewController.swift */,
@@ -584,6 +639,8 @@
 		34B746A52F57251D009F9B4D /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				34BE57AA2F7E6CC10094395C /* PasswordResetPresenterImpl.swift */,
+				34BE579E2F7E52D40094395C /* VerificationPresenterImpl.swift */,
 				34B7472D2F576095009F9B4D /* RegistrationPresenterImpl.swift */,
 				34B747292F5748E7009F9B4D /* LoginPresenterImpl.swift */,
 				34B746A62F572542009F9B4D /* WelcomePresenterImpl.swift */,
@@ -601,6 +658,126 @@
 				34B747252F57427D009F9B4D /* DashboardStubViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		34BE54132F7C6DE90094395C /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				34BE54142F7C6DF10094395C /* CodeDetailRouterImpl.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		34BE54162F7C6E1B0094395C /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				34BE54172F7C6E210094395C /* CodeDetailPresenterImpl.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		34BE541F2F7C70630094395C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34BE54282F7C71290094395C /* AddTOTPViewController.swift */,
+				34BE54202F7C70720094395C /* QRScannerViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34BE54222F7C70910094395C /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				34BE54232F7C709F0094395C /* AddTOTPRouterImpl.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		34BE54252F7C70C10094395C /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				34BE54262F7C70CE0094395C /* AddTOTPPresenterImpl.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		34BE57AE2F7E71D50094395C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				34BE57B52F7E720E0094395C /* Protocols */,
+				34BE57B42F7E72090094395C /* Views */,
+				34BE57B12F7E71F90094395C /* Routers */,
+				34BE57B02F7E71EC0094395C /* Presenters */,
+				34BE57AF2F7E71E30094395C /* Models */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		34BE57AF2F7E71E30094395C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				34BE57B82F7E72320094395C /* ProfileViewState.swift */,
+				34BE57B62F7E721E0094395C /* SessionItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		34BE57B02F7E71EC0094395C /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				34BE57C32F7E72AE0094395C /* ProfilePresenterImpl.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		34BE57B12F7E71F90094395C /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				34BE57C52F7E72F30094395C /* ProfileRouterImpl.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		34BE57B42F7E72090094395C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34BE57C92F7E73180094395C /* ProfileViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34BE57B52F7E720E0094395C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				34BE57C02F7E72920094395C /* Routers */,
+				34BE57BD2F7E72770094395C /* Presenters */,
+				34BE57BA2F7E72540094395C /* Views */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		34BE57BA2F7E72540094395C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34BE57BB2F7E72590094395C /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34BE57BD2F7E72770094395C /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				34BE57BE2F7E727E0094395C /* ProfilePresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		34BE57C02F7E72920094395C /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				34BE57C12F7E72960094395C /* ProfileRouter.swift */,
+			);
+			path = Routers;
 			sourceTree = "<group>";
 		};
 		34F323FD2F4C771B00B14F9F = {
@@ -639,6 +816,7 @@
 		34F324722F4E13D100B14F9F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				34BE57AE2F7E71D50094395C /* Profile */,
 				34B7461C2F5485F0009F9B4D /* AddTOTP */,
 				34F324782F4E15D900B14F9F /* CodeDetail */,
 				34F324752F4E154C00B14F9F /* Dashboard */,
@@ -687,6 +865,7 @@
 		34F324762F4E15C700B14F9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				34BE57A22F7E6C460094395C /* PasswordResetViewState.swift */,
 				34B746372F549259009F9B4D /* AuthResult.swift */,
 				34B746362F548F72009F9B4D /* VerificationType.swift */,
 				34B746002F535395009F9B4D /* RegistrationViewState.swift */,
@@ -718,6 +897,8 @@
 		34F324782F4E15D900B14F9F /* CodeDetail */ = {
 			isa = PBXGroup;
 			children = (
+				34BE54162F7C6E1B0094395C /* Presenters */,
+				34BE54132F7C6DE90094395C /* Routers */,
 				34998F802F69AD9600EBF491 /* Views */,
 				34B746232F5488FD009F9B4D /* Protocols */,
 				34F324792F4E15E000B14F9F /* Models */,
@@ -901,9 +1082,14 @@
 				34B746B02F573834009F9B4D /* KeychainStorageService.swift in Sources */,
 				34B746B12F573834009F9B4D /* AddTOTPPresenter.swift in Sources */,
 				34B746B22F573834009F9B4D /* AddTOTPRouter.swift in Sources */,
+				34BE54152F7C6DF20094395C /* CodeDetailRouterImpl.swift in Sources */,
 				34B746B32F573834009F9B4D /* AddTOTPView.swift in Sources */,
+				34BE54272F7C70CE0094395C /* AddTOTPPresenterImpl.swift in Sources */,
+				34BE57A92F7E6CAE0094395C /* PasswordResetPresenter.swift in Sources */,
 				34B746B42F573834009F9B4D /* AddTOTPViewState.swift in Sources */,
+				34BE57BC2F7E725A0094395C /* ProfileView.swift in Sources */,
 				34B746B52F573834009F9B4D /* AddTOTPInput.swift in Sources */,
+				34BE57C62F7E72F40094395C /* ProfileRouterImpl.swift in Sources */,
 				34B746B62F573834009F9B4D /* CodeDetailPresenter.swift in Sources */,
 				34B746B72F573834009F9B4D /* CodeDetailRouter.swift in Sources */,
 				34B746B82F573834009F9B4D /* CodeDetailView.swift in Sources */,
@@ -911,6 +1097,10 @@
 				34AC02B62F608076005D5F98 /* RemoteTOTPRepository.swift in Sources */,
 				34B746BA2F573834009F9B4D /* CodeDetailInput.swift in Sources */,
 				34B746BB2F573834009F9B4D /* TOTPGenerator.swift in Sources */,
+				34BE57BF2F7E727F0094395C /* ProfilePresenter.swift in Sources */,
+				34BE57C22F7E72970094395C /* ProfileRouter.swift in Sources */,
+				34BE541A2F7C6E4B0094395C /* CodeDetailViewController.swift in Sources */,
+				34BE54242F7C709F0094395C /* AddTOTPRouterImpl.swift in Sources */,
 				34998F7D2F6997A500EBF491 /* TOTPCellModel.swift in Sources */,
 				34B746BC2F573834009F9B4D /* TOTPRepository.swift in Sources */,
 				34AC02B12F6044F1005D5F98 /* NetworkClient.swift in Sources */,
@@ -923,9 +1113,11 @@
 				34998F862F69AF3300EBF491 /* DashboardRouterImpl.swift in Sources */,
 				34B746C32F573834009F9B4D /* DeleteTOTPItemResponse.swift in Sources */,
 				34998F8A2F69AF6C00EBF491 /* DashboardViewController.swift in Sources */,
+				34BE57B92F7E72330094395C /* ProfileViewState.swift in Sources */,
 				34B747282F574831009F9B4D /* LoginViewController.swift in Sources */,
 				34B746C42F573834009F9B4D /* CreateTOTPItemResponse.swift in Sources */,
 				34B746C52F573834009F9B4D /* UpdateTOTPItemRequest.swift in Sources */,
+				34BE579F2F7E52D60094395C /* VerificationPresenterImpl.swift in Sources */,
 				34998F882F69AF5200EBF491 /* DashboardListManager.swift in Sources */,
 				34B746C62F573834009F9B4D /* TOTPItemsRequest.swift in Sources */,
 				34998F822F69AD9F00EBF491 /* CodeDetailStubViewController.swift in Sources */,
@@ -937,6 +1129,8 @@
 				34B746CB2F573834009F9B4D /* DashboardTOTPItem.swift in Sources */,
 				34B7472E2F576095009F9B4D /* RegistrationPresenterImpl.swift in Sources */,
 				34B746CC2F573834009F9B4D /* DashboardViewState.swift in Sources */,
+				34BE54292F7C712A0094395C /* AddTOTPViewController.swift in Sources */,
+				34BE57A32F7E6C470094395C /* PasswordResetViewState.swift in Sources */,
 				34B7472A2F5748EC009F9B4D /* LoginPresenterImpl.swift in Sources */,
 				34B746CD2F573834009F9B4D /* WelcomePresenterImpl.swift in Sources */,
 				34B746CE2F573834009F9B4D /* AuthRouterImpl.swift in Sources */,
@@ -944,11 +1138,14 @@
 				34B746D02F573834009F9B4D /* LoginView.swift in Sources */,
 				34B746D12F573834009F9B4D /* VerificationView.swift in Sources */,
 				34B746D22F573834009F9B4D /* RegistrationView.swift in Sources */,
+				34BE57AB2F7E6CC20094395C /* PasswordResetPresenterImpl.swift in Sources */,
 				34B746D32F573834009F9B4D /* WelcomeView.swift in Sources */,
+				34BE57CA2F7E73180094395C /* ProfileViewController.swift in Sources */,
 				34B746D42F573834009F9B4D /* AuthRouter.swift in Sources */,
 				34B7472C2F575A44009F9B4D /* RegistrationViewController.swift in Sources */,
 				34AC02C32F616BE4005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34AC02C52F616BF8005D5F98 /* DashboardPresenterImpl.swift in Sources */,
+				34BE54182F7C6E220094395C /* CodeDetailPresenterImpl.swift in Sources */,
 				34B746D52F573834009F9B4D /* WelcomeRouter.swift in Sources */,
 				34B746D62F573834009F9B4D /* LoginPresenter.swift in Sources */,
 				34B746D72F573834009F9B4D /* VerificationPresenter.swift in Sources */,
@@ -957,10 +1154,14 @@
 				34B746DA2F573834009F9B4D /* AuthRepository.swift in Sources */,
 				34B746DB2F573834009F9B4D /* AuthResult.swift in Sources */,
 				34B746DC2F573834009F9B4D /* VerificationType.swift in Sources */,
+				34BE541C2F7C6FA10094395C /* OTPAuthParser.swift in Sources */,
 				34B746DD2F573834009F9B4D /* RegistrationViewState.swift in Sources */,
 				34B746DE2F573834009F9B4D /* LoginViewState.swift in Sources */,
 				34B746DF2F573834009F9B4D /* WelcomeViewState.swift in Sources */,
+				34BE57A12F7E530A0094395C /* VerificationViewController.swift in Sources */,
 				34B746E02F573834009F9B4D /* VerifyEmailResponse.swift in Sources */,
+				34BE57C42F7E72AE0094395C /* ProfilePresenterImpl.swift in Sources */,
+				34BE57A52F7E6C6C0094395C /* PasswordResetView.swift in Sources */,
 				34B746E12F573834009F9B4D /* PasswordResetResponse.swift in Sources */,
 				34AC02B82F60B3F9005D5F98 /* TOTPGeneratorImpl.swift in Sources */,
 				34B746E22F573834009F9B4D /* PasswordResetVerifyResponse.swift in Sources */,
@@ -968,6 +1169,7 @@
 				34B746E42F573834009F9B4D /* LoginResponse.swift in Sources */,
 				34AC02B32F604EE1005D5F98 /* URLSessionNetworkClient.swift in Sources */,
 				34B746E52F573834009F9B4D /* RegistrationResponse.swift in Sources */,
+				34BE54212F7C70720094395C /* QRScannerViewController.swift in Sources */,
 				34B746E62F573834009F9B4D /* ResendVerificationRequest.swift in Sources */,
 				34B746E72F573834009F9B4D /* PasswordResetVerifyRequest.swift in Sources */,
 				34406AF82F6D5A12008F2B0E /* DashboardRootView.swift in Sources */,
@@ -977,6 +1179,7 @@
 				34B746EA2F573834009F9B4D /* VerifyEmailRequest.swift in Sources */,
 				34B746EB2F573834009F9B4D /* RegistrationRequest.swift in Sources */,
 				34B746EC2F573834009F9B4D /* VerificationViewState.swift in Sources */,
+				34BE57B72F7E721E0094395C /* SessionItem.swift in Sources */,
 				34B746ED2F573834009F9B4D /* DeviceInfo.swift in Sources */,
 				34B746EE2F573834009F9B4D /* StorageKey.swift in Sources */,
 				34B746EF2F573834009F9B4D /* StorageService.swift in Sources */,
@@ -985,6 +1188,7 @@
 				34AC02C02F6166EC005D5F98 /* DashboardRouterStub.swift in Sources */,
 				34998F7F2F69AC9E00EBF491 /* TOTPCell.swift in Sources */,
 				34B746F22F573834009F9B4D /* AppError.swift in Sources */,
+				34BE57AD2F7E6D020094395C /* PasswordResetViewController.swift in Sources */,
 				34B746F32F573834009F9B4D /* Result.swift in Sources */,
 				34B746F42F573834009F9B4D /* UserSession.swift in Sources */,
 				34B746F52F573834009F9B4D /* LoadingState.swift in Sources */,
