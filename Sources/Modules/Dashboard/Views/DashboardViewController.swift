@@ -51,11 +51,11 @@ final class DashboardViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        let refreshButton = UIBarButtonItem(
-            image: DS.Icon.image(DS.Icon.refresh, size: .medium, tint: DS.Color.accent),
+        let addButton = UIBarButtonItem(
+            image: DS.Icon.image(DS.Icon.add, size: .medium, tint: DS.Color.accent),
             style: .plain,
             target: self,
-            action: #selector(didTapForceRefresh)
+            action: #selector(didTapAdd)
         )
         let maskButton = UIBarButtonItem(
             image: DS.Icon.image(DS.Icon.eyeClosed, size: .medium, tint: DS.Color.accent),
@@ -63,21 +63,15 @@ final class DashboardViewController: UIViewController {
             target: self,
             action: #selector(didTapToggleMask)
         )
-        navigationItem.rightBarButtonItems = [refreshButton, maskButton]
+        navigationItem.rightBarButtonItems = [addButton, maskButton]
 
-        let profileButton = UIBarButtonItem(
-            image: DS.Icon.image(DS.Icon.profile, size: .medium, tint: DS.Color.accent),
-            style: .plain,
-            target: self,
-            action: #selector(didTapProfile)
-        )
         let settingsButton = UIBarButtonItem(
             image: DS.Icon.image(DS.Icon.settings, size: .medium, tint: DS.Color.accent),
             style: .plain,
             target: self,
             action: #selector(didTapSettings)
         )
-        navigationItem.leftBarButtonItems = [profileButton, settingsButton]
+        navigationItem.leftBarButtonItem = settingsButton
     }
 
     private func setupSearchController() {
@@ -122,6 +116,10 @@ final class DashboardViewController: UIViewController {
             ))
             rootView.tableView.isHidden = true
         }
+    }
+
+    @objc private func didTapAdd() {
+        presenter?.didTapAddNew()
     }
 
     @objc private func didTapProfile() {
