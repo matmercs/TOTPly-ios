@@ -136,6 +136,11 @@
 		34BE5BEE2F82A1360094395C /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BED2F82A1350094395C /* JSONValue.swift */; };
 		34BE5BF02F82A16C0094395C /* BDUIAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BEF2F82A16C0094395C /* BDUIAction.swift */; };
 		34BE5BF22F82A1CA0094395C /* BDUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BF12F82A1CA0094395C /* BDUINode.swift */; };
+		34BE5BF62F82BF950094395C /* BDUIActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BF52F82BF950094395C /* BDUIActionHandler.swift */; };
+		34BE5BFA2F82C02F0094395C /* BDUINodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BF92F82C02E0094395C /* BDUINodeMapper.swift */; };
+		34BE5BFC2F82C04F0094395C /* BDUILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BFB2F82C04B0094395C /* BDUILogger.swift */; };
+		34BE5BFE2F82C0780094395C /* ConsoleBDUILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BFD2F82C0770094395C /* ConsoleBDUILogger.swift */; };
+		34BE5C002F82C3530094395C /* BDUINodeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BFF2F82C3520094395C /* BDUINodeRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,6 +272,11 @@
 		34BE5BED2F82A1350094395C /* JSONValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONValue.swift; sourceTree = "<group>"; };
 		34BE5BEF2F82A16C0094395C /* BDUIAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIAction.swift; sourceTree = "<group>"; };
 		34BE5BF12F82A1CA0094395C /* BDUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUINode.swift; sourceTree = "<group>"; };
+		34BE5BF52F82BF950094395C /* BDUIActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIActionHandler.swift; sourceTree = "<group>"; };
+		34BE5BF92F82C02E0094395C /* BDUINodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUINodeMapper.swift; sourceTree = "<group>"; };
+		34BE5BFB2F82C04B0094395C /* BDUILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUILogger.swift; sourceTree = "<group>"; };
+		34BE5BFD2F82C0770094395C /* ConsoleBDUILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleBDUILogger.swift; sourceTree = "<group>"; };
+		34BE5BFF2F82C3520094395C /* BDUINodeRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUINodeRenderer.swift; sourceTree = "<group>"; };
 		34F3247B2F4E18B000B14F9F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		34F3247C2F4E191D00B14F9F /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		34F3247D2F4E19CA00B14F9F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -789,6 +799,7 @@
 		34BE5BE32F82A0090094395C /* BDUI */ = {
 			isa = PBXGroup;
 			children = (
+				34BE5BFD2F82C0770094395C /* ConsoleBDUILogger.swift */,
 				34BE5BEC2F82A0800094395C /* ViewController */,
 				34BE5BEB2F82A06E0094395C /* Diffing */,
 				34BE5BE82F82A0560094395C /* Actions */,
@@ -820,6 +831,10 @@
 		34BE5BE62F82A0330094395C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				34BE5BFF2F82C3520094395C /* BDUINodeRenderer.swift */,
+				34BE5BFB2F82C04B0094395C /* BDUILogger.swift */,
+				34BE5BF92F82C02E0094395C /* BDUINodeMapper.swift */,
+				34BE5BF52F82BF950094395C /* BDUIActionHandler.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1214,9 +1229,13 @@
 				34B746D22F573834009F9B4D /* RegistrationView.swift in Sources */,
 				34BE57AB2F7E6CC20094395C /* PasswordResetPresenterImpl.swift in Sources */,
 				34B746D32F573834009F9B4D /* WelcomeView.swift in Sources */,
+				34BE5BFE2F82C0780094395C /* ConsoleBDUILogger.swift in Sources */,
 				34BE57CA2F7E73180094395C /* ProfileViewController.swift in Sources */,
 				34B746D42F573834009F9B4D /* AuthRouter.swift in Sources */,
 				34B7472C2F575A44009F9B4D /* RegistrationViewController.swift in Sources */,
+				34BE5BFA2F82C02F0094395C /* BDUINodeMapper.swift in Sources */,
+				34BE5BFC2F82C04F0094395C /* BDUILogger.swift in Sources */,
+				34BE5BF62F82BF950094395C /* BDUIActionHandler.swift in Sources */,
 				34BE5BF22F82A1CA0094395C /* BDUINode.swift in Sources */,
 				34AC02C32F616BE4005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34AC02C52F616BF8005D5F98 /* DashboardPresenterImpl.swift in Sources */,
@@ -1264,6 +1283,7 @@
 				34AC02C02F6166EC005D5F98 /* DashboardRouterStub.swift in Sources */,
 				34998F7F2F69AC9E00EBF491 /* TOTPCell.swift in Sources */,
 				34B746F22F573834009F9B4D /* AppError.swift in Sources */,
+				34BE5C002F82C3530094395C /* BDUINodeRenderer.swift in Sources */,
 				34BE57AD2F7E6D020094395C /* PasswordResetViewController.swift in Sources */,
 				34B746F32F573834009F9B4D /* Result.swift in Sources */,
 				34B746F42F573834009F9B4D /* UserSession.swift in Sources */,
