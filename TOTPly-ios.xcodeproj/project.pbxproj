@@ -133,6 +133,9 @@
 		34BE57C42F7E72AE0094395C /* ProfilePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57C32F7E72AE0094395C /* ProfilePresenterImpl.swift */; };
 		34BE57C62F7E72F40094395C /* ProfileRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57C52F7E72F30094395C /* ProfileRouterImpl.swift */; };
 		34BE57CA2F7E73180094395C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57C92F7E73180094395C /* ProfileViewController.swift */; };
+		34BE5BEE2F82A1360094395C /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BED2F82A1350094395C /* JSONValue.swift */; };
+		34BE5BF02F82A16C0094395C /* BDUIAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BEF2F82A16C0094395C /* BDUIAction.swift */; };
+		34BE5BF22F82A1CA0094395C /* BDUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BF12F82A1CA0094395C /* BDUINode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,6 +264,9 @@
 		34BE57C32F7E72AE0094395C /* ProfilePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterImpl.swift; sourceTree = "<group>"; };
 		34BE57C52F7E72F30094395C /* ProfileRouterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouterImpl.swift; sourceTree = "<group>"; };
 		34BE57C92F7E73180094395C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		34BE5BED2F82A1350094395C /* JSONValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONValue.swift; sourceTree = "<group>"; };
+		34BE5BEF2F82A16C0094395C /* BDUIAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIAction.swift; sourceTree = "<group>"; };
+		34BE5BF12F82A1CA0094395C /* BDUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUINode.swift; sourceTree = "<group>"; };
 		34F3247B2F4E18B000B14F9F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		34F3247C2F4E191D00B14F9F /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		34F3247D2F4E19CA00B14F9F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -780,6 +786,72 @@
 			path = Routers;
 			sourceTree = "<group>";
 		};
+		34BE5BE32F82A0090094395C /* BDUI */ = {
+			isa = PBXGroup;
+			children = (
+				34BE5BEC2F82A0800094395C /* ViewController */,
+				34BE5BEB2F82A06E0094395C /* Diffing */,
+				34BE5BE82F82A0560094395C /* Actions */,
+				34BE5BE72F82A03E0094395C /* Rendering */,
+				34BE5BE62F82A0330094395C /* Protocols */,
+				34BE5BE52F82A02C0094395C /* Mappers */,
+				34BE5BE42F82A0200094395C /* Models */,
+			);
+			path = BDUI;
+			sourceTree = "<group>";
+		};
+		34BE5BE42F82A0200094395C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				34BE5BF12F82A1CA0094395C /* BDUINode.swift */,
+				34BE5BEF2F82A16C0094395C /* BDUIAction.swift */,
+				34BE5BED2F82A1350094395C /* JSONValue.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		34BE5BE52F82A02C0094395C /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		34BE5BE62F82A0330094395C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		34BE5BE72F82A03E0094395C /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		34BE5BE82F82A0560094395C /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		34BE5BEB2F82A06E0094395C /* Diffing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Diffing;
+			sourceTree = "<group>";
+		};
+		34BE5BEC2F82A0800094395C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		34F323FD2F4C771B00B14F9F = {
 			isa = PBXGroup;
 			children = (
@@ -806,6 +878,7 @@
 		34F324712F4E13BD00B14F9F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				34BE5BE32F82A0090094395C /* BDUI */,
 				34AC02AF2F6044A7005D5F98 /* Network */,
 				34B746382F5499B6009F9B4D /* Storage */,
 				34F324812F4E1DDB00B14F9F /* Common */,
@@ -1107,6 +1180,7 @@
 				34B746BD2F573834009F9B4D /* DashboardPresenter.swift in Sources */,
 				34B746BE2F573834009F9B4D /* DashboardRouter.swift in Sources */,
 				34B746BF2F573834009F9B4D /* DashboardView.swift in Sources */,
+				34BE5BEE2F82A1360094395C /* JSONValue.swift in Sources */,
 				34B746C02F573834009F9B4D /* TOTPItem.swift in Sources */,
 				34B746C12F573834009F9B4D /* UpdateTOTPItemResponse.swift in Sources */,
 				34B746C22F573834009F9B4D /* TOTPItemsResponse.swift in Sources */,
@@ -1143,6 +1217,7 @@
 				34BE57CA2F7E73180094395C /* ProfileViewController.swift in Sources */,
 				34B746D42F573834009F9B4D /* AuthRouter.swift in Sources */,
 				34B7472C2F575A44009F9B4D /* RegistrationViewController.swift in Sources */,
+				34BE5BF22F82A1CA0094395C /* BDUINode.swift in Sources */,
 				34AC02C32F616BE4005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34AC02C52F616BF8005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34BE54182F7C6E220094395C /* CodeDetailPresenterImpl.swift in Sources */,
@@ -1152,6 +1227,7 @@
 				34B746D82F573834009F9B4D /* RegistrationPresenter.swift in Sources */,
 				34B746D92F573834009F9B4D /* WelcomePresenter.swift in Sources */,
 				34B746DA2F573834009F9B4D /* AuthRepository.swift in Sources */,
+				34BE5BF02F82A16C0094395C /* BDUIAction.swift in Sources */,
 				34B746DB2F573834009F9B4D /* AuthResult.swift in Sources */,
 				34B746DC2F573834009F9B4D /* VerificationType.swift in Sources */,
 				34BE541C2F7C6FA10094395C /* OTPAuthParser.swift in Sources */,
