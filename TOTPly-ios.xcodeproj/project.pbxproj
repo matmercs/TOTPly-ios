@@ -141,6 +141,21 @@
 		34BE5BFC2F82C04F0094395C /* BDUILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BFB2F82C04B0094395C /* BDUILogger.swift */; };
 		34BE5BFE2F82C0780094395C /* ConsoleBDUILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BFD2F82C0770094395C /* ConsoleBDUILogger.swift */; };
 		34BE5C002F82C3530094395C /* BDUINodeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BFF2F82C3520094395C /* BDUINodeRenderer.swift */; };
+		34BE5C022F82E1C50094395C /* LabelNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C012F82E1C40094395C /* LabelNodeMapper.swift */; };
+		34BE5C042F82E1DF0094395C /* DSTokenResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C032F82E1DF0094395C /* DSTokenResolver.swift */; };
+		34BE5C062F82E23A0094395C /* SpacerNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C052F82E2390094395C /* SpacerNodeMapper.swift */; };
+		34BE5C082F82E3860094395C /* DividerNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C072F82E3850094395C /* DividerNodeMapper.swift */; };
+		34BE5C0A2F82E3A30094395C /* ButtonNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C092F82E3A20094395C /* ButtonNodeMapper.swift */; };
+		34BE5C0C2F82E3C00094395C /* StackNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C0B2F82E3BF0094395C /* StackNodeMapper.swift */; };
+		34BE5C0E2F82E4F10094395C /* CardNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C0D2F82E4F10094395C /* CardNodeMapper.swift */; };
+		34BE5C102F82E50B0094395C /* CircularProgressNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C0F2F82E50B0094395C /* CircularProgressNodeMapper.swift */; };
+		34BE5C122F82E5220094395C /* ContainerNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C112F82E5210094395C /* ContainerNodeMapper.swift */; };
+		34BE5C142F82E5680094395C /* EmptyNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C132F82E5670094395C /* EmptyNodeMapper.swift */; };
+		34BE5C162F82E6120094395C /* FallbackNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C152F82E6110094395C /* FallbackNodeMapper.swift */; };
+		34BE5C182F82E69D0094395C /* IconNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C172F82E69D0094395C /* IconNodeMapper.swift */; };
+		34BE5C1A2F82E6BD0094395C /* LoadingNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C192F82E6BC0094395C /* LoadingNodeMapper.swift */; };
+		34BE5C1C2F82E6D60094395C /* ScrollNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C1B2F82E6D50094395C /* ScrollNodeMapper.swift */; };
+		34BE5C1E2F82E8180094395C /* TextFieldNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C1D2F82E8160094395C /* TextFieldNodeMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,6 +292,21 @@
 		34BE5BFB2F82C04B0094395C /* BDUILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUILogger.swift; sourceTree = "<group>"; };
 		34BE5BFD2F82C0770094395C /* ConsoleBDUILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleBDUILogger.swift; sourceTree = "<group>"; };
 		34BE5BFF2F82C3520094395C /* BDUINodeRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUINodeRenderer.swift; sourceTree = "<group>"; };
+		34BE5C012F82E1C40094395C /* LabelNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C032F82E1DF0094395C /* DSTokenResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTokenResolver.swift; sourceTree = "<group>"; };
+		34BE5C052F82E2390094395C /* SpacerNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacerNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C072F82E3850094395C /* DividerNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C092F82E3A20094395C /* ButtonNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C0B2F82E3BF0094395C /* StackNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C0D2F82E4F10094395C /* CardNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C0F2F82E50B0094395C /* CircularProgressNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C112F82E5210094395C /* ContainerNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C132F82E5670094395C /* EmptyNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C152F82E6110094395C /* FallbackNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C172F82E69D0094395C /* IconNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C192F82E6BC0094395C /* LoadingNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C1B2F82E6D50094395C /* ScrollNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C1D2F82E8160094395C /* TextFieldNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldNodeMapper.swift; sourceTree = "<group>"; };
 		34F3247B2F4E18B000B14F9F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		34F3247C2F4E191D00B14F9F /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		34F3247D2F4E19CA00B14F9F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -824,6 +854,20 @@
 		34BE5BE52F82A02C0094395C /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
+				34BE5C1D2F82E8160094395C /* TextFieldNodeMapper.swift */,
+				34BE5C1B2F82E6D50094395C /* ScrollNodeMapper.swift */,
+				34BE5C192F82E6BC0094395C /* LoadingNodeMapper.swift */,
+				34BE5C172F82E69D0094395C /* IconNodeMapper.swift */,
+				34BE5C152F82E6110094395C /* FallbackNodeMapper.swift */,
+				34BE5C132F82E5670094395C /* EmptyNodeMapper.swift */,
+				34BE5C112F82E5210094395C /* ContainerNodeMapper.swift */,
+				34BE5C0F2F82E50B0094395C /* CircularProgressNodeMapper.swift */,
+				34BE5C0D2F82E4F10094395C /* CardNodeMapper.swift */,
+				34BE5C0B2F82E3BF0094395C /* StackNodeMapper.swift */,
+				34BE5C092F82E3A20094395C /* ButtonNodeMapper.swift */,
+				34BE5C072F82E3850094395C /* DividerNodeMapper.swift */,
+				34BE5C052F82E2390094395C /* SpacerNodeMapper.swift */,
+				34BE5C012F82E1C40094395C /* LabelNodeMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -842,6 +886,7 @@
 		34BE5BE72F82A03E0094395C /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
+				34BE5C032F82E1DF0094395C /* DSTokenResolver.swift */,
 			);
 			path = Rendering;
 			sourceTree = "<group>";
@@ -1166,6 +1211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34BE5C162F82E6120094395C /* FallbackNodeMapper.swift in Sources */,
+				34BE5C102F82E50B0094395C /* CircularProgressNodeMapper.swift in Sources */,
 				34B746AF2F573834009F9B4D /* LocalAuthRepository.swift in Sources */,
 				34B746B02F573834009F9B4D /* KeychainStorageService.swift in Sources */,
 				34B746B12F573834009F9B4D /* AddTOTPPresenter.swift in Sources */,
@@ -1214,6 +1261,7 @@
 				34B746C82F573834009F9B4D /* CreateTOTPItemRequest.swift in Sources */,
 				34B746C92F573834009F9B4D /* TOTPItemDTO.swift in Sources */,
 				34B747262F57427E009F9B4D /* DashboardStubViewController.swift in Sources */,
+				34BE5C082F82E3860094395C /* DividerNodeMapper.swift in Sources */,
 				34B746CA2F573834009F9B4D /* TOTPAlgorithm.swift in Sources */,
 				34B746CB2F573834009F9B4D /* DashboardTOTPItem.swift in Sources */,
 				34B7472E2F576095009F9B4D /* RegistrationPresenterImpl.swift in Sources */,
@@ -1237,6 +1285,7 @@
 				34BE5BFC2F82C04F0094395C /* BDUILogger.swift in Sources */,
 				34BE5BF62F82BF950094395C /* BDUIActionHandler.swift in Sources */,
 				34BE5BF22F82A1CA0094395C /* BDUINode.swift in Sources */,
+				34BE5C1C2F82E6D60094395C /* ScrollNodeMapper.swift in Sources */,
 				34AC02C32F616BE4005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34AC02C52F616BF8005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34BE54182F7C6E220094395C /* CodeDetailPresenterImpl.swift in Sources */,
@@ -1250,6 +1299,7 @@
 				34B746DB2F573834009F9B4D /* AuthResult.swift in Sources */,
 				34B746DC2F573834009F9B4D /* VerificationType.swift in Sources */,
 				34BE541C2F7C6FA10094395C /* OTPAuthParser.swift in Sources */,
+				34BE5C042F82E1DF0094395C /* DSTokenResolver.swift in Sources */,
 				34B746DD2F573834009F9B4D /* RegistrationViewState.swift in Sources */,
 				34B746DE2F573834009F9B4D /* LoginViewState.swift in Sources */,
 				34B746DF2F573834009F9B4D /* WelcomeViewState.swift in Sources */,
@@ -1260,20 +1310,29 @@
 				34B746E12F573834009F9B4D /* PasswordResetResponse.swift in Sources */,
 				34AC02B82F60B3F9005D5F98 /* TOTPGeneratorImpl.swift in Sources */,
 				34B746E22F573834009F9B4D /* PasswordResetVerifyResponse.swift in Sources */,
+				34BE5C1A2F82E6BD0094395C /* LoadingNodeMapper.swift in Sources */,
+				34BE5C122F82E5220094395C /* ContainerNodeMapper.swift in Sources */,
+				34BE5C062F82E23A0094395C /* SpacerNodeMapper.swift in Sources */,
 				34B746E32F573834009F9B4D /* ResendVerificationResponse.swift in Sources */,
 				34B746E42F573834009F9B4D /* LoginResponse.swift in Sources */,
 				34AC02B32F604EE1005D5F98 /* URLSessionNetworkClient.swift in Sources */,
 				34B746E52F573834009F9B4D /* RegistrationResponse.swift in Sources */,
+				34BE5C0E2F82E4F10094395C /* CardNodeMapper.swift in Sources */,
+				34BE5C022F82E1C50094395C /* LabelNodeMapper.swift in Sources */,
+				34BE5C142F82E5680094395C /* EmptyNodeMapper.swift in Sources */,
+				34BE5C1E2F82E8180094395C /* TextFieldNodeMapper.swift in Sources */,
 				34BE54212F7C70720094395C /* QRScannerViewController.swift in Sources */,
 				34B746E62F573834009F9B4D /* ResendVerificationRequest.swift in Sources */,
 				34B746E72F573834009F9B4D /* PasswordResetVerifyRequest.swift in Sources */,
 				34406AF82F6D5A12008F2B0E /* DashboardRootView.swift in Sources */,
+				34BE5C0C2F82E3C00094395C /* StackNodeMapper.swift in Sources */,
 				34B746E82F573834009F9B4D /* PasswordResetRequest.swift in Sources */,
 				34406AF62F6D598A008F2B0E /* AuthValidator.swift in Sources */,
 				34B746E92F573834009F9B4D /* LoginRequest.swift in Sources */,
 				34B746EA2F573834009F9B4D /* VerifyEmailRequest.swift in Sources */,
 				34B746EB2F573834009F9B4D /* RegistrationRequest.swift in Sources */,
 				34B746EC2F573834009F9B4D /* VerificationViewState.swift in Sources */,
+				34BE5C182F82E69D0094395C /* IconNodeMapper.swift in Sources */,
 				34BE57B72F7E721E0094395C /* SessionItem.swift in Sources */,
 				34B746ED2F573834009F9B4D /* DeviceInfo.swift in Sources */,
 				34B746EE2F573834009F9B4D /* StorageKey.swift in Sources */,
@@ -1281,6 +1340,7 @@
 				34B746F02F573834009F9B4D /* AuthError.swift in Sources */,
 				34B746F12F573834009F9B4D /* NetworkError.swift in Sources */,
 				34AC02C02F6166EC005D5F98 /* DashboardRouterStub.swift in Sources */,
+				34BE5C0A2F82E3A30094395C /* ButtonNodeMapper.swift in Sources */,
 				34998F7F2F69AC9E00EBF491 /* TOTPCell.swift in Sources */,
 				34B746F22F573834009F9B4D /* AppError.swift in Sources */,
 				34BE5C002F82C3530094395C /* BDUINodeRenderer.swift in Sources */,
