@@ -159,6 +159,7 @@
 		34BE5C202F82F3640094395C /* BDUIMapperRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C1F2F82F3630094395C /* BDUIMapperRegistry.swift */; };
 		34BE5C242F82F4DE0094395C /* BDUINodeRendererImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C232F82F4DD0094395C /* BDUINodeRendererImpl.swift */; };
 		34BE5C262F83A8700094395C /* BDUIActionHandlerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C252F83A86E0094395C /* BDUIActionHandlerImpl.swift */; };
+		34BE5C2A2F8460E20094395C /* BDUITreeDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C292F8460E10094395C /* BDUITreeDiffer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,6 +315,7 @@
 		34BE5C222F82F4D10094395C /* BDUINodeRendererImpl.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = BDUINodeRendererImpl.txt; sourceTree = "<group>"; };
 		34BE5C232F82F4DD0094395C /* BDUINodeRendererImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUINodeRendererImpl.swift; sourceTree = "<group>"; };
 		34BE5C252F83A86E0094395C /* BDUIActionHandlerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIActionHandlerImpl.swift; sourceTree = "<group>"; };
+		34BE5C292F8460E10094395C /* BDUITreeDiffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUITreeDiffer.swift; sourceTree = "<group>"; };
 		34F3247B2F4E18B000B14F9F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		34F3247C2F4E191D00B14F9F /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		34F3247D2F4E19CA00B14F9F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -911,6 +913,7 @@
 		34BE5BEB2F82A06E0094395C /* Diffing */ = {
 			isa = PBXGroup;
 			children = (
+				34BE5C292F8460E10094395C /* BDUITreeDiffer.swift */,
 			);
 			path = Diffing;
 			sourceTree = "<group>";
@@ -1229,6 +1232,7 @@
 				34B746B12F573834009F9B4D /* AddTOTPPresenter.swift in Sources */,
 				34B746B22F573834009F9B4D /* AddTOTPRouter.swift in Sources */,
 				34BE54152F7C6DF20094395C /* CodeDetailRouterImpl.swift in Sources */,
+				34BE5C2A2F8460E20094395C /* BDUITreeDiffer.swift in Sources */,
 				34B746B32F573834009F9B4D /* AddTOTPView.swift in Sources */,
 				34BE54272F7C70CE0094395C /* AddTOTPPresenterImpl.swift in Sources */,
 				34BE57A92F7E6CAE0094395C /* PasswordResetPresenter.swift in Sources */,
