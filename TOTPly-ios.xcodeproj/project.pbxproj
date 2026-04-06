@@ -158,6 +158,7 @@
 		34BE5C1E2F82E8180094395C /* TextFieldNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C1D2F82E8160094395C /* TextFieldNodeMapper.swift */; };
 		34BE5C202F82F3640094395C /* BDUIMapperRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C1F2F82F3630094395C /* BDUIMapperRegistry.swift */; };
 		34BE5C242F82F4DE0094395C /* BDUINodeRendererImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C232F82F4DD0094395C /* BDUINodeRendererImpl.swift */; };
+		34BE5C262F83A8700094395C /* BDUIActionHandlerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C252F83A86E0094395C /* BDUIActionHandlerImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -312,6 +313,7 @@
 		34BE5C1F2F82F3630094395C /* BDUIMapperRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIMapperRegistry.swift; sourceTree = "<group>"; };
 		34BE5C222F82F4D10094395C /* BDUINodeRendererImpl.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = BDUINodeRendererImpl.txt; sourceTree = "<group>"; };
 		34BE5C232F82F4DD0094395C /* BDUINodeRendererImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUINodeRendererImpl.swift; sourceTree = "<group>"; };
+		34BE5C252F83A86E0094395C /* BDUIActionHandlerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIActionHandlerImpl.swift; sourceTree = "<group>"; };
 		34F3247B2F4E18B000B14F9F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		34F3247C2F4E191D00B14F9F /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		34F3247D2F4E19CA00B14F9F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -901,6 +903,7 @@
 		34BE5BE82F82A0560094395C /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				34BE5C252F83A86E0094395C /* BDUIActionHandlerImpl.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -1236,6 +1239,7 @@
 				34BE5C202F82F3640094395C /* BDUIMapperRegistry.swift in Sources */,
 				34B746B62F573834009F9B4D /* CodeDetailPresenter.swift in Sources */,
 				34B746B72F573834009F9B4D /* CodeDetailRouter.swift in Sources */,
+				34BE5C262F83A8700094395C /* BDUIActionHandlerImpl.swift in Sources */,
 				34B746B82F573834009F9B4D /* CodeDetailView.swift in Sources */,
 				34B746B92F573834009F9B4D /* CodeDetailViewState.swift in Sources */,
 				34AC02B62F608076005D5F98 /* RemoteTOTPRepository.swift in Sources */,
