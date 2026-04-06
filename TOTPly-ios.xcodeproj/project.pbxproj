@@ -156,6 +156,8 @@
 		34BE5C1A2F82E6BD0094395C /* LoadingNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C192F82E6BC0094395C /* LoadingNodeMapper.swift */; };
 		34BE5C1C2F82E6D60094395C /* ScrollNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C1B2F82E6D50094395C /* ScrollNodeMapper.swift */; };
 		34BE5C1E2F82E8180094395C /* TextFieldNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C1D2F82E8160094395C /* TextFieldNodeMapper.swift */; };
+		34BE5C202F82F3640094395C /* BDUIMapperRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C1F2F82F3630094395C /* BDUIMapperRegistry.swift */; };
+		34BE5C242F82F4DE0094395C /* BDUINodeRendererImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C232F82F4DD0094395C /* BDUINodeRendererImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -307,6 +309,9 @@
 		34BE5C192F82E6BC0094395C /* LoadingNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingNodeMapper.swift; sourceTree = "<group>"; };
 		34BE5C1B2F82E6D50094395C /* ScrollNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollNodeMapper.swift; sourceTree = "<group>"; };
 		34BE5C1D2F82E8160094395C /* TextFieldNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C1F2F82F3630094395C /* BDUIMapperRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIMapperRegistry.swift; sourceTree = "<group>"; };
+		34BE5C222F82F4D10094395C /* BDUINodeRendererImpl.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = BDUINodeRendererImpl.txt; sourceTree = "<group>"; };
+		34BE5C232F82F4DD0094395C /* BDUINodeRendererImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUINodeRendererImpl.swift; sourceTree = "<group>"; };
 		34F3247B2F4E18B000B14F9F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		34F3247C2F4E191D00B14F9F /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		34F3247D2F4E19CA00B14F9F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -886,6 +891,8 @@
 		34BE5BE72F82A03E0094395C /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
+				34BE5C232F82F4DD0094395C /* BDUINodeRendererImpl.swift */,
+				34BE5C1F2F82F3630094395C /* BDUIMapperRegistry.swift */,
 				34BE5C032F82E1DF0094395C /* DSTokenResolver.swift */,
 			);
 			path = Rendering;
@@ -922,6 +929,7 @@
 				34B745DF2F534B47009F9B4D /* TOTPly-ios.app */,
 				34B745E02F534B47009F9B4D /* TOTPly-iosTests.xctest */,
 				34B745E12F534B47009F9B4D /* TOTPly-iosUITests.xctest */,
+				34BE5C222F82F4D10094395C /* BDUINodeRendererImpl.txt */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1225,6 +1233,7 @@
 				34BE57BC2F7E725A0094395C /* ProfileView.swift in Sources */,
 				34B746B52F573834009F9B4D /* AddTOTPInput.swift in Sources */,
 				34BE57C62F7E72F40094395C /* ProfileRouterImpl.swift in Sources */,
+				34BE5C202F82F3640094395C /* BDUIMapperRegistry.swift in Sources */,
 				34B746B62F573834009F9B4D /* CodeDetailPresenter.swift in Sources */,
 				34B746B72F573834009F9B4D /* CodeDetailRouter.swift in Sources */,
 				34B746B82F573834009F9B4D /* CodeDetailView.swift in Sources */,
@@ -1289,6 +1298,7 @@
 				34AC02C32F616BE4005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34AC02C52F616BF8005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34BE54182F7C6E220094395C /* CodeDetailPresenterImpl.swift in Sources */,
+				34BE5C242F82F4DE0094395C /* BDUINodeRendererImpl.swift in Sources */,
 				34B746D52F573834009F9B4D /* WelcomeRouter.swift in Sources */,
 				34B746D62F573834009F9B4D /* LoginPresenter.swift in Sources */,
 				34B746D72F573834009F9B4D /* VerificationPresenter.swift in Sources */,
