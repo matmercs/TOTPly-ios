@@ -88,10 +88,6 @@ final class DashboardPresenterImpl: DashboardPresenter {
         router.openAddTOTP()
     }
     
-    func didTapSettings() {
-        router.openSettings()
-    }
-    
     func didTapProfile() {
         router.openProfile()
     }

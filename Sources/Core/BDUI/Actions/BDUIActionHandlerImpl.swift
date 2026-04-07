@@ -10,6 +10,7 @@ import UIKit
 final class BDUIActionHandlerImpl: BDUIActionHandler {
     weak var viewController: UIViewController?
     var onReload: (() -> Void)?
+    var onNavigate: ((String) -> Void)?
     var logger: BDUILogger?
     var networkClient: NetworkClient?
 
@@ -50,6 +51,14 @@ final class BDUIActionHandlerImpl: BDUIActionHandler {
 
         case .http:
             executeHTTPAction(action)
+
+        case .navigate:
+            guard let route = action.payload?.stringValue else { return }
+            onNavigate?(route)
+
+        case .clipboard:
+            guard let text = action.payload?.stringValue else { return }
+            UIPasteboard.general.string = text
         }
     }
 

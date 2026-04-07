@@ -21,14 +21,22 @@ final class SpacerNodeMapper: BDUINodeMapper {
         let spacer = UIView()
         spacer.backgroundColor = .clear
 
+        let hasHeight = config?.height != nil
+        let hasWidth = config?.width != nil
+
         if let height = config?.height {
             spacer.heightAnchor.constraint(equalToConstant: height).isActive = true
-        } else {
-            spacer.heightAnchor.constraint(equalToConstant: DS.Spacing.l).isActive = true
         }
 
         if let width = config?.width {
             spacer.widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+
+        if !hasHeight && !hasWidth {
+            spacer.setContentHuggingPriority(.defaultLow, for: .horizontal)
+            spacer.setContentHuggingPriority(.defaultLow, for: .vertical)
+            spacer.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+            spacer.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         }
 
         return spacer

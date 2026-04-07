@@ -13,7 +13,6 @@ protocol DashboardPresenter {
     func didPullToRefresh()
     func didTapItem(at index: Int)
     func didTapAddNew()
-    func didTapSettings()
     func didTapProfile()
     func didTapCopyCode(itemId: String)
     func didSearch(query: String)

@@ -65,13 +65,13 @@ final class DashboardViewController: UIViewController {
         )
         navigationItem.rightBarButtonItems = [addButton, maskButton]
 
-        let settingsButton = UIBarButtonItem(
-            image: DS.Icon.image(DS.Icon.settings, size: .medium, tint: DS.Color.accent),
+        let profileButton = UIBarButtonItem(
+            image: DS.Icon.image(DS.Icon.profile, size: .medium, tint: DS.Color.accent),
             style: .plain,
             target: self,
-            action: #selector(didTapSettings)
+            action: #selector(didTapProfile)
         )
-        navigationItem.leftBarButtonItem = settingsButton
+        navigationItem.leftBarButtonItem = profileButton
     }
 
     private func setupSearchController() {
@@ -124,10 +124,6 @@ final class DashboardViewController: UIViewController {
 
     @objc private func didTapProfile() {
         presenter?.didTapProfile()
-    }
-
-    @objc private func didTapSettings() {
-        presenter?.didTapSettings()
     }
 
     @objc private func didTapToggleMask() {

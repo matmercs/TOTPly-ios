@@ -160,6 +160,16 @@
 		34BE5C242F82F4DE0094395C /* BDUINodeRendererImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C232F82F4DD0094395C /* BDUINodeRendererImpl.swift */; };
 		34BE5C262F83A8700094395C /* BDUIActionHandlerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C252F83A86E0094395C /* BDUIActionHandlerImpl.swift */; };
 		34BE5C2A2F8460E20094395C /* BDUITreeDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C292F8460E10094395C /* BDUITreeDiffer.swift */; };
+		34BE5C2C2F85361F0094395C /* BDUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C2B2F85361E0094395C /* BDUIViewController.swift */; };
+		34BE5C362F853E240094395C /* bdui_profile_corporate.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C352F853CB30094395C /* bdui_profile_corporate.json */; };
+		34BE5C372F853E240094395C /* bdui_profile_corporate.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C352F853CB30094395C /* bdui_profile_corporate.json */; };
+		34BE5C382F853E240094395C /* bdui_profile_corporate.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C352F853CB30094395C /* bdui_profile_corporate.json */; };
+		34BE5C392F853E290094395C /* bdui_profile_security.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C342F853CA20094395C /* bdui_profile_security.json */; };
+		34BE5C3A2F853E290094395C /* bdui_profile_security.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C342F853CA20094395C /* bdui_profile_security.json */; };
+		34BE5C3B2F853E290094395C /* bdui_profile_security.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C342F853CA20094395C /* bdui_profile_security.json */; };
+		34BE5C3C2F853E2F0094395C /* bdui_profile.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C332F853C900094395C /* bdui_profile.json */; };
+		34BE5C3D2F853E2F0094395C /* bdui_profile.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C332F853C900094395C /* bdui_profile.json */; };
+		34BE5C3E2F853E2F0094395C /* bdui_profile.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C332F853C900094395C /* bdui_profile.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,6 +326,10 @@
 		34BE5C232F82F4DD0094395C /* BDUINodeRendererImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUINodeRendererImpl.swift; sourceTree = "<group>"; };
 		34BE5C252F83A86E0094395C /* BDUIActionHandlerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIActionHandlerImpl.swift; sourceTree = "<group>"; };
 		34BE5C292F8460E10094395C /* BDUITreeDiffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUITreeDiffer.swift; sourceTree = "<group>"; };
+		34BE5C2B2F85361E0094395C /* BDUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIViewController.swift; sourceTree = "<group>"; };
+		34BE5C332F853C900094395C /* bdui_profile.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bdui_profile.json; sourceTree = "<group>"; };
+		34BE5C342F853CA20094395C /* bdui_profile_security.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bdui_profile_security.json; sourceTree = "<group>"; };
+		34BE5C352F853CB30094395C /* bdui_profile_corporate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bdui_profile_corporate.json; sourceTree = "<group>"; };
 		34F3247B2F4E18B000B14F9F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		34F3247C2F4E191D00B14F9F /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		34F3247D2F4E19CA00B14F9F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -921,13 +935,25 @@
 		34BE5BEC2F82A0800094395C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				34BE5C2B2F85361E0094395C /* BDUIViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		34BE5C2E2F853C560094395C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				34BE5C352F853CB30094395C /* bdui_profile_corporate.json */,
+				34BE5C342F853CA20094395C /* bdui_profile_security.json */,
+				34BE5C332F853C900094395C /* bdui_profile.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		34F323FD2F4C771B00B14F9F = {
 			isa = PBXGroup;
 			children = (
+				34BE5C2E2F853C560094395C /* Resources */,
 				34F324702F4E13B000B14F9F /* Sources */,
 				34F3241F2F4C771E00B14F9F /* TOTPly-iosTests */,
 				34F324292F4C771E00B14F9F /* TOTPly-iosUITests */,
@@ -1201,6 +1227,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34BE5C3C2F853E2F0094395C /* bdui_profile.json in Resources */,
+				34BE5C392F853E290094395C /* bdui_profile_security.json in Resources */,
+				34BE5C362F853E240094395C /* bdui_profile_corporate.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1208,6 +1237,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34BE5C372F853E240094395C /* bdui_profile_corporate.json in Resources */,
+				34BE5C3A2F853E290094395C /* bdui_profile_security.json in Resources */,
+				34BE5C3D2F853E2F0094395C /* bdui_profile.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1215,6 +1247,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34BE5C382F853E240094395C /* bdui_profile_corporate.json in Resources */,
+				34BE5C3B2F853E290094395C /* bdui_profile_security.json in Resources */,
+				34BE5C3E2F853E2F0094395C /* bdui_profile.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1276,6 +1311,7 @@
 				34998F822F69AD9F00EBF491 /* CodeDetailStubViewController.swift in Sources */,
 				34B746C72F573834009F9B4D /* DeleteTOTPItemRequest.swift in Sources */,
 				34B746C82F573834009F9B4D /* CreateTOTPItemRequest.swift in Sources */,
+				34BE5C2C2F85361F0094395C /* BDUIViewController.swift in Sources */,
 				34B746C92F573834009F9B4D /* TOTPItemDTO.swift in Sources */,
 				34B747262F57427E009F9B4D /* DashboardStubViewController.swift in Sources */,
 				34BE5C082F82E3860094395C /* DividerNodeMapper.swift in Sources */,

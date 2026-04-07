@@ -17,6 +17,8 @@ struct BDUIAction: Codable, Equatable {
         case alert
         case reload
         case http
+        case navigate
+        case clipboard
     }
 
     init(type: ActionType, payload: JSONValue? = nil) {

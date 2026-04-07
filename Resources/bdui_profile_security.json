@@ -1,0 +1,268 @@
+{
+    "id": "profile-security-alert",
+    "type": "scroll",
+    "content": { "padding": "xl" },
+    "subviews": [
+        {
+            "id": "root",
+            "type": "vStack",
+            "content": { "spacing": "l" },
+            "subviews": [
+                {
+                    "id": "org-banner",
+                    "type": "card",
+                    "content": { "padding": "m" },
+                    "subviews": [{
+                        "id": "org-banner-row", "type": "hStack", "content": { "spacing": "m", "alignment": "center" },
+                        "subviews": [
+                            { "id": "org-icon", "type": "icon", "content": { "icon": "shieldCheck", "size": "large", "tint": "error" } },
+                            {
+                                "id": "org-text", "type": "vStack", "content": { "spacing": "xxs" },
+                                "subviews": [
+                                    { "id": "org-name", "type": "label", "content": { "text": "Deck", "textStyle": "headline" } },
+                                    { "id": "org-type", "type": "label", "content": { "text": "Корпоративный аккаунт · Нарушение политики", "textStyle": "caption", "color": "error" } }
+                                ]
+                            }
+                        ]
+                    }]
+                },
+                {
+                    "id": "alert-banner",
+                    "type": "container",
+                    "content": { "backgroundColor": "error", "padding": "m", "cornerRadius": "medium" },
+                    "subviews": [
+                        {
+                            "id": "alert-row", "type": "hStack", "content": { "spacing": "m", "alignment": "center" },
+                            "subviews": [
+                                { "id": "alert-icon", "type": "icon", "content": { "icon": "error", "size": "large", "tint": "buttonDestructiveText" } },
+                                {
+                                    "id": "alert-text", "type": "vStack", "content": { "spacing": "xs" },
+                                    "subviews": [
+                                        { "id": "alert-title", "type": "label", "content": { "text": "Подозрительная активность", "textStyle": "headline", "color": "buttonDestructiveText" } },
+                                        { "id": "alert-desc", "type": "label", "content": { "text": "Обнаружен вход с нового устройства из необычной локации. Подтвердите вашу личность.", "textStyle": "caption", "color": "buttonDestructiveText" } }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "verify-card",
+                    "type": "card",
+                    "content": { "padding": "l" },
+                    "subviews": [
+                        {
+                            "id": "verify-content", "type": "vStack", "content": { "spacing": "m", "alignment": "center" },
+                            "subviews": [
+                                { "id": "verify-icon", "type": "icon", "content": { "icon": "shieldCheck", "size": "large", "tint": "accent" } },
+                                { "id": "verify-title", "type": "label", "content": { "text": "Требуется верификация", "textStyle": "headline", "alignment": "center" } },
+                                { "id": "verify-desc", "type": "label", "content": { "text": "Для продолжения работы подтвердите вашу личность через email или TOTP-код", "textStyle": "callout", "color": "textSecondary", "alignment": "center" } },
+                                {
+                                    "id": "verify-btn", "type": "button",
+                                    "content": { "title": "Отправить код подтверждения", "style": "primary" },
+                                    "action": { "type": "alert", "payload": { "title": "Код отправлен", "message": "Код верификации отправлен на mkhavank@deck.lc.com" } }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "profile-card",
+                    "type": "card",
+                    "content": { "padding": "xl" },
+                    "subviews": [{
+                        "id": "profile-info", "type": "vStack", "content": { "spacing": "s", "alignment": "center" },
+                        "subviews": [
+                            { "id": "avatar", "type": "icon", "content": { "icon": "profile", "size": "xlarge", "tint": "textSecondary" } },
+                            { "id": "user-name", "type": "label", "content": { "text": "Матвей Хаванкин", "textStyle": "title1", "alignment": "center" } },
+                            { "id": "user-email", "type": "label", "content": { "text": "mkhavank@deck.lc.com", "textStyle": "footnote", "color": "textSecondary", "alignment": "center" } },
+                            { "id": "user-status", "type": "label", "content": { "text": "Статус: Ограничен", "textStyle": "caption", "color": "error", "alignment": "center" } }
+                        ]
+                    }]
+                },
+                { "id": "sep-1", "type": "divider" },
+                { "id": "policy-header", "type": "label", "content": { "text": "Политика безопасности Deck", "textStyle": "headline" } },
+                {
+                    "id": "policy-card", "type": "card", "content": { "padding": "m" },
+                    "subviews": [
+                        {
+                            "id": "policy-ip", "type": "hStack", "content": { "spacing": "m", "alignment": "center" },
+                            "subviews": [
+                                { "id": "p-ip-icon", "type": "icon", "content": { "icon": "lock", "size": "medium", "tint": "error" } },
+                                {
+                                    "id": "p-ip-info", "type": "vStack", "content": { "spacing": "xxs" },
+                                    "subviews": [
+                                        { "id": "p-ip-title", "type": "label", "content": { "text": "Geo-IP проверка", "textStyle": "body" } },
+                                        { "id": "p-ip-status", "type": "label", "content": { "text": "Нарушение: вход из необычной локации", "textStyle": "caption", "color": "error" } }
+                                    ]
+                                }
+                            ]
+                        },
+                        { "id": "p-div-1", "type": "divider" },
+                        {
+                            "id": "policy-device", "type": "hStack", "content": { "spacing": "m", "alignment": "center" },
+                            "subviews": [
+                                { "id": "p-dev-icon", "type": "icon", "content": { "icon": "error", "size": "medium", "tint": "error" } },
+                                {
+                                    "id": "p-dev-info", "type": "vStack", "content": { "spacing": "xxs" },
+                                    "subviews": [
+                                        { "id": "p-dev-title", "type": "label", "content": { "text": "Новое устройство", "textStyle": "body" } },
+                                        { "id": "p-dev-status", "type": "label", "content": { "text": "Firefox (Linux) не был верифицирован ранее", "textStyle": "caption", "color": "error" } }
+                                    ]
+                                }
+                            ]
+                        },
+                        { "id": "p-div-2", "type": "divider" },
+                        {
+                            "id": "policy-sessions", "type": "hStack", "content": { "spacing": "m", "alignment": "center" },
+                            "subviews": [
+                                { "id": "p-ses-icon", "type": "icon", "content": { "icon": "shieldCheck", "size": "medium", "tint": "accent" } },
+                                {
+                                    "id": "p-ses-info", "type": "vStack", "content": { "spacing": "xxs" },
+                                    "subviews": [
+                                        { "id": "p-ses-title", "type": "label", "content": { "text": "Лимит сессий", "textStyle": "body" } },
+                                        { "id": "p-ses-status", "type": "label", "content": { "text": "2/5 — в пределах нормы", "textStyle": "caption", "color": "accent" } }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                { "id": "sep-1b", "type": "divider" },
+                { "id": "restrictions-header", "type": "label", "content": { "text": "Текущие ограничения", "textStyle": "headline" } },
+                {
+                    "id": "restrictions-card",
+                    "type": "card",
+                    "content": { "padding": "m" },
+                    "subviews": [
+                        {
+                            "id": "r1-row", "type": "hStack", "content": { "spacing": "m", "alignment": "center" },
+                            "subviews": [
+                                { "id": "r1-icon", "type": "icon", "content": { "icon": "lock", "size": "medium", "tint": "error" } },
+                                { "id": "r1-label", "type": "label", "content": { "text": "Добавление новых кодов заблокировано", "textStyle": "body" } }
+                            ]
+                        },
+                        { "id": "r-div-1", "type": "divider" },
+                        {
+                            "id": "r2-row", "type": "hStack", "content": { "spacing": "m", "alignment": "center" },
+                            "subviews": [
+                                { "id": "r2-icon", "type": "icon", "content": { "icon": "lock", "size": "medium", "tint": "error" } },
+                                { "id": "r2-label", "type": "label", "content": { "text": "Удаление кодов заблокировано", "textStyle": "body" } }
+                            ]
+                        },
+                        { "id": "r-div-2", "type": "divider" },
+                        {
+                            "id": "r3-row", "type": "hStack", "content": { "spacing": "m", "alignment": "center" },
+                            "subviews": [
+                                { "id": "r3-icon", "type": "icon", "content": { "icon": "lock", "size": "medium", "tint": "error" } },
+                                { "id": "r3-label", "type": "label", "content": { "text": "Экспорт кодов заблокирован", "textStyle": "body" } }
+                            ]
+                        },
+                        { "id": "r-div-3", "type": "divider" },
+                        {
+                            "id": "r4-row", "type": "hStack", "content": { "spacing": "m", "alignment": "center" },
+                            "subviews": [
+                                { "id": "r4-icon", "type": "icon", "content": { "icon": "eyeOpen", "size": "medium", "tint": "accent" } },
+                                { "id": "r4-label", "type": "label", "content": { "text": "Просмотр существующих кодов разрешён", "textStyle": "body", "color": "textSecondary" } }
+                            ]
+                        }
+                    ]
+                },
+                { "id": "sep-2", "type": "divider" },
+                { "id": "sessions-header", "type": "label", "content": { "text": "Активные сессии", "textStyle": "headline" } },
+                {
+                    "id": "session-current", "type": "card", "content": { "padding": "m" },
+                    "subviews": [{
+                        "id": "sc-row", "type": "hStack", "content": { "spacing": "m", "alignment": "center" },
+                        "subviews": [
+                            { "id": "sc-icon", "type": "icon", "content": { "icon": "shieldCheck", "size": "medium", "tint": "accent" } },
+                            {
+                                "id": "sc-info", "type": "vStack", "content": { "spacing": "xxs" },
+                                "subviews": [
+                                    { "id": "sc-device", "type": "label", "content": { "text": "iPhone 15 Pro", "textStyle": "headline" } },
+                                    { "id": "sc-detail", "type": "label", "content": { "text": "192.168.1.10 · сейчас · Верифицирован", "textStyle": "caption", "color": "textSecondary" } }
+                                ]
+                            },
+                            { "id": "sc-spacer", "type": "spacer", "content": {} },
+                            { "id": "sc-badge", "type": "label", "content": { "text": "Текущая", "textStyle": "caption", "color": "accent" } }
+                        ]
+                    }]
+                },
+                {
+                    "id": "session-suspicious",
+                    "type": "container",
+                    "content": { "backgroundColor": "error", "padding": "s", "cornerRadius": "medium" },
+                    "subviews": [{
+                        "id": "ss-card", "type": "card", "content": { "padding": "m" },
+                        "subviews": [{
+                            "id": "ss-row", "type": "hStack", "content": { "spacing": "m", "alignment": "center" },
+                            "subviews": [
+                                { "id": "ss-icon", "type": "icon", "content": { "icon": "error", "size": "medium", "tint": "error" } },
+                                {
+                                    "id": "ss-info", "type": "vStack", "content": { "spacing": "xxs" },
+                                    "subviews": [
+                                        { "id": "ss-device", "type": "label", "content": { "text": "Firefox (Linux)", "textStyle": "headline" } },
+                                        { "id": "ss-detail", "type": "label", "content": { "text": "85.143.22.15 · 10 мин назад", "textStyle": "caption", "color": "textSecondary" } },
+                                        { "id": "ss-warning", "type": "label", "content": { "text": "⚠ Новое устройство · Необычная локация (Москва)", "textStyle": "caption", "color": "error" } }
+                                    ]
+                                },
+                                { "id": "ss-spacer", "type": "spacer", "content": {} },
+                                {
+                                    "id": "ss-terminate", "type": "label",
+                                    "content": { "text": "Завершить", "textStyle": "caption", "color": "error" },
+                                    "action": { "type": "alert", "payload": { "title": "Завершить подозрительную сессию?", "message": "Сессия Firefox (Linux) из Москвы будет завершена" } }
+                                }
+                            ]
+                        }]
+                    }]
+                },
+                {
+                    "id": "terminate-suspicious-btn", "type": "button",
+                    "content": { "title": "Завершить подозрительные", "style": "destructive" },
+                    "action": { "type": "alert", "payload": { "title": "Безопасность", "message": "Все подозрительные сессии завершены. Ограничения будут сняты после верификации." } }
+                },
+                { "id": "sep-3", "type": "divider" },
+                { "id": "geo-header", "type": "label", "content": { "text": "Geo-IP информация", "textStyle": "headline" } },
+                {
+                    "id": "geo-card", "type": "card", "content": { "padding": "m" },
+                    "subviews": [
+                        {
+                            "id": "geo-current", "type": "hStack", "content": { "spacing": "m", "alignment": "center" },
+                            "subviews": [
+                                { "id": "geo-c-icon", "type": "icon", "content": { "icon": "shieldCheck", "size": "medium", "tint": "accent" } },
+                                {
+                                    "id": "geo-c-info", "type": "vStack", "content": { "spacing": "xxs" },
+                                    "subviews": [
+                                        { "id": "geo-c-title", "type": "label", "content": { "text": "Текущая локация", "textStyle": "body" } },
+                                        { "id": "geo-c-value", "type": "label", "content": { "text": "Санкт-Петербург, Россия · Разрешена", "textStyle": "caption", "color": "accent" } }
+                                    ]
+                                }
+                            ]
+                        },
+                        { "id": "geo-div", "type": "divider" },
+                        {
+                            "id": "geo-suspicious", "type": "hStack", "content": { "spacing": "m", "alignment": "center" },
+                            "subviews": [
+                                { "id": "geo-s-icon", "type": "icon", "content": { "icon": "error", "size": "medium", "tint": "error" } },
+                                {
+                                    "id": "geo-s-info", "type": "vStack", "content": { "spacing": "xxs" },
+                                    "subviews": [
+                                        { "id": "geo-s-title", "type": "label", "content": { "text": "Подозрительная локация", "textStyle": "body" } },
+                                        { "id": "geo-s-value", "type": "label", "content": { "text": "Москва, Россия · Не в allowlist", "textStyle": "caption", "color": "error" } }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                { "id": "sep-4", "type": "divider" },
+                {
+                    "id": "logout-btn", "type": "button",
+                    "content": { "title": "Выйти", "style": "destructive" },
+                    "action": { "type": "navigate", "payload": "welcome" }
+                }
+            ]
+        }
+    ]
+}
+
