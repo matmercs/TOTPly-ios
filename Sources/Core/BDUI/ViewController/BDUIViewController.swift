@@ -10,16 +10,20 @@ import UIKit
 final class BDUIViewController: UIViewController {
     private let renderer: BDUINodeRendererImpl
     private let actionHandler: BDUIActionHandlerImpl
+    private let loader: BDUILoader
     private let differ = BDUITreeDiffer()
     private var currentNode: BDUINode?
     private var currentView: UIView?
+    private var config: BDUIScreenConfig?
+
+    private lazy var stateView = DSStateView()
 
     var onNavigate: ((String) -> Void)? {
         get { actionHandler.onNavigate }
         set { actionHandler.onNavigate = newValue }
     }
 
-    init() {
+    init(loader: BDUILoader = BDUILoaderImpl()) {
         let registry = BDUIMapperRegistry.makeDefault()
         registry.logger = ConsoleBDUILogger()
 
@@ -28,13 +32,13 @@ final class BDUIViewController: UIViewController {
 
         self.renderer = BDUINodeRendererImpl(registry: registry, actionHandler: actionHandler)
         self.actionHandler = actionHandler
+        self.loader = loader
 
         super.init(nibName: nil, bundle: nil)
 
         actionHandler.viewController = self
         actionHandler.onReload = { [weak self] in
-            guard let self, let node = self.currentNode else { return }
-            self.renderNode(node)
+            self?.reload()
         }
     }
 
@@ -45,24 +49,70 @@ final class BDUIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = DS.Color.background
+        setupStateView()
     }
 
-    func loadJSON(_ data: Data) {
-        do {
-            let node = try JSONDecoder().decode(BDUINode.self, from: data)
-            renderNode(node)
-        } catch {
-            showError("Failed to decode JSON: \(error.localizedDescription)")
+    func loadFromConfig(_ config: BDUIScreenConfig) {
+        self.config = config
+        if let title = config.title {
+            self.title = title
         }
+        loadFromEndpoint(config.endpoint)
     }
 
     func loadJSONFromBundle(named fileName: String) {
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json"),
-              let data = try? Data(contentsOf: url) else {
-            showError("JSON file '\(fileName).json' not found in bundle")
-            return
+        do {
+            let node = try loader.loadFromBundle(named: fileName)
+            stateView.setState(.content)
+            renderNode(node)
+        } catch {
+            showError(error.localizedDescription)
         }
-        loadJSON(data)
+    }
+
+    private func setupStateView() {
+        stateView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(stateView)
+        NSLayoutConstraint.activate([
+            stateView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            stateView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stateView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stateView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+        ])
+        stateView.onRetryTapped = { [weak self] in
+            self?.reload()
+        }
+    }
+
+    private func loadFromEndpoint(_ endpoint: String) {
+        stateView.setState(.loading(message: nil))
+        currentView?.isHidden = true
+
+        Task { @MainActor in
+            do {
+                let node = try await loader.loadFromEndpoint(endpoint)
+                print("[BDUI] Loaded from server: \(endpoint)")
+                stateView.setState(.content)
+                renderNode(node)
+                currentView?.isHidden = false
+            } catch {
+                if let fallback = config?.fallbackBundleName {
+                    print("[BDUI] Server failed, using fallback bundle: \(fallback)")
+                    loadJSONFromBundle(named: fallback)
+                    currentView?.isHidden = false
+                } else {
+                    showError("Не удалось загрузить: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+
+    private func reload() {
+        if let config {
+            loadFromEndpoint(config.endpoint)
+        } else if let node = currentNode {
+            renderNode(node)
+        }
     }
 
     private func renderNode(_ node: BDUINode) {
@@ -86,7 +136,7 @@ final class BDUIViewController: UIViewController {
     private func replaceContent(with newView: UIView) {
         currentView?.removeFromSuperview()
         currentView = newView
-        view.addSubview(newView)
+        view.insertSubview(newView, belowSubview: stateView)
         newView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             newView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -97,12 +147,7 @@ final class BDUIViewController: UIViewController {
     }
 
     private func showError(_ message: String) {
-        let label = UILabel()
-        label.text = message
-        label.apply(.body)
-        label.textColor = DS.Color.error
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        replaceContent(with: label)
+        stateView.setState(.error(message: message, retryTitle: "Повторить"))
+        currentView?.isHidden = true
     }
 }

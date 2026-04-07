@@ -62,18 +62,20 @@ final class DashboardRouterImpl: DashboardRouter {
         router.navigationController = navigationController
         navigationController?.pushViewController(vc, animated: true)
     }
-    
+
+    private static let bduiBaseURL = "https://alfaitmo.ru/server/echo/471057/totply-ios/bdui"
+
     func openProfile() {
         switch profileMode {
-        case "personal":      openBDUIProfile(jsonName: "profile_personal")
-        case "employee":      openBDUIProfile(jsonName: "profile_employee")
-        case "admin":         openBDUIProfile(jsonName: "profile_admin")
-        case "new_device":    openBDUIProfile(jsonName: "profile_new_device")
-        case "suspicious":    openBDUIProfile(jsonName: "profile_suspicious")
-        case "session_limit": openBDUIProfile(jsonName: "profile_session_limit")
-        case "onboarding":    openBDUIProfile(jsonName: "profile_onboarding")
-        case "blocked":       openBDUIProfile(jsonName: "profile_blocked")
-        default:              openNativeProfile()
+        case "native":
+            openNativeProfile()
+        default:
+            let config = BDUIScreenConfig(
+                endpoint: "\(Self.bduiBaseURL)/profile/\(profileMode)",
+                title: "Профиль",
+                fallbackBundleName: "profile_\(profileMode)"
+            )
+            openBDUIScreen(config: config)
         }
     }
 
@@ -91,10 +93,9 @@ final class DashboardRouterImpl: DashboardRouter {
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    private func openBDUIProfile(jsonName: String) {
+    private func openBDUIScreen(config: BDUIScreenConfig) {
         let vc = BDUIViewController()
-        vc.title = "Профиль"
-        vc.loadJSONFromBundle(named: jsonName)
+        vc.loadFromConfig(config)
         vc.onNavigate = { [weak self] route in
             switch route {
             case "welcome":
