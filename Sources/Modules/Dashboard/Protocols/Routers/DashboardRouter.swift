@@ -8,6 +8,7 @@
 import Foundation
 
 protocol DashboardRouter {
+    var profileMode: String { get set }
     func openCodeDetail(itemId: String)
     func openAddTOTP()
     func openProfile()

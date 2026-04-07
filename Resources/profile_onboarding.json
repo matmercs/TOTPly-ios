@@ -1,0 +1,349 @@
+{
+    "$schema": "./bdui_schema.json",
+    "id": "profile-onboarding",
+    "type": "scroll",
+    "content": {
+        "padding": "xl"
+    },
+    "subviews": [
+        {
+            "id": "root",
+            "type": "vStack",
+            "content": {
+                "spacing": "l"
+            },
+            "subviews": [
+                {
+                    "id": "invite-banner",
+                    "type": "container",
+                    "content": {
+                        "backgroundColor": "accentSecondary",
+                        "padding": "m",
+                        "cornerRadius": "medium"
+                    },
+                    "subviews": [
+                        {
+                            "id": "invite-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "invite-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "mail",
+                                        "size": "large",
+                                        "tint": "textPrimary"
+                                    }
+                                },
+                                {
+                                    "id": "invite-text",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "invite-title",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Вас пригласили в Deck",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "invite-desc",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Завершите настройку для доступа к корпоративным функциям",
+                                                "textStyle": "caption"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "profile-card",
+                    "type": "card",
+                    "content": {
+                        "padding": "xl"
+                    },
+                    "subviews": [
+                        {
+                            "id": "profile-info",
+                            "type": "vStack",
+                            "content": {
+                                "spacing": "s",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "avatar",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "profile",
+                                        "size": "xlarge",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "user-name",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Матвей Хаванкин",
+                                        "textStyle": "title1",
+                                        "alignment": "center"
+                                    }
+                                },
+                                {
+                                    "id": "user-email",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "mkhavank@deck.lc.com",
+                                        "textStyle": "footnote",
+                                        "color": "textSecondary",
+                                        "alignment": "center"
+                                    }
+                                },
+                                {
+                                    "id": "user-status",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Настройка аккаунта",
+                                        "textStyle": "caption",
+                                        "color": "accent",
+                                        "alignment": "center"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "sep-1",
+                    "type": "divider"
+                },
+                {
+                    "id": "steps-header",
+                    "type": "label",
+                    "content": {
+                        "text": "Шаги настройки",
+                        "textStyle": "headline"
+                    }
+                },
+                {
+                    "id": "steps-card",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "step-1",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "step-1-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "shieldCheck",
+                                        "size": "medium",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "step-1-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "step-1-title",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "1. Настроить MFA",
+                                                "textStyle": "body"
+                                            }
+                                        },
+                                        {
+                                            "id": "step-1-status",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Обязательно по политике организации",
+                                                "textStyle": "caption",
+                                                "color": "textSecondary"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "step-1-spacer",
+                                    "type": "spacer",
+                                    "content": {}
+                                },
+                                {
+                                    "id": "step-1-chevron",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "chevronRight",
+                                        "size": "small",
+                                        "tint": "accent"
+                                    }
+                                }
+                            ],
+                            "action": {
+                                "type": "alert",
+                                "payload": {
+                                    "title": "MFA",
+                                    "message": "Настройка двухфакторной аутентификации"
+                                }
+                            }
+                        },
+                        {
+                            "id": "step-div-1",
+                            "type": "divider"
+                        },
+                        {
+                            "id": "step-2",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "step-2-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "add",
+                                        "size": "medium",
+                                        "tint": "textSecondary"
+                                    }
+                                },
+                                {
+                                    "id": "step-2-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "step-2-title",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "2. Добавить первый код",
+                                                "textStyle": "body",
+                                                "color": "textSecondary"
+                                            }
+                                        },
+                                        {
+                                            "id": "step-2-status",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Доступно после шага 1",
+                                                "textStyle": "caption",
+                                                "color": "textCaption"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "step-div-2",
+                            "type": "divider"
+                        },
+                        {
+                            "id": "step-3",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "step-3-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "lock",
+                                        "size": "medium",
+                                        "tint": "textSecondary"
+                                    }
+                                },
+                                {
+                                    "id": "step-3-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "step-3-title",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "3. Подтвердить устройство",
+                                                "textStyle": "body",
+                                                "color": "textSecondary"
+                                            }
+                                        },
+                                        {
+                                            "id": "step-3-status",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Доступно после шага 2",
+                                                "textStyle": "caption",
+                                                "color": "textCaption"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "start-btn",
+                    "type": "button",
+                    "content": {
+                        "title": "Начать настройку",
+                        "style": "primary"
+                    },
+                    "action": {
+                        "type": "alert",
+                        "payload": {
+                            "title": "MFA",
+                            "message": "Переход к настройке двухфакторной аутентификации"
+                        }
+                    }
+                },
+                {
+                    "id": "sep-2",
+                    "type": "divider"
+                },
+                {
+                    "id": "logout-btn",
+                    "type": "button",
+                    "content": {
+                        "title": "Выйти",
+                        "style": "text"
+                    },
+                    "action": {
+                        "type": "navigate",
+                        "payload": "welcome"
+                    }
+                }
+            ]
+        }
+    ]
+}

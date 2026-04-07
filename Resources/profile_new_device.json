@@ -1,0 +1,413 @@
+{
+    "$schema": "./bdui_schema.json",
+    "id": "profile-new-device",
+    "type": "scroll",
+    "content": {
+        "padding": "xl"
+    },
+    "subviews": [
+        {
+            "id": "root",
+            "type": "vStack",
+            "content": {
+                "spacing": "l"
+            },
+            "subviews": [
+                {
+                    "id": "org-banner",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "org-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "org-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "shieldCheck",
+                                        "size": "large",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "org-text",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "org-name",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Deck",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "org-role",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Корпоративный аккаунт · Сотрудник",
+                                                "textStyle": "caption",
+                                                "color": "accent"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "warning-banner",
+                    "type": "container",
+                    "content": {
+                        "backgroundColor": "accentSecondary",
+                        "padding": "m",
+                        "cornerRadius": "medium"
+                    },
+                    "subviews": [
+                        {
+                            "id": "warning-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "warning-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "shieldCheck",
+                                        "size": "large",
+                                        "tint": "textPrimary"
+                                    }
+                                },
+                                {
+                                    "id": "warning-text",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "warning-title",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Новое устройство",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "warning-desc",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Первый вход с этого устройства. Подтвердите его для полного доступа.",
+                                                "textStyle": "caption"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "verify-card",
+                    "type": "card",
+                    "content": {
+                        "padding": "l"
+                    },
+                    "subviews": [
+                        {
+                            "id": "verify-content",
+                            "type": "vStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "verify-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "lock",
+                                        "size": "large",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "verify-title",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Подтвердите устройство",
+                                        "textStyle": "headline",
+                                        "alignment": "center"
+                                    }
+                                },
+                                {
+                                    "id": "verify-desc",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "На вашу почту будет отправлен код подтверждения",
+                                        "textStyle": "callout",
+                                        "color": "textSecondary",
+                                        "alignment": "center"
+                                    }
+                                },
+                                {
+                                    "id": "verify-btn",
+                                    "type": "button",
+                                    "content": {
+                                        "title": "Отправить код",
+                                        "style": "primary"
+                                    },
+                                    "action": {
+                                        "type": "alert",
+                                        "payload": {
+                                            "title": "Код отправлен",
+                                            "message": "Код верификации отправлен на mkhavank@deck.lc.com"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "profile-card",
+                    "type": "card",
+                    "content": {
+                        "padding": "xl"
+                    },
+                    "subviews": [
+                        {
+                            "id": "profile-info",
+                            "type": "vStack",
+                            "content": {
+                                "spacing": "s",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "avatar",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "profile",
+                                        "size": "xlarge",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "user-name",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Матвей Хаванкин",
+                                        "textStyle": "title1",
+                                        "alignment": "center"
+                                    }
+                                },
+                                {
+                                    "id": "user-email",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "mkhavank@deck.lc.com",
+                                        "textStyle": "footnote",
+                                        "color": "textSecondary",
+                                        "alignment": "center"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "sep-1",
+                    "type": "divider"
+                },
+                {
+                    "id": "restrictions-header",
+                    "type": "label",
+                    "content": {
+                        "text": "До верификации ограничено",
+                        "textStyle": "headline"
+                    }
+                },
+                {
+                    "id": "restrictions-card",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "r1-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "r1-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "lock",
+                                        "size": "medium",
+                                        "tint": "textSecondary"
+                                    }
+                                },
+                                {
+                                    "id": "r1-label",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Добавление новых кодов",
+                                        "textStyle": "body",
+                                        "color": "textSecondary"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "r-div",
+                            "type": "divider"
+                        },
+                        {
+                            "id": "r2-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "r2-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "eyeOpen",
+                                        "size": "medium",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "r2-label",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Просмотр существующих кодов",
+                                        "textStyle": "body"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "sep-2",
+                    "type": "divider"
+                },
+                {
+                    "id": "sessions-header",
+                    "type": "label",
+                    "content": {
+                        "text": "Активные сессии",
+                        "textStyle": "headline"
+                    }
+                },
+                {
+                    "id": "session-1",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "s1-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "s1-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "error",
+                                        "size": "medium",
+                                        "tint": "accentSecondary"
+                                    }
+                                },
+                                {
+                                    "id": "s1-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "s1-device",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "iPhone 15 Pro",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "s1-detail",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "192.168.1.10 · сейчас · Не верифицирован",
+                                                "textStyle": "caption",
+                                                "color": "textSecondary"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "s1-spacer",
+                                    "type": "spacer",
+                                    "content": {}
+                                },
+                                {
+                                    "id": "s1-badge",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Текущая",
+                                        "textStyle": "caption",
+                                        "color": "accent"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "sep-3",
+                    "type": "divider"
+                },
+                {
+                    "id": "logout-btn",
+                    "type": "button",
+                    "content": {
+                        "title": "Выйти",
+                        "style": "destructive"
+                    },
+                    "action": {
+                        "type": "navigate",
+                        "payload": "welcome"
+                    }
+                }
+            ]
+        }
+    ]
+}

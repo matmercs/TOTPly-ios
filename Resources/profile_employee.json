@@ -1,0 +1,633 @@
+{
+    "$schema": "./bdui_schema.json",
+    "id": "profile-employee",
+    "type": "scroll",
+    "content": {
+        "padding": "xl"
+    },
+    "subviews": [
+        {
+            "id": "root",
+            "type": "vStack",
+            "content": {
+                "spacing": "l"
+            },
+            "subviews": [
+                {
+                    "id": "org-banner",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "org-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "org-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "shieldCheck",
+                                        "size": "large",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "org-text",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "org-name",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Deck",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "org-role",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Корпоративный аккаунт · Сотрудник",
+                                                "textStyle": "caption",
+                                                "color": "accent"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "profile-card",
+                    "type": "card",
+                    "content": {
+                        "padding": "xl"
+                    },
+                    "subviews": [
+                        {
+                            "id": "profile-info",
+                            "type": "vStack",
+                            "content": {
+                                "spacing": "s",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "avatar",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "profile",
+                                        "size": "xlarge",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "user-name",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Матвей Хаванкин",
+                                        "textStyle": "title1",
+                                        "alignment": "center"
+                                    }
+                                },
+                                {
+                                    "id": "user-email",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "mkhavank@deck.lc.com",
+                                        "textStyle": "footnote",
+                                        "color": "textSecondary",
+                                        "alignment": "center"
+                                    }
+                                },
+                                {
+                                    "id": "user-role",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Роль: Сотрудник",
+                                        "textStyle": "caption",
+                                        "color": "accent",
+                                        "alignment": "center"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "account-buttons",
+                    "type": "hStack",
+                    "content": {
+                        "spacing": "m",
+                        "distribution": "fillEqually"
+                    },
+                    "subviews": [
+                        {
+                            "id": "change-password-btn",
+                            "type": "button",
+                            "content": {
+                                "title": "Сменить пароль",
+                                "style": "secondary"
+                            },
+                            "action": {
+                                "type": "alert",
+                                "payload": {
+                                    "title": "Смена пароля",
+                                    "message": "Код подтверждения отправлен на mkhavank@deck.lc.com"
+                                }
+                            }
+                        },
+                        {
+                            "id": "change-email-btn",
+                            "type": "button",
+                            "content": {
+                                "title": "Сменить почту",
+                                "style": "secondary"
+                            },
+                            "action": {
+                                "type": "alert",
+                                "payload": {
+                                    "title": "Недоступно",
+                                    "message": "Смена почты запрещена политикой организации. Обратитесь к администратору."
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "sep-1",
+                    "type": "divider"
+                },
+                {
+                    "id": "security-header",
+                    "type": "label",
+                    "content": {
+                        "text": "Безопасность",
+                        "textStyle": "headline"
+                    }
+                },
+                {
+                    "id": "security-card",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "sso-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "sso-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "key",
+                                        "size": "medium",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "sso-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "sso-title",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "SSO (SAML 2.0)",
+                                                "textStyle": "body"
+                                            }
+                                        },
+                                        {
+                                            "id": "sso-status",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Подключено через Deck ID",
+                                                "textStyle": "caption",
+                                                "color": "accent"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "sec-div-1",
+                            "type": "divider"
+                        },
+                        {
+                            "id": "mfa-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "mfa-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "shieldCheck",
+                                        "size": "medium",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "mfa-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "mfa-title",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Двухфакторная аутентификация",
+                                                "textStyle": "body"
+                                            }
+                                        },
+                                        {
+                                            "id": "mfa-status",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Обязательна по политике организации",
+                                                "textStyle": "caption",
+                                                "color": "textSecondary"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "sep-2",
+                    "type": "divider"
+                },
+                {
+                    "id": "sessions-header",
+                    "type": "label",
+                    "content": {
+                        "text": "Активные сессии (3/5)",
+                        "textStyle": "headline"
+                    }
+                },
+                {
+                    "id": "session-1",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "s1-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "s1-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "shieldCheck",
+                                        "size": "medium",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "s1-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "s1-device",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "iPhone 15 Pro",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "s1-detail",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "192.168.1.10 · сейчас · Верифицирован",
+                                                "textStyle": "caption",
+                                                "color": "textSecondary"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "s1-spacer",
+                                    "type": "spacer",
+                                    "content": {}
+                                },
+                                {
+                                    "id": "s1-badge",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Текущая",
+                                        "textStyle": "caption",
+                                        "color": "accent"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "session-2",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "s2-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "s2-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "shieldCheck",
+                                        "size": "medium",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "s2-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "s2-device",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "MacBook Pro",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "s2-detail",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "192.168.1.20 · 1 час назад · Верифицирован",
+                                                "textStyle": "caption",
+                                                "color": "textSecondary"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "s2-spacer",
+                                    "type": "spacer",
+                                    "content": {}
+                                },
+                                {
+                                    "id": "s2-terminate",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Завершить",
+                                        "textStyle": "caption",
+                                        "color": "error"
+                                    },
+                                    "action": {
+                                        "type": "alert",
+                                        "payload": {
+                                            "title": "Сессия",
+                                            "message": "Сессия MacBook Pro завершена"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "session-3",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "s3-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "s3-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "shieldCheck",
+                                        "size": "medium",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "s3-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "s3-device",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Safari (iPad)",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "s3-detail",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "192.168.1.35 · 2 дня назад · Верифицирован",
+                                                "textStyle": "caption",
+                                                "color": "textSecondary"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "s3-spacer",
+                                    "type": "spacer",
+                                    "content": {}
+                                },
+                                {
+                                    "id": "s3-terminate",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Завершить",
+                                        "textStyle": "caption",
+                                        "color": "error"
+                                    },
+                                    "action": {
+                                        "type": "alert",
+                                        "payload": {
+                                            "title": "Сессия",
+                                            "message": "Сессия Safari (iPad) завершена"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "sep-3",
+                    "type": "divider"
+                },
+                {
+                    "id": "export-row",
+                    "type": "hStack",
+                    "content": {
+                        "spacing": "m",
+                        "alignment": "center"
+                    },
+                    "subviews": [
+                        {
+                            "id": "export-icon",
+                            "type": "icon",
+                            "content": {
+                                "icon": "copy",
+                                "size": "medium",
+                                "tint": "textSecondary"
+                            }
+                        },
+                        {
+                            "id": "export-label",
+                            "type": "label",
+                            "content": {
+                                "text": "Экспорт кодов",
+                                "textStyle": "body",
+                                "color": "textSecondary"
+                            }
+                        },
+                        {
+                            "id": "export-spacer",
+                            "type": "spacer",
+                            "content": {}
+                        },
+                        {
+                            "id": "export-lock",
+                            "type": "icon",
+                            "content": {
+                                "icon": "lock",
+                                "size": "small",
+                                "tint": "error"
+                            }
+                        }
+                    ],
+                    "action": {
+                        "type": "alert",
+                        "payload": {
+                            "title": "Экспорт",
+                            "message": "Экспорт запрещён политикой организации"
+                        }
+                    }
+                },
+                {
+                    "id": "sep-4",
+                    "type": "divider"
+                },
+                {
+                    "id": "about-header",
+                    "type": "label",
+                    "content": {
+                        "text": "О приложении",
+                        "textStyle": "headline"
+                    }
+                },
+                {
+                    "id": "about-card",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "version-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "v-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "settings",
+                                        "size": "medium",
+                                        "tint": "textSecondary"
+                                    }
+                                },
+                                {
+                                    "id": "v-label",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Версия 1.0.0 (Enterprise)",
+                                        "textStyle": "body",
+                                        "color": "textSecondary"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "sep-5",
+                    "type": "divider"
+                },
+                {
+                    "id": "logout-btn",
+                    "type": "button",
+                    "content": {
+                        "title": "Выйти",
+                        "style": "destructive"
+                    },
+                    "action": {
+                        "type": "navigate",
+                        "payload": "welcome"
+                    }
+                }
+            ]
+        }
+    ]
+}

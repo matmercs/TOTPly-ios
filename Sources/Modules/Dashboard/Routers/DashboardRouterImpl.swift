@@ -16,7 +16,7 @@ final class DashboardRouterImpl: DashboardRouter {
     // "bdui"      BDUI обычный пользователь
     // "corporate" BDUI корпоративный (организация, SSO, роли, администрирование)
     // "security"  BDUI подозрительная сессия (ограничения, верификация, geo-ip)
-    var profileMode = "security"
+    var profileMode = "personal"
 
     private let repository: TOTPRepository
     private let generator: TOTPGenerator
@@ -65,10 +65,15 @@ final class DashboardRouterImpl: DashboardRouter {
     
     func openProfile() {
         switch profileMode {
-        case "bdui":       openBDUIProfile(jsonName: "bdui_profile")
-        case "corporate":  openBDUIProfile(jsonName: "bdui_profile_corporate")
-        case "security":   openBDUIProfile(jsonName: "bdui_profile_security")
-        default:           openNativeProfile()
+        case "personal":      openBDUIProfile(jsonName: "profile_personal")
+        case "employee":      openBDUIProfile(jsonName: "profile_employee")
+        case "admin":         openBDUIProfile(jsonName: "profile_admin")
+        case "new_device":    openBDUIProfile(jsonName: "profile_new_device")
+        case "suspicious":    openBDUIProfile(jsonName: "profile_suspicious")
+        case "session_limit": openBDUIProfile(jsonName: "profile_session_limit")
+        case "onboarding":    openBDUIProfile(jsonName: "profile_onboarding")
+        case "blocked":       openBDUIProfile(jsonName: "profile_blocked")
+        default:              openNativeProfile()
         }
     }
 

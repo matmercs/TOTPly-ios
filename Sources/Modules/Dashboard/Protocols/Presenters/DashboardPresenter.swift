@@ -19,4 +19,5 @@ protocol DashboardPresenter {
     func didTapDelete(itemId: String)
     func didTapToggleCodeMask()
     func didTapForceRefresh()
+    func didSelectProfileMode(_ mode: String)
 }
