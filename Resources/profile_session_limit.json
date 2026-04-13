@@ -1,0 +1,663 @@
+{
+    "$schema": "./bdui_schema.json",
+    "id": "profile-session-limit",
+    "type": "scroll",
+    "content": {
+        "padding": "xl"
+    },
+    "subviews": [
+        {
+            "id": "root",
+            "type": "vStack",
+            "content": {
+                "spacing": "l"
+            },
+            "subviews": [
+                {
+                    "id": "org-banner",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "org-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "org-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "shieldCheck",
+                                        "size": "large",
+                                        "tint": "error"
+                                    }
+                                },
+                                {
+                                    "id": "org-text",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "org-name",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Deck",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "org-role",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Превышен лимит сессий",
+                                                "textStyle": "caption",
+                                                "color": "error"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "warning-banner",
+                    "type": "container",
+                    "content": {
+                        "backgroundColor": "error",
+                        "padding": "m",
+                        "cornerRadius": "medium"
+                    },
+                    "subviews": [
+                        {
+                            "id": "warning-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "warning-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "error",
+                                        "size": "large",
+                                        "tint": "buttonDestructiveText"
+                                    }
+                                },
+                                {
+                                    "id": "warning-text",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "warning-title",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Превышен лимит сессий (6/5)",
+                                                "textStyle": "headline",
+                                                "color": "buttonDestructiveText"
+                                            }
+                                        },
+                                        {
+                                            "id": "warning-desc",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Добавление кодов заблокировано. Завершите хотя бы одну сессию.",
+                                                "textStyle": "caption",
+                                                "color": "buttonDestructiveText"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "profile-card",
+                    "type": "card",
+                    "content": {
+                        "padding": "xl"
+                    },
+                    "subviews": [
+                        {
+                            "id": "profile-info",
+                            "type": "vStack",
+                            "content": {
+                                "spacing": "s",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "avatar",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "profile",
+                                        "size": "xlarge",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "user-name",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Матвей Хаванкин",
+                                        "textStyle": "title1",
+                                        "alignment": "center"
+                                    }
+                                },
+                                {
+                                    "id": "user-email",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "mkhavank@deck.lc.com",
+                                        "textStyle": "footnote",
+                                        "color": "textSecondary",
+                                        "alignment": "center"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "sep-1",
+                    "type": "divider"
+                },
+                {
+                    "id": "sessions-header",
+                    "type": "label",
+                    "content": {
+                        "text": "Активные сессии (6/5)",
+                        "textStyle": "headline"
+                    }
+                },
+                {
+                    "id": "session-1",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "s1-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "s1-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "shieldCheck",
+                                        "size": "medium",
+                                        "tint": "accent"
+                                    }
+                                },
+                                {
+                                    "id": "s1-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "s1-device",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "iPhone 15 Pro",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "s1-detail",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "192.168.1.10 · сейчас",
+                                                "textStyle": "caption",
+                                                "color": "textSecondary"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "s1-spacer",
+                                    "type": "spacer",
+                                    "content": {}
+                                },
+                                {
+                                    "id": "s1-badge",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Текущая",
+                                        "textStyle": "caption",
+                                        "color": "accent"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "session-2",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "s2-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "s2-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "settings",
+                                        "size": "medium",
+                                        "tint": "textSecondary"
+                                    }
+                                },
+                                {
+                                    "id": "s2-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "s2-device",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "MacBook Pro",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "s2-detail",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "192.168.1.20 · 1 час назад",
+                                                "textStyle": "caption",
+                                                "color": "textSecondary"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "s2-spacer",
+                                    "type": "spacer",
+                                    "content": {}
+                                },
+                                {
+                                    "id": "s2-terminate",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Завершить",
+                                        "textStyle": "caption",
+                                        "color": "error"
+                                    },
+                                    "action": {
+                                        "type": "alert",
+                                        "payload": {
+                                            "title": "Сессия",
+                                            "message": "Сессия MacBook Pro завершена"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "session-3",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "s3-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "s3-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "settings",
+                                        "size": "medium",
+                                        "tint": "textSecondary"
+                                    }
+                                },
+                                {
+                                    "id": "s3-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "s3-device",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Chrome (Windows)",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "s3-detail",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "85.143.22.15 · 3 часа назад",
+                                                "textStyle": "caption",
+                                                "color": "textSecondary"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "s3-spacer",
+                                    "type": "spacer",
+                                    "content": {}
+                                },
+                                {
+                                    "id": "s3-terminate",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Завершить",
+                                        "textStyle": "caption",
+                                        "color": "error"
+                                    },
+                                    "action": {
+                                        "type": "alert",
+                                        "payload": {
+                                            "title": "Сессия",
+                                            "message": "Сессия Chrome (Windows) завершена"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "session-4",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "s4-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "s4-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "settings",
+                                        "size": "medium",
+                                        "tint": "textSecondary"
+                                    }
+                                },
+                                {
+                                    "id": "s4-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "s4-device",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Safari (iPad)",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "s4-detail",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "192.168.1.35 · 1 день назад",
+                                                "textStyle": "caption",
+                                                "color": "textSecondary"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "s4-spacer",
+                                    "type": "spacer",
+                                    "content": {}
+                                },
+                                {
+                                    "id": "s4-terminate",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Завершить",
+                                        "textStyle": "caption",
+                                        "color": "error"
+                                    },
+                                    "action": {
+                                        "type": "alert",
+                                        "payload": {
+                                            "title": "Сессия",
+                                            "message": "Сессия Safari (iPad) завершена"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "session-5",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "s5-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "s5-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "settings",
+                                        "size": "medium",
+                                        "tint": "textSecondary"
+                                    }
+                                },
+                                {
+                                    "id": "s5-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "s5-device",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Firefox (Android)",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "s5-detail",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "10.0.0.5 · 2 дня назад",
+                                                "textStyle": "caption",
+                                                "color": "textSecondary"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "s5-spacer",
+                                    "type": "spacer",
+                                    "content": {}
+                                },
+                                {
+                                    "id": "s5-terminate",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Завершить",
+                                        "textStyle": "caption",
+                                        "color": "error"
+                                    },
+                                    "action": {
+                                        "type": "alert",
+                                        "payload": {
+                                            "title": "Сессия",
+                                            "message": "Сессия Firefox (Android) завершена"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "session-6",
+                    "type": "card",
+                    "content": {
+                        "padding": "m"
+                    },
+                    "subviews": [
+                        {
+                            "id": "s6-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "s6-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "settings",
+                                        "size": "medium",
+                                        "tint": "textSecondary"
+                                    }
+                                },
+                                {
+                                    "id": "s6-info",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xxs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "s6-device",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Edge (Windows)",
+                                                "textStyle": "headline"
+                                            }
+                                        },
+                                        {
+                                            "id": "s6-detail",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "172.16.0.12 · 3 дня назад",
+                                                "textStyle": "caption",
+                                                "color": "textSecondary"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "s6-spacer",
+                                    "type": "spacer",
+                                    "content": {}
+                                },
+                                {
+                                    "id": "s6-terminate",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Завершить",
+                                        "textStyle": "caption",
+                                        "color": "error"
+                                    },
+                                    "action": {
+                                        "type": "alert",
+                                        "payload": {
+                                            "title": "Сессия",
+                                            "message": "Сессия Edge (Windows) завершена"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "terminate-all-btn",
+                    "type": "button",
+                    "content": {
+                        "title": "Завершить все другие",
+                        "style": "destructive"
+                    },
+                    "action": {
+                        "type": "alert",
+                        "payload": {
+                            "title": "Сессии",
+                            "message": "Все другие сессии завершены. Лимит восстановлен."
+                        }
+                    }
+                },
+                {
+                    "id": "sep-2",
+                    "type": "divider"
+                },
+                {
+                    "id": "logout-btn",
+                    "type": "button",
+                    "content": {
+                        "title": "Выйти",
+                        "style": "destructive"
+                    },
+                    "action": {
+                        "type": "navigate",
+                        "payload": "welcome"
+                    }
+                }
+            ]
+        }
+    ]
+}

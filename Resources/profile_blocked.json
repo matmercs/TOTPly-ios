@@ -1,0 +1,234 @@
+{
+    "$schema": "./bdui_schema.json",
+    "id": "profile-blocked",
+    "type": "scroll",
+    "content": {
+        "padding": "xl"
+    },
+    "subviews": [
+        {
+            "id": "root",
+            "type": "vStack",
+            "content": {
+                "spacing": "l"
+            },
+            "subviews": [
+                {
+                    "id": "blocked-banner",
+                    "type": "container",
+                    "content": {
+                        "backgroundColor": "error",
+                        "padding": "m",
+                        "cornerRadius": "medium"
+                    },
+                    "subviews": [
+                        {
+                            "id": "blocked-row",
+                            "type": "hStack",
+                            "content": {
+                                "spacing": "m",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "blocked-icon",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "lock",
+                                        "size": "large",
+                                        "tint": "buttonDestructiveText"
+                                    }
+                                },
+                                {
+                                    "id": "blocked-text",
+                                    "type": "vStack",
+                                    "content": {
+                                        "spacing": "xs"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "blocked-title",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Аккаунт заблокирован",
+                                                "textStyle": "headline",
+                                                "color": "buttonDestructiveText"
+                                            }
+                                        },
+                                        {
+                                            "id": "blocked-desc",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "Доступ к аккаунту ограничен администратором организации",
+                                                "textStyle": "caption",
+                                                "color": "buttonDestructiveText"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "profile-card",
+                    "type": "card",
+                    "content": {
+                        "padding": "xl"
+                    },
+                    "subviews": [
+                        {
+                            "id": "profile-info",
+                            "type": "vStack",
+                            "content": {
+                                "spacing": "s",
+                                "alignment": "center"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "avatar",
+                                    "type": "icon",
+                                    "content": {
+                                        "icon": "profile",
+                                        "size": "xlarge",
+                                        "tint": "textSecondary"
+                                    }
+                                },
+                                {
+                                    "id": "user-name",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Матвей Хаванкин",
+                                        "textStyle": "title1",
+                                        "alignment": "center",
+                                        "color": "textSecondary"
+                                    }
+                                },
+                                {
+                                    "id": "user-email",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "mkhavank@deck.lc.com",
+                                        "textStyle": "footnote",
+                                        "color": "textCaption",
+                                        "alignment": "center"
+                                    }
+                                },
+                                {
+                                    "id": "user-status",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Заблокирован",
+                                        "textStyle": "caption",
+                                        "color": "error",
+                                        "alignment": "center"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "sep-1",
+                    "type": "divider"
+                },
+                {
+                    "id": "reason-card",
+                    "type": "card",
+                    "content": {
+                        "padding": "l"
+                    },
+                    "subviews": [
+                        {
+                            "id": "reason-content",
+                            "type": "vStack",
+                            "content": {
+                                "spacing": "m"
+                            },
+                            "subviews": [
+                                {
+                                    "id": "reason-header",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Причина блокировки",
+                                        "textStyle": "headline"
+                                    }
+                                },
+                                {
+                                    "id": "reason-text",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Вы больше не являетесь сотрудником компании Deck.",
+                                        "textStyle": "body",
+                                        "color": "textSecondary"
+                                    }
+                                },
+                                {
+                                    "id": "reason-divider",
+                                    "type": "divider"
+                                },
+                                {
+                                    "id": "contact-header",
+                                    "type": "label",
+                                    "content": {
+                                        "text": "Контакт администратора",
+                                        "textStyle": "footnote",
+                                        "color": "textCaption"
+                                    }
+                                },
+                                {
+                                    "id": "contact-row",
+                                    "type": "hStack",
+                                    "content": {
+                                        "spacing": "m",
+                                        "alignment": "center"
+                                    },
+                                    "subviews": [
+                                        {
+                                            "id": "contact-icon",
+                                            "type": "icon",
+                                            "content": {
+                                                "icon": "mail",
+                                                "size": "medium",
+                                                "tint": "accent"
+                                            }
+                                        },
+                                        {
+                                            "id": "contact-email",
+                                            "type": "label",
+                                            "content": {
+                                                "text": "admin@deck.lc.com",
+                                                "textStyle": "body",
+                                                "color": "accent"
+                                            }
+                                        }
+                                    ],
+                                    "action": {
+                                        "type": "open",
+                                        "payload": "mailto:admin@deck.lc.com"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "sep-2",
+                    "type": "divider"
+                },
+                {
+                    "id": "logout-btn",
+                    "type": "button",
+                    "content": {
+                        "title": "Выйти",
+                        "style": "destructive"
+                    },
+                    "action": {
+                        "type": "navigate",
+                        "payload": "welcome"
+                    }
+                }
+            ]
+        }
+    ]
+}

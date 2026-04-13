@@ -60,6 +60,9 @@ final class DSButton: UIButton {
 
         titleLabel?.font = TextStyle.headline.font
         layer.cornerRadius = DS.CornerRadius.small
+        var config = UIButton.Configuration.plain()
+        config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: DS.Spacing.l, bottom: 0, trailing: DS.Spacing.l)
+        configuration = config
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: DS.Size.Button.height).isActive = true
 

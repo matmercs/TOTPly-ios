@@ -11,7 +11,7 @@ final class DashboardPresenterImpl: DashboardPresenter {
     private weak var view: DashboardView?
     private let repository: TOTPRepository
     private let generator: TOTPGenerator
-    private let router: DashboardRouter
+    private var router: DashboardRouter
     
     private var state: DashboardViewState = .initial
 
@@ -88,12 +88,12 @@ final class DashboardPresenterImpl: DashboardPresenter {
         router.openAddTOTP()
     }
     
-    func didTapSettings() {
-        router.openSettings()
-    }
-    
     func didTapProfile() {
         router.openProfile()
+    }
+
+    func didSelectProfileMode(_ mode: String) {
+        router.profileMode = mode
     }
     
     func didTapCopyCode(itemId: String) {

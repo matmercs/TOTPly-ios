@@ -65,13 +65,20 @@ final class DashboardViewController: UIViewController {
         )
         navigationItem.rightBarButtonItems = [addButton, maskButton]
 
-        let settingsButton = UIBarButtonItem(
-            image: DS.Icon.image(DS.Icon.settings, size: .medium, tint: DS.Color.accent),
+        let profileButton = UIBarButtonItem(
+            image: DS.Icon.image(DS.Icon.profile, size: .medium, tint: DS.Color.accent),
             style: .plain,
             target: self,
-            action: #selector(didTapSettings)
+            action: #selector(didTapProfile)
         )
-        navigationItem.leftBarButtonItem = settingsButton
+        let devButton = UIBarButtonItem(
+            title: "DEV",
+            style: .plain,
+            target: self,
+            action: #selector(didTapDev)
+        )
+        devButton.tintColor = DS.Color.textCaption
+        navigationItem.leftBarButtonItems = [profileButton, devButton]
     }
 
     private func setupSearchController() {
@@ -126,8 +133,27 @@ final class DashboardViewController: UIViewController {
         presenter?.didTapProfile()
     }
 
-    @objc private func didTapSettings() {
-        presenter?.didTapSettings()
+    @objc private func didTapDev() {
+        let alert = UIAlertController(title: "BDUI Profile Mode", message: nil, preferredStyle: .actionSheet)
+        let modes: [(String, String)] = [
+            ("native", "Native (MVP)"),
+            ("personal", "Личный аккаунт"),
+            ("employee", "Сотрудник"),
+            ("admin", "Администратор"),
+            ("new_device", "Новое устройство"),
+            ("suspicious", "Подозрительная сессия"),
+            ("session_limit", "Превышен лимит сессий"),
+            ("onboarding", "Онбординг"),
+            ("blocked", "Заблокирован"),
+        ]
+        for (mode, title) in modes {
+            alert.addAction(UIAlertAction(title: title, style: .default) { [weak self] _ in
+                self?.presenter?.didSelectProfileMode(mode)
+                self?.presenter?.didTapProfile()
+            })
+        }
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel))
+        present(alert, animated: true)
     }
 
     @objc private func didTapToggleMask() {

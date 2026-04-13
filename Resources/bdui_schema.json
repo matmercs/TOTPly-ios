@@ -1,0 +1,225 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "BDUINode",
+    "description": "Backend Driven UI node tree for TOTPly design system",
+    "type": "object",
+    "required": ["id", "type"],
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "Unique identifier for diffing and accessibility"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "label",
+                "button",
+                "vStack",
+                "hStack",
+                "card",
+                "scroll",
+                "container",
+                "icon",
+                "spacer",
+                "divider",
+                "textField",
+                "loading",
+                "empty",
+                "circularProgress"
+            ],
+            "description": "Component type - determines which NodeMapper renders this node"
+        },
+        "content": {
+            "type": "object",
+            "description": "Type-specific configuration, decoded by each mapper"
+        },
+        "subviews": {
+            "type": "array",
+            "items": { "$ref": "#" },
+            "description": "Recursive child nodes"
+        },
+        "action": { "$ref": "#/definitions/action" },
+        "isVisible": {
+            "type": "boolean",
+            "default": true,
+            "description": "Role-based visibility, defaults to true"
+        }
+    },
+    "definitions": {
+        "spacingToken": {
+            "type": "string",
+            "enum": ["xxs", "xs", "s", "m", "l", "xl", "xxl"]
+        },
+        "colorToken": {
+            "type": "string",
+            "enum": [
+                "background", "surfaceCard",
+                "textPrimary", "textSecondary", "textCaption",
+                "accent", "accentSecondary", "error",
+                "separator", "disabled", "progressTrack",
+                "fieldBackground", "fieldBorder",
+                "toastBackground", "toastText",
+                "buttonPrimaryBackground", "buttonPrimaryText",
+                "buttonSecondaryBackground", "buttonSecondaryText",
+                "buttonDestructiveBackground", "buttonDestructiveText",
+                "white", "black", "clear"
+            ]
+        },
+        "textStyleToken": {
+            "type": "string",
+            "enum": [
+                "largeTitle", "title1", "headline", "body",
+                "callout", "subheadline", "footnote", "caption",
+                "code", "codeSmall"
+            ]
+        },
+        "iconToken": {
+            "type": "string",
+            "enum": [
+                "copy", "refresh", "eyeOpen", "eyeClosed",
+                "profile", "settings", "delete", "add",
+                "search", "lock", "mail", "error", "empty",
+                "chevronRight", "shieldCheck", "key", "signOut", "qrCode"
+            ]
+        },
+        "iconSizeToken": {
+            "type": "string",
+            "enum": ["small", "medium", "large", "xlarge"]
+        },
+        "cornerRadiusToken": {
+            "type": "string",
+            "enum": ["small", "medium", "large"]
+        },
+        "buttonStyleToken": {
+            "type": "string",
+            "enum": ["primary", "secondary", "destructive", "text"]
+        },
+        "alignmentToken": {
+            "type": "string",
+            "enum": ["fill", "leading", "trailing", "center", "top", "bottom"]
+        },
+        "distributionToken": {
+            "type": "string",
+            "enum": ["fill", "fillEqually", "fillProportionally", "equalSpacing", "equalCentering"]
+        },
+        "textAlignmentToken": {
+            "type": "string",
+            "enum": ["left", "center", "right", "natural"]
+        },
+        "labelContent": {
+            "type": "object",
+            "properties": {
+                "text": { "type": "string" },
+                "textStyle": { "$ref": "#/definitions/textStyleToken" },
+                "color": { "$ref": "#/definitions/colorToken" },
+                "alignment": { "$ref": "#/definitions/textAlignmentToken" },
+                "numberOfLines": { "type": "integer" }
+            }
+        },
+        "buttonContent": {
+            "type": "object",
+            "properties": {
+                "title": { "type": "string" },
+                "style": { "$ref": "#/definitions/buttonStyleToken" },
+                "isEnabled": { "type": "boolean" },
+                "isLoading": { "type": "boolean" }
+            }
+        },
+        "stackContent": {
+            "type": "object",
+            "properties": {
+                "spacing": { "$ref": "#/definitions/spacingToken" },
+                "alignment": { "$ref": "#/definitions/alignmentToken" },
+                "distribution": { "$ref": "#/definitions/distributionToken" },
+                "padding": { "$ref": "#/definitions/spacingToken" }
+            }
+        },
+        "cardContent": {
+            "type": "object",
+            "properties": {
+                "padding": { "$ref": "#/definitions/spacingToken" }
+            }
+        },
+        "scrollContent": {
+            "type": "object",
+            "properties": {
+                "axis": { "type": "string", "enum": ["vertical", "horizontal"] },
+                "padding": { "$ref": "#/definitions/spacingToken" },
+                "spacing": { "$ref": "#/definitions/spacingToken" }
+            }
+        },
+        "containerContent": {
+            "type": "object",
+            "properties": {
+                "backgroundColor": { "$ref": "#/definitions/colorToken" },
+                "padding": { "$ref": "#/definitions/spacingToken" },
+                "cornerRadius": { "$ref": "#/definitions/cornerRadiusToken" }
+            }
+        },
+        "iconContent": {
+            "type": "object",
+            "properties": {
+                "icon": { "$ref": "#/definitions/iconToken" },
+                "size": { "$ref": "#/definitions/iconSizeToken" },
+                "tint": { "$ref": "#/definitions/colorToken" }
+            }
+        },
+        "spacerContent": {
+            "type": "object",
+            "properties": {
+                "height": { "type": "number" },
+                "width": { "type": "number" }
+            }
+        },
+        "dividerContent": {
+            "type": "object",
+            "properties": {
+                "color": { "$ref": "#/definitions/colorToken" }
+            }
+        },
+        "textFieldContent": {
+            "type": "object",
+            "properties": {
+                "placeholder": { "type": "string" },
+                "title": { "type": "string" },
+                "isSecure": { "type": "boolean" },
+                "keyboardType": { "type": "string", "enum": ["default", "email", "number", "phone", "url"] }
+            }
+        },
+        "loadingContent": {
+            "type": "object",
+            "properties": {
+                "message": { "type": "string" }
+            }
+        },
+        "emptyContent": {
+            "type": "object",
+            "properties": {
+                "icon": { "$ref": "#/definitions/iconToken" },
+                "title": { "type": "string" },
+                "subtitle": { "type": "string" }
+            }
+        },
+        "circularProgressContent": {
+            "type": "object",
+            "properties": {
+                "progress": { "type": "number", "minimum": 0, "maximum": 1 },
+                "timeText": { "type": "string" },
+                "isExpiring": { "type": "boolean" }
+            }
+        },
+        "action": {
+            "type": "object",
+            "required": ["type"],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["print", "open", "alert", "reload", "http", "navigate", "clipboard"]
+                },
+                "payload": {
+                    "description": "Action-specific data: string for print/open/navigate/clipboard, object for alert/http"
+                }
+            }
+        }
+    }
+}

@@ -21,11 +21,8 @@
 		34AC02B32F604EE1005D5F98 /* URLSessionNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02B22F604EDF005D5F98 /* URLSessionNetworkClient.swift */; };
 		34AC02B62F608076005D5F98 /* RemoteTOTPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02B52F608075005D5F98 /* RemoteTOTPRepository.swift */; };
 		34AC02B82F60B3F9005D5F98 /* TOTPGeneratorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02B72F60B3F7005D5F98 /* TOTPGeneratorImpl.swift */; };
-		34AC02C02F6166EC005D5F98 /* DashboardRouterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02BF2F6166EB005D5F98 /* DashboardRouterStub.swift */; };
 		34AC02C32F616BE4005D5F98 /* DashboardPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02C22F616BE4005D5F98 /* DashboardPresenterImpl.swift */; };
 		34AC02C52F616BF8005D5F98 /* DashboardPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02C42F616BF8005D5F98 /* DashboardPresenterImpl.swift */; };
-		34AC02C62F616C2D005D5F98 /* DashboardRouterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02BF2F6166EB005D5F98 /* DashboardRouterStub.swift */; };
-		34AC02C72F616C2D005D5F98 /* DashboardRouterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02BF2F6166EB005D5F98 /* DashboardRouterStub.swift */; };
 		34AC02C82F616C32005D5F98 /* DashboardPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02C22F616BE4005D5F98 /* DashboardPresenterImpl.swift */; };
 		34AC02C92F616C32005D5F98 /* DashboardPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02C22F616BE4005D5F98 /* DashboardPresenterImpl.swift */; };
 		34AC02CA2F616C3B005D5F98 /* URLSessionNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC02B22F604EDF005D5F98 /* URLSessionNetworkClient.swift */; };
@@ -133,6 +130,46 @@
 		34BE57C42F7E72AE0094395C /* ProfilePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57C32F7E72AE0094395C /* ProfilePresenterImpl.swift */; };
 		34BE57C62F7E72F40094395C /* ProfileRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57C52F7E72F30094395C /* ProfileRouterImpl.swift */; };
 		34BE57CA2F7E73180094395C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE57C92F7E73180094395C /* ProfileViewController.swift */; };
+		34BE5BEE2F82A1360094395C /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BED2F82A1350094395C /* JSONValue.swift */; };
+		34BE5BF02F82A16C0094395C /* BDUIAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BEF2F82A16C0094395C /* BDUIAction.swift */; };
+		34BE5BF22F82A1CA0094395C /* BDUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BF12F82A1CA0094395C /* BDUINode.swift */; };
+		34BE5BF62F82BF950094395C /* BDUIActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BF52F82BF950094395C /* BDUIActionHandler.swift */; };
+		34BE5BFA2F82C02F0094395C /* BDUINodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BF92F82C02E0094395C /* BDUINodeMapper.swift */; };
+		34BE5BFC2F82C04F0094395C /* BDUILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BFB2F82C04B0094395C /* BDUILogger.swift */; };
+		34BE5BFE2F82C0780094395C /* ConsoleBDUILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BFD2F82C0770094395C /* ConsoleBDUILogger.swift */; };
+		34BE5C002F82C3530094395C /* BDUINodeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5BFF2F82C3520094395C /* BDUINodeRenderer.swift */; };
+		34BE5C022F82E1C50094395C /* LabelNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C012F82E1C40094395C /* LabelNodeMapper.swift */; };
+		34BE5C042F82E1DF0094395C /* DSTokenResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C032F82E1DF0094395C /* DSTokenResolver.swift */; };
+		34BE5C062F82E23A0094395C /* SpacerNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C052F82E2390094395C /* SpacerNodeMapper.swift */; };
+		34BE5C082F82E3860094395C /* DividerNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C072F82E3850094395C /* DividerNodeMapper.swift */; };
+		34BE5C0A2F82E3A30094395C /* ButtonNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C092F82E3A20094395C /* ButtonNodeMapper.swift */; };
+		34BE5C0C2F82E3C00094395C /* StackNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C0B2F82E3BF0094395C /* StackNodeMapper.swift */; };
+		34BE5C0E2F82E4F10094395C /* CardNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C0D2F82E4F10094395C /* CardNodeMapper.swift */; };
+		34BE5C102F82E50B0094395C /* CircularProgressNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C0F2F82E50B0094395C /* CircularProgressNodeMapper.swift */; };
+		34BE5C122F82E5220094395C /* ContainerNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C112F82E5210094395C /* ContainerNodeMapper.swift */; };
+		34BE5C142F82E5680094395C /* EmptyNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C132F82E5670094395C /* EmptyNodeMapper.swift */; };
+		34BE5C162F82E6120094395C /* FallbackNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C152F82E6110094395C /* FallbackNodeMapper.swift */; };
+		34BE5C182F82E69D0094395C /* IconNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C172F82E69D0094395C /* IconNodeMapper.swift */; };
+		34BE5C1A2F82E6BD0094395C /* LoadingNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C192F82E6BC0094395C /* LoadingNodeMapper.swift */; };
+		34BE5C1C2F82E6D60094395C /* ScrollNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C1B2F82E6D50094395C /* ScrollNodeMapper.swift */; };
+		34BE5C1E2F82E8180094395C /* TextFieldNodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C1D2F82E8160094395C /* TextFieldNodeMapper.swift */; };
+		34BE5C202F82F3640094395C /* BDUIMapperRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C1F2F82F3630094395C /* BDUIMapperRegistry.swift */; };
+		34BE5C242F82F4DE0094395C /* BDUINodeRendererImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C232F82F4DD0094395C /* BDUINodeRendererImpl.swift */; };
+		34BE5C262F83A8700094395C /* BDUIActionHandlerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C252F83A86E0094395C /* BDUIActionHandlerImpl.swift */; };
+		34BE5C2A2F8460E20094395C /* BDUITreeDiffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C292F8460E10094395C /* BDUITreeDiffer.swift */; };
+		34BE5C2C2F85361F0094395C /* BDUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C2B2F85361E0094395C /* BDUIViewController.swift */; };
+		34BE5C412F855EC10094395C /* profile_admin.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C402F855EC10094395C /* profile_admin.json */; };
+		34BE5C422F855EE00094395C /* bdui_schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C3F2F855E610094395C /* bdui_schema.json */; };
+		34BE5C442F855EF20094395C /* profile_blocked.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C432F855EF20094395C /* profile_blocked.json */; };
+		34BE5C462F855EFB0094395C /* profile_employee.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C452F855EFB0094395C /* profile_employee.json */; };
+		34BE5C482F855F010094395C /* profile_new_device.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C472F855F010094395C /* profile_new_device.json */; };
+		34BE5C4A2F855F060094395C /* profile_onboarding.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C492F855F060094395C /* profile_onboarding.json */; };
+		34BE5C4C2F855F0B0094395C /* profile_personal.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C4B2F855F0B0094395C /* profile_personal.json */; };
+		34BE5C4E2F855F100094395C /* profile_session_limit.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C4D2F855F100094395C /* profile_session_limit.json */; };
+		34BE5C502F855F150094395C /* profile_suspicious.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BE5C4F2F855F150094395C /* profile_suspicious.json */; };
+		34BE5C522F856E5C0094395C /* BDUIScreenConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C512F856E5C0094395C /* BDUIScreenConfig.swift */; };
+		34BE5C542F8572FB0094395C /* BDUILoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C532F8572F50094395C /* BDUILoader.swift */; };
+		34BE5C562F8573270094395C /* BDUILoaderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE5C552F8573270094395C /* BDUILoaderImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,7 +202,6 @@
 		34AC02B22F604EDF005D5F98 /* URLSessionNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkClient.swift; sourceTree = "<group>"; };
 		34AC02B52F608075005D5F98 /* RemoteTOTPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTOTPRepository.swift; sourceTree = "<group>"; };
 		34AC02B72F60B3F7005D5F98 /* TOTPGeneratorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPGeneratorImpl.swift; sourceTree = "<group>"; };
-		34AC02BF2F6166EB005D5F98 /* DashboardRouterStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouterStub.swift; sourceTree = "<group>"; };
 		34AC02C22F616BE4005D5F98 /* DashboardPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenterImpl.swift; sourceTree = "<group>"; };
 		34AC02C42F616BF8005D5F98 /* DashboardPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenterImpl.swift; sourceTree = "<group>"; };
 		34B745DF2F534B47009F9B4D /* TOTPly-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TOTPly-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +297,47 @@
 		34BE57C32F7E72AE0094395C /* ProfilePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterImpl.swift; sourceTree = "<group>"; };
 		34BE57C52F7E72F30094395C /* ProfileRouterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouterImpl.swift; sourceTree = "<group>"; };
 		34BE57C92F7E73180094395C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		34BE5BED2F82A1350094395C /* JSONValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONValue.swift; sourceTree = "<group>"; };
+		34BE5BEF2F82A16C0094395C /* BDUIAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIAction.swift; sourceTree = "<group>"; };
+		34BE5BF12F82A1CA0094395C /* BDUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUINode.swift; sourceTree = "<group>"; };
+		34BE5BF52F82BF950094395C /* BDUIActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIActionHandler.swift; sourceTree = "<group>"; };
+		34BE5BF92F82C02E0094395C /* BDUINodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUINodeMapper.swift; sourceTree = "<group>"; };
+		34BE5BFB2F82C04B0094395C /* BDUILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUILogger.swift; sourceTree = "<group>"; };
+		34BE5BFD2F82C0770094395C /* ConsoleBDUILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleBDUILogger.swift; sourceTree = "<group>"; };
+		34BE5BFF2F82C3520094395C /* BDUINodeRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUINodeRenderer.swift; sourceTree = "<group>"; };
+		34BE5C012F82E1C40094395C /* LabelNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C032F82E1DF0094395C /* DSTokenResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTokenResolver.swift; sourceTree = "<group>"; };
+		34BE5C052F82E2390094395C /* SpacerNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacerNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C072F82E3850094395C /* DividerNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C092F82E3A20094395C /* ButtonNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C0B2F82E3BF0094395C /* StackNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C0D2F82E4F10094395C /* CardNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C0F2F82E50B0094395C /* CircularProgressNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C112F82E5210094395C /* ContainerNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C132F82E5670094395C /* EmptyNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C152F82E6110094395C /* FallbackNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C172F82E69D0094395C /* IconNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C192F82E6BC0094395C /* LoadingNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C1B2F82E6D50094395C /* ScrollNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C1D2F82E8160094395C /* TextFieldNodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldNodeMapper.swift; sourceTree = "<group>"; };
+		34BE5C1F2F82F3630094395C /* BDUIMapperRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIMapperRegistry.swift; sourceTree = "<group>"; };
+		34BE5C222F82F4D10094395C /* BDUINodeRendererImpl.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = BDUINodeRendererImpl.txt; sourceTree = "<group>"; };
+		34BE5C232F82F4DD0094395C /* BDUINodeRendererImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUINodeRendererImpl.swift; sourceTree = "<group>"; };
+		34BE5C252F83A86E0094395C /* BDUIActionHandlerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIActionHandlerImpl.swift; sourceTree = "<group>"; };
+		34BE5C292F8460E10094395C /* BDUITreeDiffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUITreeDiffer.swift; sourceTree = "<group>"; };
+		34BE5C2B2F85361E0094395C /* BDUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIViewController.swift; sourceTree = "<group>"; };
+		34BE5C3F2F855E610094395C /* bdui_schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bdui_schema.json; sourceTree = "<group>"; };
+		34BE5C402F855EC10094395C /* profile_admin.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profile_admin.json; sourceTree = "<group>"; };
+		34BE5C432F855EF20094395C /* profile_blocked.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profile_blocked.json; sourceTree = "<group>"; };
+		34BE5C452F855EFB0094395C /* profile_employee.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profile_employee.json; sourceTree = "<group>"; };
+		34BE5C472F855F010094395C /* profile_new_device.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profile_new_device.json; sourceTree = "<group>"; };
+		34BE5C492F855F060094395C /* profile_onboarding.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profile_onboarding.json; sourceTree = "<group>"; };
+		34BE5C4B2F855F0B0094395C /* profile_personal.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profile_personal.json; sourceTree = "<group>"; };
+		34BE5C4D2F855F100094395C /* profile_session_limit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profile_session_limit.json; sourceTree = "<group>"; };
+		34BE5C4F2F855F150094395C /* profile_suspicious.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profile_suspicious.json; sourceTree = "<group>"; };
+		34BE5C512F856E5C0094395C /* BDUIScreenConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUIScreenConfig.swift; sourceTree = "<group>"; };
+		34BE5C532F8572F50094395C /* BDUILoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUILoader.swift; sourceTree = "<group>"; };
+		34BE5C552F8573270094395C /* BDUILoaderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDUILoaderImpl.swift; sourceTree = "<group>"; };
 		34F3247B2F4E18B000B14F9F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		34F3247C2F4E191D00B14F9F /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		34F3247D2F4E19CA00B14F9F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -374,7 +451,6 @@
 			isa = PBXGroup;
 			children = (
 				34998F832F69AF3200EBF491 /* DashboardRouterImpl.swift */,
-				34AC02BF2F6166EB005D5F98 /* DashboardRouterStub.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -780,9 +856,120 @@
 			path = Routers;
 			sourceTree = "<group>";
 		};
+		34BE5BE32F82A0090094395C /* BDUI */ = {
+			isa = PBXGroup;
+			children = (
+				34BE5BFD2F82C0770094395C /* ConsoleBDUILogger.swift */,
+				34BE5BEC2F82A0800094395C /* ViewController */,
+				34BE5BEB2F82A06E0094395C /* Diffing */,
+				34BE5BE82F82A0560094395C /* Actions */,
+				34BE5BE72F82A03E0094395C /* Rendering */,
+				34BE5BE62F82A0330094395C /* Protocols */,
+				34BE5BE52F82A02C0094395C /* Mappers */,
+				34BE5BE42F82A0200094395C /* Models */,
+			);
+			path = BDUI;
+			sourceTree = "<group>";
+		};
+		34BE5BE42F82A0200094395C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				34BE5BF12F82A1CA0094395C /* BDUINode.swift */,
+				34BE5BEF2F82A16C0094395C /* BDUIAction.swift */,
+				34BE5BED2F82A1350094395C /* JSONValue.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		34BE5BE52F82A02C0094395C /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				34BE5C1D2F82E8160094395C /* TextFieldNodeMapper.swift */,
+				34BE5C1B2F82E6D50094395C /* ScrollNodeMapper.swift */,
+				34BE5C192F82E6BC0094395C /* LoadingNodeMapper.swift */,
+				34BE5C172F82E69D0094395C /* IconNodeMapper.swift */,
+				34BE5C152F82E6110094395C /* FallbackNodeMapper.swift */,
+				34BE5C132F82E5670094395C /* EmptyNodeMapper.swift */,
+				34BE5C112F82E5210094395C /* ContainerNodeMapper.swift */,
+				34BE5C0F2F82E50B0094395C /* CircularProgressNodeMapper.swift */,
+				34BE5C0D2F82E4F10094395C /* CardNodeMapper.swift */,
+				34BE5C0B2F82E3BF0094395C /* StackNodeMapper.swift */,
+				34BE5C092F82E3A20094395C /* ButtonNodeMapper.swift */,
+				34BE5C072F82E3850094395C /* DividerNodeMapper.swift */,
+				34BE5C052F82E2390094395C /* SpacerNodeMapper.swift */,
+				34BE5C012F82E1C40094395C /* LabelNodeMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		34BE5BE62F82A0330094395C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				34BE5C532F8572F50094395C /* BDUILoader.swift */,
+				34BE5BFF2F82C3520094395C /* BDUINodeRenderer.swift */,
+				34BE5BFB2F82C04B0094395C /* BDUILogger.swift */,
+				34BE5BF92F82C02E0094395C /* BDUINodeMapper.swift */,
+				34BE5BF52F82BF950094395C /* BDUIActionHandler.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		34BE5BE72F82A03E0094395C /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				34BE5C552F8573270094395C /* BDUILoaderImpl.swift */,
+				34BE5C232F82F4DD0094395C /* BDUINodeRendererImpl.swift */,
+				34BE5C1F2F82F3630094395C /* BDUIMapperRegistry.swift */,
+				34BE5C032F82E1DF0094395C /* DSTokenResolver.swift */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		34BE5BE82F82A0560094395C /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				34BE5C252F83A86E0094395C /* BDUIActionHandlerImpl.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		34BE5BEB2F82A06E0094395C /* Diffing */ = {
+			isa = PBXGroup;
+			children = (
+				34BE5C292F8460E10094395C /* BDUITreeDiffer.swift */,
+			);
+			path = Diffing;
+			sourceTree = "<group>";
+		};
+		34BE5BEC2F82A0800094395C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				34BE5C512F856E5C0094395C /* BDUIScreenConfig.swift */,
+				34BE5C2B2F85361E0094395C /* BDUIViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		34BE5C2E2F853C560094395C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				34BE5C3F2F855E610094395C /* bdui_schema.json */,
+				34BE5C402F855EC10094395C /* profile_admin.json */,
+				34BE5C432F855EF20094395C /* profile_blocked.json */,
+				34BE5C452F855EFB0094395C /* profile_employee.json */,
+				34BE5C472F855F010094395C /* profile_new_device.json */,
+				34BE5C492F855F060094395C /* profile_onboarding.json */,
+				34BE5C4B2F855F0B0094395C /* profile_personal.json */,
+				34BE5C4D2F855F100094395C /* profile_session_limit.json */,
+				34BE5C4F2F855F150094395C /* profile_suspicious.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		34F323FD2F4C771B00B14F9F = {
 			isa = PBXGroup;
 			children = (
+				34BE5C2E2F853C560094395C /* Resources */,
 				34F324702F4E13B000B14F9F /* Sources */,
 				34F3241F2F4C771E00B14F9F /* TOTPly-iosTests */,
 				34F324292F4C771E00B14F9F /* TOTPly-iosUITests */,
@@ -790,6 +977,7 @@
 				34B745DF2F534B47009F9B4D /* TOTPly-ios.app */,
 				34B745E02F534B47009F9B4D /* TOTPly-iosTests.xctest */,
 				34B745E12F534B47009F9B4D /* TOTPly-iosUITests.xctest */,
+				34BE5C222F82F4D10094395C /* BDUINodeRendererImpl.txt */,
 			);
 			sourceTree = "<group>";
 		};
@@ -806,6 +994,7 @@
 		34F324712F4E13BD00B14F9F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				34BE5BE32F82A0090094395C /* BDUI */,
 				34AC02AF2F6044A7005D5F98 /* Network */,
 				34B746382F5499B6009F9B4D /* Storage */,
 				34F324812F4E1DDB00B14F9F /* Common */,
@@ -1054,6 +1243,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34BE5C422F855EE00094395C /* bdui_schema.json in Resources */,
+				34BE5C462F855EFB0094395C /* profile_employee.json in Resources */,
+				34BE5C4A2F855F060094395C /* profile_onboarding.json in Resources */,
+				34BE5C502F855F150094395C /* profile_suspicious.json in Resources */,
+				34BE5C412F855EC10094395C /* profile_admin.json in Resources */,
+				34BE5C4E2F855F100094395C /* profile_session_limit.json in Resources */,
+				34BE5C4C2F855F0B0094395C /* profile_personal.json in Resources */,
+				34BE5C482F855F010094395C /* profile_new_device.json in Resources */,
+				34BE5C442F855EF20094395C /* profile_blocked.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1078,20 +1276,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34BE5C162F82E6120094395C /* FallbackNodeMapper.swift in Sources */,
+				34BE5C102F82E50B0094395C /* CircularProgressNodeMapper.swift in Sources */,
 				34B746AF2F573834009F9B4D /* LocalAuthRepository.swift in Sources */,
 				34B746B02F573834009F9B4D /* KeychainStorageService.swift in Sources */,
 				34B746B12F573834009F9B4D /* AddTOTPPresenter.swift in Sources */,
 				34B746B22F573834009F9B4D /* AddTOTPRouter.swift in Sources */,
 				34BE54152F7C6DF20094395C /* CodeDetailRouterImpl.swift in Sources */,
+				34BE5C2A2F8460E20094395C /* BDUITreeDiffer.swift in Sources */,
 				34B746B32F573834009F9B4D /* AddTOTPView.swift in Sources */,
+				34BE5C562F8573270094395C /* BDUILoaderImpl.swift in Sources */,
 				34BE54272F7C70CE0094395C /* AddTOTPPresenterImpl.swift in Sources */,
 				34BE57A92F7E6CAE0094395C /* PasswordResetPresenter.swift in Sources */,
 				34B746B42F573834009F9B4D /* AddTOTPViewState.swift in Sources */,
 				34BE57BC2F7E725A0094395C /* ProfileView.swift in Sources */,
 				34B746B52F573834009F9B4D /* AddTOTPInput.swift in Sources */,
 				34BE57C62F7E72F40094395C /* ProfileRouterImpl.swift in Sources */,
+				34BE5C202F82F3640094395C /* BDUIMapperRegistry.swift in Sources */,
 				34B746B62F573834009F9B4D /* CodeDetailPresenter.swift in Sources */,
 				34B746B72F573834009F9B4D /* CodeDetailRouter.swift in Sources */,
+				34BE5C262F83A8700094395C /* BDUIActionHandlerImpl.swift in Sources */,
 				34B746B82F573834009F9B4D /* CodeDetailView.swift in Sources */,
 				34B746B92F573834009F9B4D /* CodeDetailViewState.swift in Sources */,
 				34AC02B62F608076005D5F98 /* RemoteTOTPRepository.swift in Sources */,
@@ -1107,6 +1311,8 @@
 				34B746BD2F573834009F9B4D /* DashboardPresenter.swift in Sources */,
 				34B746BE2F573834009F9B4D /* DashboardRouter.swift in Sources */,
 				34B746BF2F573834009F9B4D /* DashboardView.swift in Sources */,
+				34BE5BEE2F82A1360094395C /* JSONValue.swift in Sources */,
+				34BE5C522F856E5C0094395C /* BDUIScreenConfig.swift in Sources */,
 				34B746C02F573834009F9B4D /* TOTPItem.swift in Sources */,
 				34B746C12F573834009F9B4D /* UpdateTOTPItemResponse.swift in Sources */,
 				34B746C22F573834009F9B4D /* TOTPItemsResponse.swift in Sources */,
@@ -1123,8 +1329,10 @@
 				34998F822F69AD9F00EBF491 /* CodeDetailStubViewController.swift in Sources */,
 				34B746C72F573834009F9B4D /* DeleteTOTPItemRequest.swift in Sources */,
 				34B746C82F573834009F9B4D /* CreateTOTPItemRequest.swift in Sources */,
+				34BE5C2C2F85361F0094395C /* BDUIViewController.swift in Sources */,
 				34B746C92F573834009F9B4D /* TOTPItemDTO.swift in Sources */,
 				34B747262F57427E009F9B4D /* DashboardStubViewController.swift in Sources */,
+				34BE5C082F82E3860094395C /* DividerNodeMapper.swift in Sources */,
 				34B746CA2F573834009F9B4D /* TOTPAlgorithm.swift in Sources */,
 				34B746CB2F573834009F9B4D /* DashboardTOTPItem.swift in Sources */,
 				34B7472E2F576095009F9B4D /* RegistrationPresenterImpl.swift in Sources */,
@@ -1140,21 +1348,31 @@
 				34B746D22F573834009F9B4D /* RegistrationView.swift in Sources */,
 				34BE57AB2F7E6CC20094395C /* PasswordResetPresenterImpl.swift in Sources */,
 				34B746D32F573834009F9B4D /* WelcomeView.swift in Sources */,
+				34BE5BFE2F82C0780094395C /* ConsoleBDUILogger.swift in Sources */,
 				34BE57CA2F7E73180094395C /* ProfileViewController.swift in Sources */,
 				34B746D42F573834009F9B4D /* AuthRouter.swift in Sources */,
 				34B7472C2F575A44009F9B4D /* RegistrationViewController.swift in Sources */,
+				34BE5BFA2F82C02F0094395C /* BDUINodeMapper.swift in Sources */,
+				34BE5BFC2F82C04F0094395C /* BDUILogger.swift in Sources */,
+				34BE5BF62F82BF950094395C /* BDUIActionHandler.swift in Sources */,
+				34BE5BF22F82A1CA0094395C /* BDUINode.swift in Sources */,
+				34BE5C1C2F82E6D60094395C /* ScrollNodeMapper.swift in Sources */,
 				34AC02C32F616BE4005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34AC02C52F616BF8005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34BE54182F7C6E220094395C /* CodeDetailPresenterImpl.swift in Sources */,
+				34BE5C242F82F4DE0094395C /* BDUINodeRendererImpl.swift in Sources */,
 				34B746D52F573834009F9B4D /* WelcomeRouter.swift in Sources */,
+				34BE5C542F8572FB0094395C /* BDUILoader.swift in Sources */,
 				34B746D62F573834009F9B4D /* LoginPresenter.swift in Sources */,
 				34B746D72F573834009F9B4D /* VerificationPresenter.swift in Sources */,
 				34B746D82F573834009F9B4D /* RegistrationPresenter.swift in Sources */,
 				34B746D92F573834009F9B4D /* WelcomePresenter.swift in Sources */,
 				34B746DA2F573834009F9B4D /* AuthRepository.swift in Sources */,
+				34BE5BF02F82A16C0094395C /* BDUIAction.swift in Sources */,
 				34B746DB2F573834009F9B4D /* AuthResult.swift in Sources */,
 				34B746DC2F573834009F9B4D /* VerificationType.swift in Sources */,
 				34BE541C2F7C6FA10094395C /* OTPAuthParser.swift in Sources */,
+				34BE5C042F82E1DF0094395C /* DSTokenResolver.swift in Sources */,
 				34B746DD2F573834009F9B4D /* RegistrationViewState.swift in Sources */,
 				34B746DE2F573834009F9B4D /* LoginViewState.swift in Sources */,
 				34B746DF2F573834009F9B4D /* WelcomeViewState.swift in Sources */,
@@ -1165,29 +1383,39 @@
 				34B746E12F573834009F9B4D /* PasswordResetResponse.swift in Sources */,
 				34AC02B82F60B3F9005D5F98 /* TOTPGeneratorImpl.swift in Sources */,
 				34B746E22F573834009F9B4D /* PasswordResetVerifyResponse.swift in Sources */,
+				34BE5C1A2F82E6BD0094395C /* LoadingNodeMapper.swift in Sources */,
+				34BE5C122F82E5220094395C /* ContainerNodeMapper.swift in Sources */,
+				34BE5C062F82E23A0094395C /* SpacerNodeMapper.swift in Sources */,
 				34B746E32F573834009F9B4D /* ResendVerificationResponse.swift in Sources */,
 				34B746E42F573834009F9B4D /* LoginResponse.swift in Sources */,
 				34AC02B32F604EE1005D5F98 /* URLSessionNetworkClient.swift in Sources */,
 				34B746E52F573834009F9B4D /* RegistrationResponse.swift in Sources */,
+				34BE5C0E2F82E4F10094395C /* CardNodeMapper.swift in Sources */,
+				34BE5C022F82E1C50094395C /* LabelNodeMapper.swift in Sources */,
+				34BE5C142F82E5680094395C /* EmptyNodeMapper.swift in Sources */,
+				34BE5C1E2F82E8180094395C /* TextFieldNodeMapper.swift in Sources */,
 				34BE54212F7C70720094395C /* QRScannerViewController.swift in Sources */,
 				34B746E62F573834009F9B4D /* ResendVerificationRequest.swift in Sources */,
 				34B746E72F573834009F9B4D /* PasswordResetVerifyRequest.swift in Sources */,
 				34406AF82F6D5A12008F2B0E /* DashboardRootView.swift in Sources */,
+				34BE5C0C2F82E3C00094395C /* StackNodeMapper.swift in Sources */,
 				34B746E82F573834009F9B4D /* PasswordResetRequest.swift in Sources */,
 				34406AF62F6D598A008F2B0E /* AuthValidator.swift in Sources */,
 				34B746E92F573834009F9B4D /* LoginRequest.swift in Sources */,
 				34B746EA2F573834009F9B4D /* VerifyEmailRequest.swift in Sources */,
 				34B746EB2F573834009F9B4D /* RegistrationRequest.swift in Sources */,
 				34B746EC2F573834009F9B4D /* VerificationViewState.swift in Sources */,
+				34BE5C182F82E69D0094395C /* IconNodeMapper.swift in Sources */,
 				34BE57B72F7E721E0094395C /* SessionItem.swift in Sources */,
 				34B746ED2F573834009F9B4D /* DeviceInfo.swift in Sources */,
 				34B746EE2F573834009F9B4D /* StorageKey.swift in Sources */,
 				34B746EF2F573834009F9B4D /* StorageService.swift in Sources */,
 				34B746F02F573834009F9B4D /* AuthError.swift in Sources */,
 				34B746F12F573834009F9B4D /* NetworkError.swift in Sources */,
-				34AC02C02F6166EC005D5F98 /* DashboardRouterStub.swift in Sources */,
+				34BE5C0A2F82E3A30094395C /* ButtonNodeMapper.swift in Sources */,
 				34998F7F2F69AC9E00EBF491 /* TOTPCell.swift in Sources */,
 				34B746F22F573834009F9B4D /* AppError.swift in Sources */,
+				34BE5C002F82C3530094395C /* BDUINodeRenderer.swift in Sources */,
 				34BE57AD2F7E6D020094395C /* PasswordResetViewController.swift in Sources */,
 				34B746F32F573834009F9B4D /* Result.swift in Sources */,
 				34B746F42F573834009F9B4D /* UserSession.swift in Sources */,
@@ -1199,7 +1427,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34AC02C62F616C2D005D5F98 /* DashboardRouterStub.swift in Sources */,
 				34AC02C82F616C32005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34AC02CE2F616C4D005D5F98 /* TOTPGeneratorImpl.swift in Sources */,
 				34AC02CC2F616C42005D5F98 /* RemoteTOTPRepository.swift in Sources */,
@@ -1216,7 +1443,6 @@
 				34AC02CF2F616C4D005D5F98 /* TOTPGeneratorImpl.swift in Sources */,
 				34AC02C92F616C32005D5F98 /* DashboardPresenterImpl.swift in Sources */,
 				34AC02CB2F616C3B005D5F98 /* URLSessionNetworkClient.swift in Sources */,
-				34AC02C72F616C2D005D5F98 /* DashboardRouterStub.swift in Sources */,
 				34998F842F69AF3300EBF491 /* DashboardRouterImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

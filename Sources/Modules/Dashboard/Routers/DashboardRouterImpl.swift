@@ -10,6 +10,13 @@ import UIKit
 final class DashboardRouterImpl: DashboardRouter {
     weak var navigationController: UINavigationController?
     weak var window: UIWindow?
+    
+    // Для демонстрации:
+    // "native"    нативный ProfileViewController
+    // "bdui"      BDUI обычный пользователь
+    // "corporate" BDUI корпоративный (организация, SSO, роли, администрирование)
+    // "security"  BDUI подозрительная сессия (ограничения, верификация, geo-ip)
+    var profileMode = "personal"
 
     private let repository: TOTPRepository
     private let generator: TOTPGenerator
@@ -56,11 +63,23 @@ final class DashboardRouterImpl: DashboardRouter {
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    func openSettings() {
-        openProfile()
-    }
+    private static let bduiBaseURL = "https://alfaitmo.ru/server/echo/471057/totply-ios/bdui"
 
     func openProfile() {
+        switch profileMode {
+        case "native":
+            openNativeProfile()
+        default:
+            let config = BDUIScreenConfig(
+                endpoint: "\(Self.bduiBaseURL)/profile/\(profileMode)",
+                title: "Профиль",
+                fallbackBundleName: "profile_\(profileMode)"
+            )
+            openBDUIScreen(config: config)
+        }
+    }
+
+    private func openNativeProfile() {
         let router = ProfileRouterImpl()
         router.navigationController = navigationController
         router.window = window
@@ -71,6 +90,25 @@ final class DashboardRouterImpl: DashboardRouter {
         )
         let vc = ProfileViewController(presenter: presenter)
         presenter.setView(vc)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func openBDUIScreen(config: BDUIScreenConfig) {
+        let vc = BDUIViewController()
+        vc.loadFromConfig(config)
+        vc.onNavigate = { [weak self] route in
+            switch route {
+            case "welcome":
+                try? self?.authRepository.clearSession()
+                let authRouter = AuthRouterImpl(
+                    window: self?.window,
+                    authRepository: self?.authRepository ?? LocalAuthRepository(storage: KeychainStorageService())
+                )
+                authRouter.start()
+            default:
+                break
+            }
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
 }
